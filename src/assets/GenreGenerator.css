@@ -174,7 +174,6 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(#f70000, #f89200, #f8f501, #038f00, #0168f8, #a200f7);
-  -webkit-background-clip: text;
   color: transparent;
   line-height: 0.9;
   clip-path: ellipse(120px 120px at -2.54% -9.25%);
@@ -229,7 +228,6 @@
   text-transform: uppercase;
   position: relative;
   background: linear-gradient(90deg, #ff6f61, #ffbd44, #ff6f61);
-  -webkit-background-clip: text;
   color: transparent;
   animation: melt 3s infinite ease-in-out;
 }
@@ -240,7 +238,6 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, #ff6f61, #ffbd44, #ff6f61);
-  -webkit-background-clip: text;
   color: transparent;
   transform: scaleY(1);
   opacity: 0.5;
@@ -734,7 +731,6 @@
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 2px #ffffff;
-  text-stroke: 2px #ffffff; /* pas partout supporté mais ok */
   text-shadow:
     0 0 6px rgba(255, 0, 140, 0.9),
     0 0 14px rgba(0, 224, 255, 0.9);
@@ -961,7 +957,6 @@
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 3px #ffffff;
-  text-stroke: 3px #ffffff; /* pas supporté partout mais safe */
   letter-spacing: 0.2em;
 }
 
@@ -1011,7 +1006,6 @@
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 2px #ffffff;
-  text-stroke: 2px #ffffff;
   letter-spacing: 0.25em;
   animation: outline-dash-pulse 1.8s ease-in-out infinite;
 }
@@ -1498,7 +1492,6 @@
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 1px #ffffff;
-  text-stroke: 1px #ffffff;
   animation: stroke-grow 1.8s ease-in-out infinite;
 }
 
@@ -1552,7 +1545,6 @@ font-weight: 900;
 text-transform: uppercase;
 color: transparent;
 -webkit-text-stroke: 2px #ffffff;
-text-stroke: 2px #ffffff; /* pas partout supporté mais ok */
 letter-spacing: 0.1em;
 }
 
@@ -1593,7 +1585,6 @@ font-weight: 900;
 text-transform: uppercase;
 color: transparent;
 -webkit-text-stroke: 3px #ffffff;
-text-stroke: 3px #ffffff; /* pas supporté partout mais safe */
 letter-spacing: 0.2em;
 }
 
@@ -1637,7 +1628,6 @@ background-clip: text;
 text-transform: uppercase;
 color: transparent;
 -webkit-text-stroke: 2px #ffffff;
-text-stroke: 2px #ffffff;
 letter-spacing: 0.25em;
 animation: outline-dash-pulse 1.8s ease-in-out infinite;
 }
@@ -2081,7 +2071,6 @@ animation: fire-flicker 0.18s infinite alternate;
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 1px #ffffff;
-  text-stroke: 1px #ffffff;
   animation: stroke-grow 1.8s ease-in-out infinite;
 }
 
@@ -2133,7 +2122,6 @@ font-weight: 900;
 text-transform: uppercase;
 color: transparent;
 -webkit-text-stroke: 2px #ffffff;
-text-stroke: 2px #ffffff; /* pas partout supporté mais ok */
 letter-spacing: 0.1em;
 }
 
@@ -2174,7 +2162,6 @@ font-weight: 900;
 text-transform: uppercase;
 color: transparent;
 -webkit-text-stroke: 3px #ffffff;
-text-stroke: 3px #ffffff; /* pas supporté partout mais safe */
 letter-spacing: 0.2em;
 }
 
@@ -2218,7 +2205,7 @@ background-clip: text;
 text-transform: uppercase;
 color: transparent;
 -webkit-text-stroke: 2px #ffffff;
-text-stroke: 2px #ffffff;
+
 letter-spacing: 0.25em;
 animation: outline-dash-pulse 1.8s ease-in-out infinite;
 }
