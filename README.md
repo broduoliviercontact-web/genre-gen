@@ -4,7 +4,7 @@ Petit projet React qui génère aléatoirement des noms de styles musicaux à pa
 
 Idéal pour :
 - s'amuser avec des genres musicaux absurdes 🤘  
-- montrer des exemples de **text animations / text effects en CSS** à des élèves  
+- montrer des exemples de **text animations / text effects en CSS**
 - expérimenter avec les `@keyframes`, `::before` / `::after`, `text-shadow`, `clip-path`, etc.
 
 ---
