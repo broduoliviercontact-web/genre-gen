@@ -1,0 +1,2268 @@
+/* ========= STYLE DE BASE DU COMPOSANT ========= */
+
+.genre-generator {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #222;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  background: radial-gradient(circle at top, #222 0, #000 60%);
+  color: #fff;
+  text-align: center;
+}
+
+.genre-generator__title {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.genre-generator__button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(90deg, #ff005e, #ff9a00);
+  color: #fff;
+}
+
+.genre-generator__button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.genre-generator__error {
+  color: #ff4b4b;
+  margin-top: 1rem;
+}
+
+.genre-generator__genre {
+  margin-top: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+/* ========= STYLE 1 : NEON GLOW ========= */
+
+.genre-generator__genre--neon {
+  font-size: 3.5rem;
+  color: #fff;
+  text-shadow:
+    0 0 5px #ff005e,
+    0 0 10px #ff005e,
+    0 0 20px #ff005e,
+    0 0 40px #ff005e,
+    0 0 80px #ff005e;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow:
+      0 0 5px #ff005e,
+      0 0 10px #ff005e,
+      0 0 20px #ff005e,
+      0 0 40px #ff005e,
+      0 0 80px #ff005e;
+  }
+  100% {
+    text-shadow:
+      0 0 10px #00d4ff,
+      0 0 20px #00d4ff,
+      0 0 40px #00d4ff,
+      0 0 80px #00d4ff,
+      0 0 160px #00d4ff;
+  }
+}
+
+/* ========= STYLE 2 : META VARIABLE 3D ========= */
+
+@font-face {
+  src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2")
+    format("woff2");
+  font-family: "MetaDemo";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.genre-generator__genre--meta {
+  transition: all 0.5s;
+  -webkit-text-stroke: 2px #d6f4f4;
+  font-variation-settings: "wght" 900, "ital" 1;
+  font-size: 3.5rem;
+  color: transparent;
+  font-family: "MetaDemo", sans-serif;
+  text-shadow:
+    5px 5px 0px #07bccc,
+    8px 8px 0px #e601c0,
+    11px 11px 0px #e9019a,
+    14px 14px 0px #f40468,
+    25px 25px 10px #482896;
+  cursor: pointer;
+}
+
+.genre-generator__genre--meta:hover {
+  font-variation-settings: "wght" 100, "ital" 0;
+  text-shadow: none;
+}
+
+/* ========= STYLE 3 : LIGHTS ANIM ========= */
+
+@keyframes lights {
+  0% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  30% {
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  40% {
+    color: hsl(230, 100%, 95%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 90%, 0.5),
+      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+  }
+  70% {
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  100% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+}
+
+.genre-generator__genre--lights {
+  font-size: 3.5rem;
+  font-weight: 300;
+  animation: lights 5s 750ms linear infinite;
+}
+
+/* ========= STYLE 4 : RAINBOW SWING ========= */
+
+.genre-generator__genre--rainbow {
+  font-family: "Teko", sans-serif;
+  text-transform: uppercase;
+  font-size: 4rem;
+  position: relative;
+  color: #000;
+}
+
+.genre-generator__genre--rainbow::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#f70000, #f89200, #f8f501, #038f00, #0168f8, #a200f7);
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 0.9;
+  clip-path: ellipse(120px 120px at -2.54% -9.25%);
+  animation: swing 5s infinite alternate;
+}
+
+@keyframes swing {
+  0% {
+    clip-path: ellipse(120px 120px at -2.54% -9.25%);
+  }
+  50% {
+    clip-path: ellipse(120px 120px at 49.66% 64.36%);
+  }
+  100% {
+    clip-path: ellipse(120px 120px at 102.62% -1.61%);
+  }
+}
+
+/* ========= STYLE 5 : VARIABLE FONT INCONSOLATA ========= */
+
+@font-face {
+  font-family: "InconsolataVF";
+  src: url("https://ggayane.github.io/css-experiments/Inconsolata-VF.ttf");
+  font-weight: 275 900;
+  font-stretch: 50% 200%;
+}
+
+.genre-generator__genre--variable {
+  font-family: "InconsolataVF", monospace;
+  font-size: 3.5rem;
+  font-variation-settings: "wght" 275, "wdth" 50;
+  animation: swapthings 3s infinite both cubic-bezier(0.17, 0.04, 0.04, 0.99);
+}
+
+@keyframes swapthings {
+  0% {
+    font-variation-settings: "wght" 275, "wdth" 50;
+  }
+  50% {
+    font-variation-settings: "wght" 900, "wdth" 200;
+  }
+  100% {
+    font-variation-settings: "wght" 275, "wdth" 50;
+  }
+}
+
+/* ========= STYLE 6 : MELTING TEXT ========= */
+
+.genre-generator__genre--melting {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  background: linear-gradient(90deg, #ff6f61, #ffbd44, #ff6f61);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: melt 3s infinite ease-in-out;
+}
+
+.genre-generator__genre--melting::before,
+.genre-generator__genre--melting::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #ff6f61, #ffbd44, #ff6f61);
+  -webkit-background-clip: text;
+  color: transparent;
+  transform: scaleY(1);
+  opacity: 0.5;
+  animation: drip 3s infinite ease-in-out;
+  z-index: -1;
+}
+
+.genre-generator__genre--melting::after {
+  filter: blur(10px);
+  opacity: 0.3;
+}
+
+@keyframes melt {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes drip {
+  0%,
+  100% {
+    transform: scaleY(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scaleY(1.5);
+    opacity: 0.7;
+  }
+}
+
+/* ========= STYLE 7 : MATRIX GLITCH ========= */
+
+.genre-generator__genre--matrix {
+  font-size: 3.5rem;
+  font-family: monospace;
+  color: #0f0;
+  text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0;
+  position: relative;
+}
+
+.genre-generator__genre--matrix::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  animation: glitch 2s infinite;
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0, 0 0 15px #0f0;
+}
+
+@keyframes glitch {
+  0%,
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(0);
+  }
+  33% {
+    clip-path: polygon(0 0, 100% 0, 100% 15%, 0 15%);
+    transform: translate(-5px, -5px);
+  }
+  66% {
+    clip-path: polygon(0 85%, 100% 85%, 100% 100%, 0 100%);
+    transform: translate(5px, 5px);
+  }
+}
+
+/* ========= STYLE 8 : SPIN 3D ========= */
+
+.genre-generator__genre--spin {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    1px 1px 0px #e63946,
+    2px 2px 0px #f77f00,
+    3px 3px 0px #fcbf49,
+    4px 4px 0px #a8dadc,
+    5px 5px 0px #457b9d;
+  transform-style: preserve-3d;
+  animation: spin-3d 4s infinite linear;
+}
+
+@keyframes spin-3d {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* ========= STYLE 9 : EXPLOSIVE BURST ========= */
+
+.genre-generator__genre--burst {
+  font-size: 3.5rem;
+  position: relative;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+.genre-generator__genre--burst::before,
+.genre-generator__genre--burst::after {
+  content: "";
+  position: absolute;
+  inset: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, #ffdd00, transparent 60%);
+  opacity: 0;
+  pointer-events: none;
+  animation: burst-pulse 0.9s ease-out;
+}
+
+.genre-generator__genre--burst::after {
+  background: radial-gradient(circle, #ff4b91, transparent 70%);
+  animation-delay: 0.15s;
+}
+
+@keyframes burst-pulse {
+  0% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(4);
+  }
+}
+
+/* ========= STYLE 10 : DANCING SHADOW ========= */
+
+.genre-generator__genre--shadowDance {
+  font-size: 3.3rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow:
+    8px 8px 0px #ff4b91,
+    -8px -8px 0px #00e0ff;
+  animation: shadow-dance 1.6s infinite alternate ease-in-out;
+}
+
+@keyframes shadow-dance {
+  0% {
+    text-shadow:
+      8px 8px 0px #ff4b91,
+      -8px -8px 0px #00e0ff;
+    transform: translate(0, 0);
+  }
+  50% {
+    text-shadow:
+      -8px 8px 0px #ff4b91,
+      8px -8px 0px #00e0ff;
+    transform: translate(2px, -2px);
+  }
+  100% {
+    text-shadow:
+      0px 0px 0px #ff4b91,
+      0px 0px 0px #00e0ff;
+    transform: translate(-2px, 2px);
+  }
+}
+
+/* ========= STYLE 11 : TEXT MASK / GRADIENT ========= */
+
+.genre-generator__genre--mask {
+  font-size: 3.2rem;
+  font-weight: 800;
+  background-image: linear-gradient(
+    120deg,
+    #ff4b91,
+    #ffdd00,
+    #00e0ff,
+    #a200f7,
+    #ff4b91
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: mask-move 4s linear infinite;
+}
+
+@keyframes mask-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* ========= STYLE 12 : TYPEWRITER ========= */
+
+.genre-generator__genre--typewriter {
+  font-family: "InconsolataVF", system-ui, sans-serif;
+  font-size: 2.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid currentColor;
+  display: inline-block;
+  animation:
+    typing 3s steps(20, end) 1 forwards,
+    caret-blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes caret-blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: currentColor;
+  }
+}
+
+/* ========= STYLE 13 : SHIMMER ========= */
+
+.genre-generator__genre--shimmer {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(
+    120deg,
+    #ffffff 0%,
+    #ffdd00 20%,
+    #ff4b91 40%,
+    #00e0ff 60%,
+    #ffffff 80%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer-move 2.5s linear infinite;
+}
+
+@keyframes shimmer-move {
+  0% {
+    background-position: -50% 50%;
+  }
+  100% {
+    background-position: 150% 50%;
+  }
+}
+
+/* ========= STYLE 14 : WAVE ========= */
+
+.genre-generator__genre--wave {
+  font-size: 3rem;
+  display: inline-block;
+  transform-origin: center bottom;
+  animation: wave-move 1.8s ease-in-out infinite;
+}
+
+@keyframes wave-move {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(8px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* ========= STYLE 15 : BOUNCE ========= */
+
+.genre-generator__genre--bounce {
+  font-size: 3.2rem;
+  animation: bounce-in 0.9s cubic-bezier(0.19, 1, 0.22, 1),
+    bounce-loop 1.6s ease-in-out infinite 0.9s;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-loop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ========= STYLE 16 : GLITCH 2 ========= */
+
+.genre-generator__genre--glitch2 {
+  font-size: 3.3rem;
+  position: relative;
+  color: #fff;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+  animation: glitch2-shake 1.5s infinite;
+}
+
+.genre-generator__genre--glitch2::before,
+.genre-generator__genre--glitch2::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.genre-generator__genre--glitch2::before {
+  color: #ff00c1;
+  transform: translate(-2px, -1px);
+  animation: glitch2-offset 1.5s infinite;
+}
+
+.genre-generator__genre--glitch2::after {
+  color: #00e0ff;
+  transform: translate(2px, 1px);
+  animation: glitch2-offset 1.5s infinite reverse;
+}
+
+@keyframes glitch2-shake {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-2px, 1px);
+  }
+  40% {
+    transform: translate(2px, -1px);
+  }
+  60% {
+    transform: translate(-1px, -2px);
+  }
+  80% {
+    transform: translate(1px, 2px);
+  }
+}
+
+@keyframes glitch2-offset {
+  0% {
+    clip-path: inset(0 0 40% 0);
+  }
+  50% {
+    clip-path: inset(30% 0 10% 0);
+  }
+  100% {
+    clip-path: inset(60% 0 0 0);
+  }
+}
+
+/* ========= STYLE 17 : FADE UP ========= */
+
+.genre-generator__genre--fadeUp {
+  font-size: 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-up 0.9s ease-out forwards;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    letter-spacing: 0.4em;
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px);
+    letter-spacing: 0.1em;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0.05em;
+  }
+}
+
+/* ========= STYLE 18 : 3D SHADOW CARTOON ========= */
+/* Inspiré des effets "3D Text Shadow" du site */
+
+.genre-generator__genre--shadow3d {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow:
+    1px 1px 0 #111,
+    2px 2px 0 #111,
+    3px 3px 0 #111,
+    4px 4px 0 #111,
+    5px 5px 0 #111,
+    6px 6px 0 #111,
+    7px 7px 0 #111,
+    8px 8px 0 #111;
+}
+
+/* ========= STYLE 19 : REFLECTION ========= */
+/* Inspiré des effets de reflet / miroir */
+
+.genre-generator__genre--reflect {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 1.2rem;
+}
+
+.genre-generator__genre--reflect::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  transform-origin: top;
+  transform: scaleY(-1);
+  opacity: 0.45;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: blur(1px);
+}
+
+/* ========= STYLE 20 : CHROME / METAL ========= */
+/* Inspiré des effets chrome / 80s / métalliques */
+
+.genre-generator__genre--chrome {
+  font-size: 3.4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    180deg,
+    #fdfdfd 0%,
+    #dcdcdc 20%,
+    #8f8f8f 40%,
+    #222222 50%,
+    #7f7f7f 60%,
+    #f1f1f1 80%,
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 0 4px rgba(0, 0, 0, 0.6),
+    0 0 12px rgba(0, 0, 0, 0.8);
+}
+
+/* ========= STYLE 21 : OUTLINE + GLOW ========= */
+/* Inspiré des effets "cosmic neon / outline" */
+
+.genre-generator__genre--outlineGlow {
+  font-size: 3.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  text-stroke: 2px #ffffff; /* pas partout supporté mais ok */
+  text-shadow:
+    0 0 6px rgba(255, 0, 140, 0.9),
+    0 0 14px rgba(0, 224, 255, 0.9);
+  background: radial-gradient(circle, #ff4b91, #00e0ff, #ffdd00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: outline-glow-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes outline-glow-pulse {
+  0% {
+    text-shadow:
+      0 0 4px rgba(255, 0, 140, 0.7),
+      0 0 10px rgba(0, 224, 255, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow:
+      0 0 12px rgba(255, 0, 140, 1),
+      0 0 22px rgba(0, 224, 255, 1);
+    transform: scale(1.04);
+  }
+  100% {
+    text-shadow:
+      0 0 4px rgba(255, 0, 140, 0.7),
+      0 0 10px rgba(0, 224, 255, 0.7);
+    transform: scale(1);
+  }
+}
+/* ========= STYLE 22 : BLOCK SLIDE ========= */
+
+.genre-generator__genre--blockSlide {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: inline-block;
+  background: #ffffff;
+  color: #000000;
+  padding: 0.3em 0.6em;
+  border-radius: 0.2em;
+  animation: block-slide-in 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@keyframes block-slide-in {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(3px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ========= STYLE 23 : SCANNER / LIGHT SWEEP ========= */
+
+.genre-generator__genre--scanner {
+  font-size: 3.1rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.genre-generator__genre--scanner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  transform: translateX(-120%);
+  animation: scanner-sweep 2.2s infinite;
+}
+
+@keyframes scanner-sweep {
+  0% {
+    transform: translateX(-120%);
+  }
+  50% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+/* ========= STYLE 24 : LAVA / MAGMA GRADIENT ========= */
+
+.genre-generator__genre--lava {
+  font-size: 3.3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: radial-gradient(
+    circle at 0% 0%,
+    #ff9a00,
+    #ff005e 25%,
+    #ff9a00 50%,
+    #ff005e 75%,
+    #ff9a00 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: lava-flow 5s ease-in-out infinite;
+}
+
+@keyframes lava-flow {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* ========= STYLE 25 : HOLOGRAM ========= */
+
+.genre-generator__genre--hologram {
+  font-size: 3.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #00ffff;
+  position: relative;
+  text-shadow:
+    0 0 6px rgba(0, 255, 255, 0.8),
+    0 0 18px rgba(255, 0, 255, 0.8);
+}
+
+.genre-generator__genre--hologram::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: #ff00ff;
+  mix-blend-mode: screen;
+  transform: translate(2px, -2px);
+  opacity: 0.7;
+}
+
+/* ========= STYLE 26 : MULTI-LAYER SHADOW ========= */
+
+.genre-generator__genre--shadowLayers {
+  font-size: 3.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow:
+    -1px -1px 0 #ff4b91,
+    -2px -2px 0 #ffdd00,
+    -3px -3px 0 #00e0ff,
+    -4px -4px 0 #a200f7;
+  animation: shadow-layers-shift 2s infinite alternate;
+}
+
+@keyframes shadow-layers-shift {
+  0% {
+    text-shadow:
+      -1px -1px 0 #ff4b91,
+      -2px -2px 0 #ffdd00,
+      -3px -3px 0 #00e0ff,
+      -4px -4px 0 #a200f7;
+  }
+  100% {
+    text-shadow:
+      1px 1px 0 #ff4b91,
+      2px 2px 0 #ffdd00,
+      3px 3px 0 #00e0ff,
+      4px 4px 0 #a200f7;
+  }
+}
+
+/* ========= STYLE 27 : PIXEL / ARCADE ========= */
+
+.genre-generator__genre--pixel {
+  font-size: 3rem;
+  font-family: "InconsolataVF", monospace;
+  text-transform: uppercase;
+  color: #00ffff;
+  text-shadow:
+    0 0 0 #00ffff,
+    1px 0 0 #00ffff,
+    -1px 0 0 #00ffff,
+    0 1px 0 #00ffff,
+    0 -1px 0 #00ffff;
+  image-rendering: pixelated;
+  animation: pixel-jump 0.8s steps(2, end) infinite;
+}
+
+@keyframes pixel-jump {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(1px, 0);
+  }
+  50% {
+    transform: translate(1px, 1px);
+  }
+  75% {
+    transform: translate(0, 1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* ========= STYLE 28 : STENCIL ========= */
+
+.genre-generator__genre--stencil {
+  font-size: 3.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 3px #ffffff;
+  text-stroke: 3px #ffffff; /* pas supporté partout mais safe */
+  letter-spacing: 0.2em;
+}
+
+/* ========= STYLE 29 : DUOTONE SHADOW ========= */
+
+.genre-generator__genre--duotone {
+  font-size: 3.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffdd00;
+  text-shadow: 4px 0 0 #00e0ff;
+}
+
+/* ========= STYLE 30 : INNER SHADOW FEEL ========= */
+
+.genre-generator__genre--innerShadow {
+  font-size: 3.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #eeeeee;
+  text-shadow:
+    0 2px 3px rgba(0, 0, 0, 0.9),
+    0 -2px 3px rgba(255, 255, 255, 0.3);
+}
+
+/* ========= STYLE 31 : GLASS / FROSTED TEXT ========= */
+
+.genre-generator__genre--glass {
+  font-size: 3.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.2)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* ========= STYLE 32 : OUTLINE DASH ========= */
+
+.genre-generator__genre--outlineDash {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  text-stroke: 2px #ffffff;
+  letter-spacing: 0.25em;
+  animation: outline-dash-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes outline-dash-pulse {
+  0% {
+    letter-spacing: 0.4em;
+    opacity: 0.6;
+  }
+  50% {
+    letter-spacing: 0.15em;
+    opacity: 1;
+  }
+  100% {
+    letter-spacing: 0.25em;
+    opacity: 0.8;
+  }
+}
+
+/* ========= STYLE 33 : FIRE ========= */
+
+.genre-generator__genre--fire {
+  font-size: 3.3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ffe66d, #ff9a00, #ff3b3b, #5c0000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 0 10px rgba(255, 153, 0, 0.8),
+    0 0 20px rgba(255, 69, 0, 0.9);
+  animation: fire-flicker 0.18s infinite alternate;
+}
+
+@keyframes fire-flicker {
+  0% {
+    text-shadow:
+      0 0 6px rgba(255, 153, 0, 0.6),
+      0 0 14px rgba(255, 69, 0, 0.7);
+    transform: translateY(0);
+  }
+  50% {
+    text-shadow:
+      0 0 14px rgba(255, 204, 0, 1),
+      0 0 26px rgba(255, 69, 0, 1);
+    transform: translateY(-1px);
+  }
+  100% {
+    text-shadow:
+      0 0 8px rgba(255, 153, 0, 0.8),
+      0 0 18px rgba(255, 69, 0, 0.9);
+    transform: translateY(1px);
+  }
+}
+
+/* ========= STYLE 34 : ICE ========= */
+
+.genre-generator__genre--ice {
+  font-size: 3.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #e0f7ff, #9bdcff, #3db5ff, #0e2f4f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 0 12px rgba(61, 181, 255, 0.7),
+    0 0 24px rgba(224, 247, 255, 0.9);
+  animation: ice-shimmer 2.4s ease-in-out infinite;
+}
+
+@keyframes ice-shimmer {
+  0% {
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(255, 255, 255, 1));
+  }
+  100% {
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
+  }
+}
+
+/* ========= STYLE 35 : RAIN ========= */
+
+.genre-generator__genre--rain {
+  font-size: 3rem;
+  font-weight: 700;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.1)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.genre-generator__genre--rain::after {
+  content: "";
+  position: absolute;
+  left: -20%;
+  top: -100%;
+  width: 140%;
+  height: 300%;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3) 0,
+    rgba(255, 255, 255, 0.3) 2px,
+    transparent 4px
+  );
+  animation: rain-fall 2.5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rain-fall {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50%);
+  }
+}
+
+/* ========= STYLE 36 : VHS ========= */
+
+.genre-generator__genre--vhs {
+  font-size: 3.1rem;
+  text-transform: uppercase;
+  position: relative;
+  color: #ffffff;
+  text-shadow: 0 0 2px #000;
+  animation: vhs-wobble 1.2s infinite;
+}
+
+.genre-generator__genre--vhs::before,
+.genre-generator__genre--vhs::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.genre-generator__genre--vhs::before {
+  color: #ff006e;
+  transform: translateX(-2px);
+}
+
+.genre-generator__genre--vhs::after {
+  color: #00f5d4;
+  transform: translateX(2px);
+}
+
+@keyframes vhs-wobble {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-1px, 1px);
+  }
+  40% {
+    transform: translate(1px, -1px);
+  }
+  60% {
+    transform: translate(-2px, 0);
+  }
+  80% {
+    transform: translate(2px, 0);
+  }
+}
+
+/* ========= STYLE 37 : ZOOM POP ========= */
+
+.genre-generator__genre--zoomPop {
+  font-size: 3.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  animation: zoom-pop 1.4s ease-in-out infinite;
+}
+
+@keyframes zoom-pop {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  40% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+}
+
+/* ========= STYLE 38 : SPIRAL ========= */
+
+.genre-generator__genre--spiral {
+  font-size: 3.2rem;
+  display: inline-block;
+  animation: spiral-rotate 2.6s linear infinite;
+}
+
+@keyframes spiral-rotate {
+  0% {
+    transform: rotate(0deg) translateZ(0);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(360deg) translateZ(0);
+  }
+}
+
+/* ========= STYLE 39 : HEARTBEAT ========= */
+
+.genre-generator__genre--heartbeat {
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: #ff4b91;
+  text-shadow:
+    0 0 14px rgba(255, 75, 145, 0.9),
+    0 0 26px rgba(255, 75, 145, 0.7);
+  animation: heartbeat-pulse 1.1s ease-in-out infinite;
+}
+
+@keyframes heartbeat-pulse {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.12);
+  }
+  40% {
+    transform: scale(0.98);
+  }
+  60% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ========= STYLE 40 : SHAKE ========= */
+
+.genre-generator__genre--shake {
+  font-size: 3.1rem;
+  animation: shake-wiggle 0.6s infinite;
+}
+
+@keyframes shake-wiggle {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-2px, 1px);
+  }
+  50% {
+    transform: translate(2px, -1px);
+  }
+  75% {
+    transform: translate(-1px, -2px);
+  }
+  100% {
+    transform: translate(1px, 2px);
+  }
+}
+
+/* ========= STYLE 41 : TILT ========= */
+
+.genre-generator__genre--tilt {
+  font-size: 3.2rem;
+  transform-origin: center bottom;
+  animation: tilt-swing 1.4s ease-in-out infinite;
+}
+
+@keyframes tilt-swing {
+  0% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(-4deg);
+  }
+}
+
+/* ========= STYLE 42 : SLIDE UP ========= */
+
+.genre-generator__genre--slideUp {
+  font-size: 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slide-up-in 0.8s ease-out forwards;
+}
+
+@keyframes slide-up-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========= STYLE 43 : SLIDE DOWN ========= */
+
+.genre-generator__genre--slideDown {
+  font-size: 3rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slide-down-in 0.8s ease-out forwards;
+}
+
+@keyframes slide-down-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========= STYLE 44 : FLIP X ========= */
+
+.genre-generator__genre--flipX {
+  font-size: 3.2rem;
+  transform-origin: center;
+  animation: flip-x 1.6s ease-in-out infinite;
+}
+
+@keyframes flip-x {
+  0% {
+    transform: perspective(600px) rotateX(0deg);
+  }
+  50% {
+    transform: perspective(600px) rotateX(180deg);
+  }
+  100% {
+    transform: perspective(600px) rotateX(360deg);
+  }
+}
+
+/* ========= STYLE 45 : FLIP Y ========= */
+
+.genre-generator__genre--flipY {
+  font-size: 3.2rem;
+  transform-origin: center;
+  animation: flip-y 1.6s ease-in-out infinite;
+}
+
+@keyframes flip-y {
+  0% {
+    transform: perspective(600px) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(600px) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(600px) rotateY(360deg);
+  }
+}
+
+/* ========= STYLE 46 : BLUR IN ========= */
+
+.genre-generator__genre--blurIn {
+  font-size: 3.1rem;
+  animation: blur-in 0.9s ease-out forwards;
+}
+
+@keyframes blur-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========= STYLE 47 : BLUR OUT ========= */
+
+.genre-generator__genre--blurOut {
+  font-size: 3.1rem;
+  animation: blur-out 1.4s ease-in-out infinite alternate;
+}
+
+@keyframes blur-out {
+  0% {
+    filter: blur(0);
+    opacity: 1;
+  }
+  100% {
+    filter: blur(6px);
+    opacity: 0.3;
+  }
+}
+
+/* ========= STYLE 48 : RAINBOW WAVE ========= */
+
+.genre-generator__genre--rainbowWave {
+  font-size: 3.3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: linear-gradient(
+    90deg,
+    #ff005e,
+    #ff9a00,
+    #ffdd00,
+    #00e0ff,
+    #a200f7,
+    #ff005e
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-wave-move 3s linear infinite;
+}
+
+@keyframes rainbow-wave-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+/* ========= STYLE 49 : GLITCH LINES ========= */
+
+.genre-generator__genre--glitchLines {
+  font-size: 3.2rem;
+  position: relative;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.genre-generator__genre--glitchLines::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.8) 0,
+    rgba(255, 255, 255, 0.8) 2px,
+    transparent 4px
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glitch-lines-move 1.5s linear infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes glitch-lines-move {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(10%);
+  }
+}
+
+/* ========= STYLE 50 : STROKE GROW ========= */
+
+.genre-generator__genre--strokeGrow {
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px #ffffff;
+  text-stroke: 1px #ffffff;
+  animation: stroke-grow 1.8s ease-in-out infinite;
+}
+
+@keyframes stroke-grow {
+  0% {
+    -webkit-text-stroke-width: 1px;
+    text-stroke-width: 1px;
+    letter-spacing: 0.1em;
+  }
+  50% {
+    -webkit-text-stroke-width: 4px;
+    text-stroke-width: 4px;
+    letter-spacing: 0.25em;
+  }
+  100% {
+    -webkit-text-stroke-width: 1px;
+    text-stroke-width: 1px;
+    letter-spacing: 0.1em;
+  }
+}
+/* ========= STYLE 51 : SHADOW DANCE ========= */       
+
+.genre-generator__genre--shadowDance {
+  font-size: 3.3rem;
+font-weight: 700;
+color: #fff;
+text-shadow: 8px 8px 0px #ff4b91, -8px -8px 0px #00e0ff;
+animation: shadow-dance 1.6s infinite alternate ease-in-out;
+}
+
+@keyframes shadow-dance {
+  0% {
+    text-shadow: 8px 8px 0px #ff4b91, -8px -8px 0px #00e0ff;
+    transform: translate(0, 0);
+  }
+  50% {
+    text-shadow: -8px 8px 0px #ff4b91, 8px -8px 0px #00e0ff;
+    transform: translate(2px, -2px);
+  }
+  100% {
+    text-shadow: 0px 0px 0px #ff4b91, 0px 0px 0px #00e0ff;
+    transform: translate(-2px, 2px);
+  }
+}
+
+/* ========= STYLE 52 : SHADOW LAYERS ========= */
+
+.genre-generator__genre--shadowLayers {
+  font-size: 3.2rem;
+font-weight: 900;
+text-transform: uppercase;
+color: transparent;
+-webkit-text-stroke: 2px #ffffff;
+text-stroke: 2px #ffffff; /* pas partout supporté mais ok */
+letter-spacing: 0.1em;
+}
+
+/* ========= STYLE 53 : PIXEL / ARCADE ========= */
+
+.genre-generator__genre--pixel {
+  font-size: 3rem;
+font-family: "InconsolataVF", monospace;
+text-transform: uppercase;
+color: #00ffff;
+text-shadow: 0 0 0 #00ffff, 1px 0 0 #00ffff, -1px 0 0 #00ffff, 0 1px 0 #00ffff, 0 -1px 0 #00ffff;
+image-rendering: pixelated;
+animation: pixel-jump 0.8s steps(2, end) infinite;
+}
+
+@keyframes pixel-jump {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(1px, 0);
+  }
+  50% {
+    transform: translate(1px, 1px);
+  }
+  75% {
+    transform: translate(0, 1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+/* ========= STYLE 54 : STENCIL ========= */
+
+.genre-generator__genre--stencil {
+  font-size: 3.2rem;
+font-weight: 900;
+text-transform: uppercase;
+color: transparent;
+-webkit-text-stroke: 3px #ffffff;
+text-stroke: 3px #ffffff; /* pas supporté partout mais safe */
+letter-spacing: 0.2em;
+}
+
+/* ========= STYLE 55 : DUOTONE SHADOW ========= */
+
+.genre-generator__genre--duotone {
+  font-size: 3.1rem;
+font-weight: 800;
+text-transform: uppercase;
+color: #ffdd00;
+text-shadow: 4px 0 0 #00e0ff;
+}
+
+/* ========= STYLE 56 : INNER SHADOW FEEL ========= */
+
+.genre-generator__genre--innerShadow {
+  font-size: 3.2rem;
+font-weight: 800;
+text-transform: uppercase;
+color: #eeeeee;
+text-shadow: 2px 2px 0px #ff4b91, -2px -2px 0px #ffdd00;
+}
+
+/* ========= STYLE 57 : GLASS / FROSTED TEXT ========= */
+
+.genre-generator__genre--glass {
+  font-size: 3.3rem;
+font-weight: 700;
+text-transform: uppercase;
+color: rgba(255, 255, 255, 0.85);
+text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+background: linear-gradient(120deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.2));
+-webkit-background-clip: text;
+background-clip: text;
+}
+
+/* ========= STYLE 58 : OUTLINE DASH ========= */
+
+.genre-generator__genre--outlineDash {
+  font-size: 3rem;
+text-transform: uppercase;
+color: transparent;
+-webkit-text-stroke: 2px #ffffff;
+text-stroke: 2px #ffffff;
+letter-spacing: 0.25em;
+animation: outline-dash-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes outline-dash-pulse {
+  0% {
+    letter-spacing: 0.4em;
+    opacity: 0.6;
+  }
+  50% {
+    letter-spacing: 0.15em;
+    opacity: 1;
+  }
+  100% {
+    letter-spacing: 0.25em;
+    opacity: 0.8;
+  }
+}
+/* ========= STYLE 59 : FIRE ========= */
+
+.genre-generator__genre--fire {
+  font-size: 3.3rem;
+font-weight: 800;
+text-transform: uppercase;
+background: linear-gradient(180deg, #ffe66d, #ff9a00, #ff3b3b, #5c0000);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+text-shadow: 0 0 10px rgba(255, 153, 0, 0.8), 0 0 20px rgba(255, 69, 0, 0.9);
+animation: fire-flicker 0.18s infinite alternate;
+}
+
+@keyframes fire-flicker {
+  0% {
+    text-shadow: 0 0 6px rgba(255, 153, 0, 0.6), 0 0 14px rgba(255, 69, 0, 0.7);
+    transform: translateY(0);
+  }
+  50% {
+    text-shadow: 0 0 14px rgba(255, 204, 0, 1), 0 0 26px rgba(255, 69, 0, 1);
+    transform: translateY(-1px);
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(255, 153, 0, 0.8), 0 0 18px rgba(255, 69, 0, 0.9);
+    transform: translateY(1px);
+  }
+}
+
+/* ========= STYLE 60 : ICE ========= */
+
+.genre-generator__genre--ice {  
+  font-size: 3.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #e0f7ff, #9bdcff, #3db5ff, #0e2f4f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;                       
+  text-shadow: 0 0 12px rgba(61, 181, 255, 0.7), 0 0 24px rgba(224, 247, 255, 0.9);
+  animation: ice-shimmer 2.4s ease-in-out infinite;
+}
+
+@keyframes ice-shimmer {
+  0% {
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(255, 255, 255, 1));
+  }
+  100% {
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
+  }
+}
+/* ========= STYLE 61 : RAIN ========= */
+
+.genre-generator__genre--rain {
+  font-size: 3rem;
+  font-weight: 700;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.genre-generator__genre--rain::after {
+  content: "";
+  position: absolute;
+  left: -20%;
+  top: -100%;
+  width: 140%;
+  height: 300%;
+  background-image: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3), transparent 4px);
+  animation: rain-fall 2.5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rain-fall {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50%);
+  }
+}
+
+/* ========= STYLE 62 : VHS ========= */
+
+.genre-generator__genre--vhs {
+  font-size: 3.1rem;
+  text-transform: uppercase;
+  position: relative;
+  color: #ffffff;
+  text-shadow: 0 0 2px #000;
+  animation: vhs-wobble 1.2s infinite;
+}
+
+.genre-generator__genre--vhs::before,
+.genre-generator__genre--vhs::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.genre-generator__genre--vhs::before {
+  color: #ff006e;
+  transform: translateX(-2px);
+}
+
+.genre-generator__genre--vhs::after {
+  color: #00f5d4;
+  transform: translateX(2px);
+}
+
+@keyframes vhs-wobble {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-1px, 1px);
+  }
+  40% {
+    transform: translate(1px, -1px);
+  }
+  60% {
+    transform: translate(-2px, 0);
+  }
+  80% {
+    transform: translate(2px, 0);
+  }
+}
+/* ========= STYLE 63 : ZOOM POP ========= */
+
+.genre-generator__genre--zoomPop {
+  font-size: 3.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  animation: zoom-pop 1.4s ease-in-out infinite;
+}
+
+@keyframes zoom-pop {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  40% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+}
+
+/* ========= STYLE 64 : SPIRAL ========= */
+
+.genre-generator__genre--spiral {
+  font-size: 3.2rem;
+  display: inline-block;
+  animation: spiral-rotate 2.6s linear infinite;
+}
+
+@keyframes spiral-rotate {
+  0% {
+    transform: rotate(0deg) translateZ(0);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(360deg) translateZ(0);
+  }
+}
+
+/* ========= STYLE 65 : HEARTBEAT ========= */
+
+.genre-generator__genre--heartbeat {
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: #ff4b91;
+  text-shadow: 0 0 14px rgba(255, 75, 145, 0.9), 0 0 26px rgba(255, 75, 145, 0.7);
+  animation: heartbeat-pulse 1.1s ease-in-out infinite;
+}
+
+@keyframes heartbeat-pulse {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.12);
+  }
+  40% {
+    transform: scale(0.98);
+  }
+  60% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ========= STYLE 66 : SHAKE ========= */
+
+.genre-generator__genre--shake {
+  font-size: 3.1rem;
+  animation: shake-wiggle 0.6s infinite;
+}
+
+@keyframes shake-wiggle {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-2px, 1px);
+  }
+  50% {
+    transform: translate(2px, -1px);
+  }
+  75% {
+    transform: translate(-1px, -2px);
+  }
+  100% {
+    transform: translate(1px, 2px);
+  }
+}
+/* ========= STYLE 67 : TILT ========= */
+
+.genre-generator__genre--tilt {
+  font-size: 3.2rem;
+  transform-origin: center bottom;
+  animation: tilt-swing 1.4s ease-in-out infinite;
+}
+
+@keyframes tilt-swing {
+  0% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(-4deg);
+  }
+}
+
+/* ========= STYLE 68 : SLIDE UP ========= */
+
+.genre-generator__genre--slideUp {
+  font-size: 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slide-up-in 0.8s ease-out forwards;
+}
+
+@keyframes slide-up-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}   
+/* ========= STYLE 69 : SLIDE DOWN ========= */                      
+
+.genre-generator__genre--slideDown {
+  font-size: 3rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slide-down-in 0.8s ease-out forwards;
+}
+
+@keyframes slide-down-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}                      
+/* ========= STYLE 70 : FLIP X ========= */                      
+
+.genre-generator__genre--flipX {
+  font-size: 3.2rem;
+  transform-origin: center;
+  animation: flip-x 1.6s ease-in-out infinite;
+}
+
+@keyframes flip-x {
+  0% {
+    transform: perspective(600px) rotateX(0deg);
+  }
+  50% {
+    transform: perspective(600px) rotateX(180deg);
+  }
+  100% {
+    transform: perspective(600px) rotateX(360deg);
+  }
+}
+
+/* ========= STYLE 71 : FLIP Y ========= */                      
+
+.genre-generator__genre--flipY {
+  font-size: 3.2rem;
+  transform-origin: center;
+  animation: flip-y 1.6s ease-in-out infinite;
+}
+
+@keyframes flip-y {
+  0% {
+    transform: perspective(600px) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(600px) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(600px) rotateY(360deg);
+  }
+}
+/* ========= STYLE 72 : BLUR IN ========= */                      
+
+.genre-generator__genre--blurIn {
+  font-size: 3.1rem;
+  animation: blur-in 0.9s ease-out forwards;
+}
+
+@keyframes blur-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========= STYLE 73 : BLUR OUT ========= */                      
+
+.genre-generator__genre--blurOut {
+  font-size: 3.1rem;
+  animation: blur-out 1.4s ease-in-out infinite alternate;
+}
+
+@keyframes blur-out {
+  0% {
+    filter: blur(0);
+    opacity: 1;
+  }
+  100% {
+    filter: blur(6px);
+    opacity: 0.3;
+  }
+}                      
+/* ========= STYLE 74 : RAINBOW WAVE ========= */                      
+
+.genre-generator__genre--rainbowWave {
+  font-size: 3.3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #ff005e, #ff9a00, #ffdd00, #00e0ff, #a200f7, #ff005e);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-wave-move 3s linear infinite;
+}
+
+@keyframes rainbow-wave-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+/* ========= STYLE 75 : GLITCH LINES ========= */                      
+
+.genre-generator__genre--glitchLines {
+  font-size: 3.2rem;
+  position: relative;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.genre-generator__genre--glitchLines::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;                        
+  background: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8), transparent 4px);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glitch-lines-move 1.5s linear infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes glitch-lines-move {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(10%);
+  }
+}                      
+/* ========= STYLE 76 : STROKE GROW ========= */                      
+
+.genre-generator__genre--strokeGrow {
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px #ffffff;
+  text-stroke: 1px #ffffff;
+  animation: stroke-grow 1.8s ease-in-out infinite;
+}
+
+@keyframes stroke-grow {
+  0% {
+    -webkit-text-stroke-width: 1px;
+    text-stroke-width: 1px;
+    letter-spacing: 0.1em;
+  }
+  50% {
+    -webkit-text-stroke-width: 4px;
+    text-stroke-width: 4px;
+    letter-spacing: 0.25em;
+  }
+  100% {
+    -webkit-text-stroke-width: 1px;
+    text-stroke-width: 1px;
+    letter-spacing: 0.1em;
+  }                   }   
+/* ========= STYLE 77 : SHADOW DANCE ========= */                      
+
+.genre-generator__genre--shadowDance {
+  font-size: 3.3rem;
+font-weight: 700;
+color: #fff;
+text-shadow: 8px 8px 0px #ff4b91, -8px -8px 0px #00e0ff;
+animation: shadow-dance 1.6s infinite alternate ease-in-out;
+}
+
+@keyframes shadow-dance {
+  0% {
+    text-shadow: 8px 8px 0px #ff4b91, -8px -8px 0px #00e0ff;
+    transform: translate(0, 0);
+  }
+  50% {
+    text-shadow: -8px 8px 0px #ff4b91, 8px -8px 0px #00e0ff;
+    transform: translate(2px, -2px);
+  }
+  100% {
+    text-shadow: 0px 0px 0px #ff4b91, 0px 0px 0px #00e0ff;
+    transform: translate(-2px, 2px);
+  }
+}
+/* ========= STYLE 78 : SHADOW LAYERS ========= */                      
+
+.genre-generator__genre--shadowLayers {
+  font-size: 3.2rem;
+font-weight: 900;
+text-transform: uppercase;
+color: transparent;
+-webkit-text-stroke: 2px #ffffff;
+text-stroke: 2px #ffffff; /* pas partout supporté mais ok */
+letter-spacing: 0.1em;
+}
+
+/* ========= STYLE 79 : PIXEL / ARCADE ========= */                      
+
+.genre-generator__genre--pixel {
+  font-size: 3rem;
+font-family: "InconsolataVF", monospace;
+text-transform: uppercase;
+color: #00ffff;
+text-shadow: 0 0 0 #00ffff, 1px 0 0 #00ffff, -1px 0 0 #00ffff, 0 1px 0 #00ffff, 0 -1px 0 #00ffff;
+image-rendering: pixelated;
+animation: pixel-jump 0.8s steps(2, end) infinite;
+}
+
+@keyframes pixel-jump {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(1px, 0);
+  }
+  50% {
+    transform: translate(1px, 1px);
+  }
+  75% {
+    transform: translate(0, 1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+/* ========= STYLE 80 : STENCIL ========= */                      
+
+.genre-generator__genre--stencil {
+  font-size: 3.2rem;
+font-weight: 900;
+text-transform: uppercase;
+color: transparent;
+-webkit-text-stroke: 3px #ffffff;
+text-stroke: 3px #ffffff; /* pas supporté partout mais safe */
+letter-spacing: 0.2em;
+}
+
+/* ========= STYLE 81 : DUOTONE SHADOW ========= */                      
+
+.genre-generator__genre--duotone {
+  font-size: 3.1rem;
+font-weight: 800;
+text-transform: uppercase;
+color: #ffdd00;
+text-shadow: 4px 0 0 #00e0ff;
+}
+
+/* ========= STYLE 82 : INNER SHADOW FEEL ========= */                      
+
+.genre-generator__genre--innerShadow {
+  font-size: 3.2rem;
+font-weight: 800;
+text-transform: uppercase;
+color: #eeeeee;
+text-shadow: 2px 2px 0px #ff4b91, -2px -2px 0px #ffdd00;
+}
+
+/* ========= STYLE 83 : GLASS / FROSTED TEXT ========= */                      
+
+.genre-generator__genre--glass {
+  font-size: 3.3rem;
+font-weight: 700;
+text-transform: uppercase;
+color: rgba(255, 255, 255, 0.85);
+text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+background: linear-gradient(120deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.2));
+-webkit-background-clip: text;
+background-clip: text;
+}
+
+/* ========= STYLE 84 : OUTLINE DASH ========= */                      
+
+.genre-generator__genre--outlineDash {
+  font-size: 3rem;                      
+text-transform: uppercase;
+color: transparent;
+-webkit-text-stroke: 2px #ffffff;
+text-stroke: 2px #ffffff;
+letter-spacing: 0.25em;
+animation: outline-dash-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes outline-dash-pulse {
+  0% {
+    letter-spacing: 0.4em;
+    opacity: 0.6;
+  }
+  50% {
+    letter-spacing: 0.15em;
+    opacity: 1;
+  }
+  100% {
+    letter-spacing: 0.25em;
+    opacity: 0.8;
+  }
+}
+/* ========= STYLE 85 : FIRE ========= */                      
+
+.genre-generator__genre--fire {
+  font-size: 3.3rem;
+font-weight: 800;
+text-transform: uppercase;
+background: linear-gradient(180deg, #ffe66d, #ff9a00, #ff3b3b, #5c0000);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+text-shadow: 0 0 10px rgba(255, 153, 0, 0.8), 0 0 20px rgba(255, 69, 0, 0.9);
+animation: fire-flicker 0.18s infinite alternate;
+}
+
+@keyframes fire-flicker {
+  0% {
+    text-shadow: 0 0 6px rgba(255, 153, 0, 0.6), 0 0 14px rgba(255, 69, 0, 0.7);
+    transform: translateY(0);
+  }
+  50% {
+    text-shadow: 0 0 14px rgba(255, 204, 0, 1), 0 0 26px rgba(255, 69, 0, 1);
+    transform: translateY(-1px);
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(255, 153, 0, 0.8), 0 0 18px rgba(255, 69, 0, 0.9);
+    transform: translateY(1px);
+  }
+}
+/* ========= STYLE 86 : ICE ========= */

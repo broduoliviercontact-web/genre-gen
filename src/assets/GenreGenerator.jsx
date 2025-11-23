@@ -1,9 +1,120 @@
 import { useState, useEffect } from "react";
+import "./GenreGenerator.css";
+
+const STYLE_KEYS = [
+  "neon",
+  "meta",
+  "lights",
+  "rainbow",
+  "variable",
+  "melting",
+  "matrix",
+  "spin",
+  "burst",
+  "shadowDance",
+  "mask",
+  "typewriter",
+  "shimmer",
+  "wave",
+  "bounce",
+  "glitch2",
+  "fadeUp",
+  "shadow3d",
+  "reflect",
+  "chrome",
+  "outlineGlow",
+  "blockSlide",
+  "scanner",
+  "lava",
+  "hologram",
+  "shadowLayers",
+  "pixel",
+  "stencil",
+  "duotone",
+  "innerShadow",
+  "glass",
+  "outlineDash",
+  "fire",
+  "ice",
+  "rain",
+  "vhs",
+  "zoomPop",
+  "spiral",
+  "heartbeat",
+  "shake",
+  "tilt",
+  "slideUp",
+  "slideDown",
+  "flipX",
+  "flipY",
+  "blurIn",
+  "blurOut",
+  "rainbowWave",
+  "glitchLines",
+  "strokeGrow",
+  "shadowDance",
+  "shadowLayers",
+  "pixel",
+  "stencil",
+  "duotone",
+  "innerShadow",
+  "glass",
+  "outlineDash",
+  "fire",
+  "ice",
+  "rain",
+  "vhs",
+  "zoomPop",
+  "spiral",
+  "heartbeat",
+  "shake",
+  "tilt",
+  "slideUp",
+  "slideDown",
+  "flipX",
+  "flipY",
+  "blurIn",
+  "blurOut",
+  "rainbowWave",
+  "glitchLines",
+  "strokeGrow",
+  "shadowDance",
+  "shadowLayers",
+  "pixel",
+  "stencil",
+  "duotone",
+  "innerShadow",
+  "glass",
+  "outlineDash",
+  "fire",
+  "ice",
+  "rain",
+  "vhs",
+  "zoomPop",
+  "spiral",
+  "heartbeat",
+  "shake",  
+  "tilt",
+];
+
+function getRandomStyle() {
+  const index = Math.floor(Math.random() * STYLE_KEYS.length);
+  return STYLE_KEYS[index];
+}
 
 function GenreGenerator() {
   const [genre, setGenre] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [styleKey, setStyleKey] = useState(() => getRandomStyle());
+
+  // Mettre une majuscule à chaque mot
+  function formatGenre(text) {
+    if (!text) return "";
+    return text
+      .toLowerCase()
+      .replace(/\b\w/g, (char) => char.toUpperCase());
+  }
 
   async function fetchGenre() {
     try {
@@ -19,10 +130,8 @@ function GenreGenerator() {
       }
 
       const data = await response.json();
-console.log(response.json);
+      console.log(data);
 
-      // L'API peut renvoyer un tableau ou une simple string,
-      // on gère les deux cas.
       let value;
       if (Array.isArray(data)) {
         value = data[0];
@@ -32,7 +141,11 @@ console.log(response.json);
         value = JSON.stringify(data);
       }
 
-      setGenre(value);
+      const formatted = formatGenre(value);
+
+      // 👉 on change le genre ET on choisit un style aléatoire
+      setGenre(formatted);
+      setStyleKey(getRandomStyle());
     } catch (err) {
       setError(err.message || "Erreur lors du chargement du genre.");
     } finally {
@@ -41,53 +154,33 @@ console.log(response.json);
   }
 
   useEffect(() => {
-    // On charge un premier genre au montage du composant
     fetchGenre();
   }, []);
 
   return (
-    <div
-      style={{
-        fontFamily: "system-ui, sans-serif",
-        maxWidth: 480,
-        margin: "2rem auto",
-        padding: "1.5rem",
-        borderRadius: 12,
-        border: "1px solid #ddd",
-        boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
-      }}
-    >
-      <h1 style={{ fontSize: "1.4rem", marginBottom: "1rem" }}>
-        🎵 Random Genre (Genrenator)
+    <div className="genre-generator">
+      <h1 className="genre-generator__title">
+        🎵 Random Genre : Genrenator 🎵
       </h1>
 
       <button
         onClick={fetchGenre}
         disabled={loading}
-        style={{
-          padding: "0.6rem 1rem",
-          borderRadius: 999,
-          border: "none",
-          cursor: "pointer",
-          fontWeight: 600,
-        }}
+        className="genre-generator__button"
       >
         {loading ? "Chargement..." : "Nouveau genre"}
       </button>
 
       {error && (
-        <p style={{ color: "red", marginTop: "1rem" }}>
+        <p className="genre-generator__error">
           Erreur : {error}
         </p>
       )}
 
       {!error && genre && (
         <p
-          style={{
-            marginTop: "1.2rem",
-            fontSize: "1.1rem",
-            fontWeight: 500,
-          }}
+          className={`genre-generator__genre genre-generator__genre--${styleKey}`}
+          data-text={genre}
         >
           {genre}
         </p>
