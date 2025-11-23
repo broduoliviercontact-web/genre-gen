@@ -2266,3 +2266,88 @@ animation: fire-flicker 0.18s infinite alternate;
   }
 }
 /* ========= STYLE 86 : ICE ========= */
+/* Évite que le texte déborde sur les petits écrans */
+.genre-generator__genre {
+  padding-inline: 0.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Permet au conteneur de respirer sur petits écrans */
+body {
+  margin: 0;
+  padding: 0;
+}
+/* ========= RESPONSIVE ========= */
+
+/* Tablettes et petits laptops */
+@media (max-width: 1024px) {
+  .genre-generator {
+    max-width: 90%;
+    margin: 1.5rem auto;
+    padding: 1.2rem;
+  }
+
+  .genre-generator__title {
+    font-size: 1.4rem;
+  }
+
+  .genre-generator__button {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .genre-generator__genre,
+  .genre-generator__genre[class*="genre-generator__genre--"] {
+    font-size: clamp(2rem, 6vw, 3rem) !important;
+  }
+}
+
+/* Mobiles (portrait) */
+@media (max-width: 768px) {
+  .genre-generator {
+    max-width: 95%;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .genre-generator__title {
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+
+  .genre-generator__button {
+    width: 100%;
+    max-width: none;
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .genre-generator__genre,
+  .genre-generator__genre[class*="genre-generator__genre--"] {
+    font-size: clamp(1.6rem, 8vw, 2.4rem) !important;
+  }
+}
+
+/* Très petits écrans (téléphones étroits) */
+@media (max-width: 480px) {
+  .genre-generator {
+    margin: 0.75rem auto;
+    padding: 0.8rem;
+  }
+
+  .genre-generator__title {
+    font-size: 1rem;
+  }
+
+  .genre-generator__button {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .genre-generator__genre,
+  .genre-generator__genre[class*="genre-generator__genre--"] {
+    font-size: clamp(1.4rem, 9vw, 2rem) !important;
+  }
+}
