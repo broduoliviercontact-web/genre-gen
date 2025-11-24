@@ -4171,58 +4171,7 @@ body {
 }
 
 
-/* ========= STYLE : SPLIT VERTICAL (TEXTE COUPÉ EN 2 QUI SLIDE) ========= */
 
-.genre-generator__genre--splitVertical {
-  position: relative;
-  display: inline-block;
-  font-size: 3.1rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: transparent;
-}
-
-.genre-generator__genre--splitVertical::before,
-.genre-generator__genre--splitVertical::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  width: 50%;
-  color: #ffffff;
-  overflow: hidden;
-}
-
-.genre-generator__genre--splitVertical::before {
-  left: 0;
-  clip-path: inset(0 0% 0 0);
-  transform: translateX(-100%);
-  animation: split-vertical-left 0.8s ease-out forwards;
-}
-
-.genre-generator__genre--splitVertical::after {
-  right: 0;
-  clip-path: inset(0 0 0 0%);
-  transform: translateX(100%);
-  animation: split-vertical-right 0.8s ease-out forwards;
-}
-
-@keyframes split-vertical-left {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes split-vertical-right {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
 
 /* ========= STYLE : DROP BOUNCE (TOMBE + REBOND) ========= */
 
@@ -5417,4 +5366,570 @@ body {
     95% 40%,
     100% 50%
   );
+}
+
+
+/* ... (after your existing styles) ... */
+
+/* ========= STYLE 98 : HYPER SPEED ========= */
+.genre-generator__genre--hyperSpeed {
+  font-size: 3.4rem;
+  font-style: italic;
+  font-weight: 900;
+  color: #fff;
+  transform: skewX(-20deg);
+  text-shadow: 
+    10px 0 0 rgba(255,255,255,0.2),
+    20px 0 0 rgba(255,255,255,0.1),
+    30px 0 0 rgba(255,255,255,0.05);
+  animation: speed-shake 0.1s infinite;
+}
+
+@keyframes speed-shake {
+  0% { transform: skewX(-20deg) translateX(0); }
+  50% { transform: skewX(-20deg) translateX(-2px); }
+  100% { transform: skewX(-20deg) translateX(0); }
+}
+
+/* ========= STYLE 99 : SOAP BUBBLE ========= */
+.genre-generator__genre--soapBubble {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.1);
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.6);
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 0, 255, 0.4), 
+    rgba(0, 255, 255, 0.4), 
+    rgba(255, 255, 0, 0.4)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
+  animation: bubble-wobble 3s ease-in-out infinite;
+}
+
+@keyframes bubble-wobble {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05) rotate(1deg); }
+}
+
+/* ========= STYLE 100 : CAUTION TAPE ========= */
+.genre-generator__genre--cautionTape {
+  font-size: 3.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px #000;
+  background: repeating-linear-gradient(
+    45deg,
+    #f9d71c,
+    #f9d71c 10px,
+    #000 10px,
+    #000 20px
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(2px 2px 0 #fff);
+  animation: tape-scroll 20s linear infinite;
+}
+
+@keyframes tape-scroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 0; }
+}
+
+/* ========= STYLE 101 : SUPER SAIYAN AURA ========= */
+.genre-generator__genre--superSaiyan {
+  font-size: 3.3rem;
+  font-weight: 900;
+  font-style: italic;
+  color: #fff;
+  text-shadow: 
+    0 0 10px #ffcc00,
+    0 -5px 20px #ffaa00,
+    0 -10px 40px #ff8800;
+  animation: power-up 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes power-up {
+  0% { transform: translateY(0) scale(1); text-shadow: 0 0 10px #ffcc00, 0 -5px 20px #ffaa00; }
+  100% { transform: translateY(-2px) scale(1.02); text-shadow: 0 0 20px #ffcc00, 0 -10px 40px #ff0000; }
+}
+
+/* ========= STYLE 102 : BLUEPRINT TECH ========= */
+.genre-generator__genre--blueprint {
+  font-size: 3.2rem;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-stroke: 1px #00a2ff;
+  background-image: radial-gradient(#00a2ff 1px, transparent 1px);
+  background-size: 4px 4px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 2px #00a2ff);
+}
+
+/* ========= STYLE 103 : X-RAY SKELETON ========= */
+.genre-generator__genre--xray {
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: #000;
+  background-color: #fff;
+  padding: 0 10px;
+  filter: invert(1) grayscale(1) contrast(1.5);
+  mix-blend-mode: exclusion;
+}
+
+/* ========= STYLE 104 : VAMPIRE BITE ========= */
+.genre-generator__genre--vampireBite {
+  font-size: 3.5rem;
+  font-family: serif;
+  color: #8a0303;
+  text-shadow: 
+    1px 1px 0 #000,
+    0 15px 5px rgba(138, 3, 3, 0.5); /* Fake dripping shadow */
+  position: relative;
+}
+.genre-generator__genre--vampireBite::after {
+  content: ".";
+  position: absolute;
+  color: #8a0303;
+  top: 40px;
+  left: 50%;
+  font-size: 0.5em;
+  animation: drip-blood 2s infinite;
+  opacity: 0;
+}
+@keyframes drip-blood {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(30px); opacity: 0; }
+}
+
+/* ========= STYLE 105 : PRISM REFRACTION ========= */
+.genre-generator__genre--prism {
+  font-size: 3.3rem;
+  font-weight: bold;
+  color: rgba(255,255,255,0.5);
+  text-shadow: 
+    -4px 0 rgba(255,0,0,0.8),
+    -2px 0 rgba(255,255,0,0.8),
+    2px 0 rgba(0,255,255,0.8),
+    4px 0 rgba(0,0,255,0.8);
+  mix-blend-mode: hard-light;
+}
+
+/* ========= STYLE 106 : STICKER SLAP ========= */
+.genre-generator__genre--stickerSlap {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #000;
+  -webkit-text-stroke: 0;
+  background-color: #fff;
+  padding: 5px 15px;
+  transform: rotate(-3deg);
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  border: 4px solid #fff;
+  border-radius: 5px;
+}
+
+/* ========= STYLE 107 : VOID PORTAL ========= */
+.genre-generator__genre--voidPortal {
+  font-size: 3.4rem;
+  font-weight: 900;
+  color: #000;
+  text-shadow: 0 0 10px #8000ff;
+  background: radial-gradient(circle, #000 40%, #3a0ca3 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: portal-suck 2s infinite ease-in-out alternate;
+}
+
+@keyframes portal-suck {
+  0% { transform: scale(1); text-shadow: 0 0 10px #8000ff; }
+  100% { transform: scale(0.95); text-shadow: 0 0 25px #f72585; }
+}
+
+/* ... (Add this at the very end of your CSS file) ... */
+
+/* ========= STYLE 108 : ANAGLYPH 3D (Red/Cyan Offset) ========= */
+/* Inspired by the classic 3D glasses effect found on the blog */
+.genre-generator__genre--anaglyph3d {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  text-shadow: 
+    -4px -2px 0 #00f, 
+    4px 2px 0 #f00;
+}
+
+/* ========= STYLE 109 : PEELED STICKER ========= */
+/* Gives the text a look like a sticker peeling off the wall */
+.genre-generator__genre--peeled {
+  font-size: 3.4rem;
+  font-weight: 900;
+  color: #fff;
+  background: #222;
+  padding: 0.2em 0.4em;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.5);
+  transform: rotate(-5deg);
+  position: relative;
+  overflow: hidden;
+}
+.genre-generator__genre--peeled::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-top: 40px solid #555; /* Back of sticker color */
+  border-right: 40px solid transparent;
+  width: 0;
+  height: 0;
+}
+
+/* ========= STYLE 110 : LONG SHADOW (FLAT DESIGN) ========= */
+/* The popular "Long Shadow" trend */
+.genre-generator__genre--longShadow {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #f1c40f; /* Bright Yellow */
+  text-shadow: 
+    1px 1px #c0392b,
+    2px 2px #c0392b,
+    3px 3px #c0392b,
+    4px 4px #c0392b,
+    5px 5px #c0392b,
+    6px 6px #c0392b,
+    7px 7px #c0392b,
+    8px 8px #c0392b,
+    15px 15px 0px rgba(0,0,0,0.2);
+  transform: skewX(-5deg);
+}
+
+/* ========= STYLE 111 : MASKED IMAGE TEXT ========= */
+/* Uses background-clip to put a pattern inside the text */
+.genre-generator__genre--maskedPattern {
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: transparent;
+  background: repeating-linear-gradient(
+    45deg,
+    #ff6b6b,
+    #ff6b6b 10px,
+    #feca57 10px,
+    #feca57 20px
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 2px #fff;
+}
+
+/* ========= STYLE 112 : EMBOSSED (PRESSED IN) ========= */
+/* Realistic pressed-in metal look */
+.genre-generator__genre--embossed {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #333;
+  text-shadow: 
+    -1px -1px 1px #fff, 
+    1px 1px 1px #000;
+  opacity: 0.8;
+}
+
+/* ========= STYLE 113 : SLASHED (CUT IN HALF) ========= */
+/* Similar to the "Sliced" effect seen in design blogs */
+.genre-generator__genre--slashed {
+  font-size: 3.4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  position: relative;
+  color: transparent;
+}
+
+.genre-generator__genre--slashed::before,
+.genre-generator__genre--slashed::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  overflow: hidden;
+}
+
+.genre-generator__genre--slashed::before {
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 55%);
+  transform: translateX(-3px);
+  text-shadow: 2px 0 #ff005e;
+}
+
+.genre-generator__genre--slashed::after {
+  clip-path: polygon(0 55%, 100% 45%, 100% 100%, 0 100%);
+  transform: translateX(3px);
+  text-shadow: -2px 0 #00e0ff;
+}
+
+/* ========= STYLE 114 : FOLDED PAPER ========= */
+/* Looks like the text is folded in the middle */
+.genre-generator__genre--folded {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.genre-generator__genre--folded span {
+  /* Note: This usually requires wrapping letters in spans, 
+     but for this CSS-only version we simulate depth with gradients */
+  background: linear-gradient(to bottom, #ffffff 50%, #cccccc 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transform: perspective(500px) rotateX(20deg);
+  display: inline-block;
+}
+
+/* ========= STYLE 115 : VINTAGE RETRO LINES ========= */
+/* The classic 70s/80s striped logo look */
+.genre-generator__genre--vintageLines {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px #ff9f43;
+  position: relative;
+}
+.genre-generator__genre--vintageLines::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  -webkit-text-stroke: 2px #ee5253;
+  z-index: -1;
+}
+.genre-generator__genre--vintageLines::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  -webkit-text-stroke: 2px #2e86de;
+  z-index: -2;
+}
+
+
+/* ... (Add this at the end of your file) ... */
+
+/* ========= STYLE 116 : LIQUID WATER (Foolish Dev Classic) ========= */
+.genre-generator__genre--liquidWater {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  position: relative;
+  color: rgba(255, 255, 255, 0.1);
+  -webkit-text-stroke: 2px #03a9f4;
+}
+
+.genre-generator__genre--liquidWater::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  color: #03a9f4;
+  border-right: 2px solid #03a9f4;
+  overflow: hidden;
+  animation: liquid-fill 3s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes liquid-fill {
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 0; }
+}
+
+/* ========= STYLE 117 : SMOKY DISSOLVE ========= */
+.genre-generator__genre--smokyDissolve {
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: transparent;
+  text-shadow: 0 0 0 #fff;
+  animation: smoky-blur 2.5s linear infinite;
+}
+
+@keyframes smoky-blur {
+  0% {
+    text-shadow: 0 0 0 #fff;
+    opacity: 1;
+    filter: blur(0px);
+    transform: rotate(0deg);
+  }
+  50% {
+    text-shadow: 10px -10px 20px #fff;
+    opacity: 0.5;
+    filter: blur(5px);
+    transform: rotate(2deg);
+  }
+  100% {
+    text-shadow: 20px -20px 40px #fff;
+    opacity: 0;
+    filter: blur(20px);
+    transform: rotate(5deg) scale(1.2);
+  }
+}
+
+/* ========= STYLE 118 : CINEMATIC ZOOM (Netflix Style) ========= */
+.genre-generator__genre--cinematicZoom {
+  font-size: 2rem; /* Starts small */
+  font-weight: 900;
+  color: #e50914; /* Netflix Red */
+  text-transform: uppercase;
+  animation: cine-zoom 3s ease-out infinite;
+  text-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+@keyframes cine-zoom {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+    letter-spacing: 10px;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+    letter-spacing: 0px;
+  }
+}
+
+/* ========= STYLE 119 : SHINING GOLD ========= */
+.genre-generator__genre--shiningGold {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #333;
+  background: linear-gradient(to right, #333 0, #cfc09f 10%, #333 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine-sweep 2.5s infinite linear;
+  background-size: 200% 100%;
+}
+
+@keyframes shine-sweep {
+  0% { background-position: 0; }
+  60% { background-position: 180px; }
+  100% { background-position: 360px; }
+}
+
+/* ========= STYLE 120 : NEON FLICKER (Broken Sign) ========= */
+.genre-generator__genre--neonFlicker {
+  font-size: 3.4rem;
+  color: #fff;
+  text-shadow: 
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa;
+  animation: flicker-sign 1.5s infinite alternate;
+}
+
+@keyframes flicker-sign {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa,
+      0 0 80px #0fa;
+      opacity: 1;
+  }
+  20%, 24%, 55% {        
+    text-shadow: none;
+    opacity: 0.1;
+  }
+}
+
+/* ========= STYLE 121 : ELASTIC BOUNCE ========= */
+.genre-generator__genre--elasticBounce {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #ff9f43;
+  text-transform: uppercase;
+  display: inline-block;
+  animation: elastic-jump 1.5s infinite;
+}
+
+@keyframes elastic-jump {
+  0% { transform: scale(1, 1) translateY(0); }
+  10% { transform: scale(1.1, 0.9) translateY(0); }
+  30% { transform: scale(0.9, 1.1) translateY(-20px); }
+  50% { transform: scale(1.05, 0.95) translateY(0); }
+  57% { transform: scale(1, 1) translateY(-7px); }
+  64% { transform: scale(1, 1) translateY(0); }
+  100% { transform: scale(1, 1) translateY(0); }
+}
+
+/* ========= STYLE 122 : 3D LAYERED STACK ========= */
+.genre-generator__genre--layer3d {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #fff;
+  transform: rotate(-15deg) skewX(15deg);
+  text-shadow: 
+    1px 1px #ccc,
+    2px 2px #ccc,
+    3px 3px #ccc,
+    4px 4px #ccc,
+    5px 5px #ccc,
+    6px 6px #ccc,
+    7px 7px #ccc;
+  transition: 0.2s;
+}
+.genre-generator__genre--layer3d:hover {
+  text-shadow: 
+    1px 1px #ff005e,
+    2px 2px #ff005e,
+    3px 3px #ff005e,
+    4px 4px #ff005e,
+    5px 5px #ff005e,
+    6px 6px #ff005e,
+    7px 7px #ff005e,
+    8px 8px #ff005e;
+  transform: rotate(-15deg) skewX(15deg) translate(-10px, -10px);
+}
+
+/* ========= STYLE 123 : FOCUS BLUR ========= */
+.genre-generator__genre--focusBlur {
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: #00d2d3;
+  letter-spacing: 0.2em;
+  animation: blur-focus 2s ease-in-out infinite alternate;
+}
+
+@keyframes blur-focus {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    filter: blur(0px);
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+    transform: scale(1);
+  }
 }

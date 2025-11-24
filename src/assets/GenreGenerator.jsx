@@ -3,6 +3,29 @@ import "./GenreGenerator.css";
 import AppFooter from "./AppFooter"; // adapte le chemin si besoin
 
 const STYLE_KEYS = [
+
+    // === ADD THESE NEW COOL STYLES ===
+    
+  "hyperSpeed",
+
+    // === NEW DESIGNYOURWAY INSPIRED STYLES ===
+  "anaglyph3d",
+  "peeled",
+  "longShadow",
+  "maskedPattern",
+  "embossed",
+  "slashed",
+  "folded",
+  "vintageLines",
+  "soapBubble",
+  "cautionTape",
+  "superSaiyan",
+  "blueprint",
+  "xray",
+  "vampireBite",
+  "prism",
+  "stickerSlap",
+  "voidPortal",
   "bassDrop",
   "vinylSpin",
   "laserScan",
@@ -16,7 +39,6 @@ const STYLE_KEYS = [
   "sidechainPulse",
   "chorusEcho",
   "tapeWobble",
-
   "arenaLight",
   "clubTunnel",
   "morphWave",
@@ -88,7 +110,6 @@ const STYLE_KEYS = [
   "whipSpin",
   "gradientLoop",
   "particleGlow",
-  "splitVertical",
   "dropBounce",
   "scanLines",
   "flashStroke",
@@ -98,6 +119,15 @@ const STYLE_KEYS = [
   "glitchBlocks",
   "holoShift",
   "warpWave",
+  // === FOOLISH DEVELOPER INSPIRED STYLES ===
+  "liquidWater",
+  "smokyDissolve",
+  "cinematicZoom",
+  "shiningGold",
+  "neonFlicker",
+  "elasticBounce",
+  "layer3d",
+  "focusBlur",
 
   "neonLights2",
   "rainbowSweep",
@@ -169,14 +199,12 @@ const FONT_KEYS = [
   "d2k",
   "dracutaz",
   "dragonforce",
-  "drumandbass",
   "grunge",
   "if",
   "maiden",
   "metalmania",
   "punkkid",
   "puree2",
-  "pwtrombone",
   "queensoftheapocalypse",
   "scarbes",
   "scaryglyphs",
@@ -194,6 +222,65 @@ const SYSTEM_FONT_CHOICES = [
   '"Helvetica Neue", Arial, sans-serif',
   '"Nunito", system-ui, sans-serif',
   '"Fira Sans", system-ui, sans-serif',
+    '"Segoe UI", system-ui, sans-serif',
+  '"Helvetica Neue", Arial, sans-serif',
+
+  // === HARD ROCK & HEAVY METAL ===
+  '"Metal Mania", "Impact", "Haettenschweiler", sans-serif',  // Thrash / Heavy Metal
+  '"Russo One", "Arial Black", sans-serif',                   // Industrial / Hard Rock
+  '"Alfa Slab One", "Impact", sans-serif',                    // Stoner Rock / Doom
+  '"Black Ops One", "Stencil", fantasy',                      // Nu-Metal / Military
+  
+  // === PUNK & GRUNGE ===
+  '"Rock Salt", "Bradley Hand", cursive',                     // Grunge / Messy
+  '"Permanent Marker", "Comic Sans MS", cursive',             // Punk / Garage
+  
+  // === GOTHIC & HORROR ===
+  '"Creepster", "Chiller", fantasy',                          // Shock Rock / Horror
+  '"UnifrakturMaguntia", "Old English Text MT", serif',       // Black Metal / Gothic
+  
+  // === PROG & ALTERNATIVE ===
+  '"Copperplate", "Copperplate Gothic Bold", serif',          // Prog Rock
+  '"Oswald", "Impact", sans-serif',                           // Alternative / Indie
+  '"Bangers", "Impact", sans-serif',                          // Pop Punk
+   // === HIP HOP / PARENTAL ADVISORY ===
+  // Big, blocky, in-your-face
+  '"Anton", "Impact", "Arial Black", "Haettenschweiler", sans-serif',
+  '"Oswald", "Franklin Gothic Medium", sans-serif',
+
+  // === INDIE / FOLK / ACOUSTIC ===
+  // Handwritten, skinny, whimsical
+  '"Amatic SC", "Bradley Hand", "Chalkboard SE", cursive',
+  '"Shadows Into Light", "Patrick Hand", cursive',
+
+  // === TECHNO / EDM / FUTURISTIC ===
+  // Wide, geometric, sci-fi
+  '"Audiowide", "Orbitron", "OCR A Std", monospace',
+  '"Russo One", "Eurostile", "BankGothic", sans-serif',
+
+  // === CLASSIC ROCK / 70s PSYCHEDELIC ===
+  // Groovy scripts and thick serifs
+  '"Lobster", "Brush Script MT", "Cooper Black", cursive',
+  '"Alfa Slab One", "Rockwell Extra Bold", serif',
+
+  // === JAZZ / SOUL / LUXURY ===
+  // High contrast, elegant, fashion magazine style
+  '"Playfair Display", "Didot", "Bodoni MT", serif',
+  '"Cinzel", "Trajan Pro", serif',
+
+  // === GRUNGE / INDUSTRIAL / 90s ===
+  // Distressed, typewriter, messy
+  '"Special Elite", "Courier New", "American Typewriter", monospace',
+  '"Rock Salt", "Chalkduster", fantasy',
+
+  // === VAPORWAVE / RETRO 80s ===
+  // Neon style, brush scripts
+  '"Permanent Marker", "Mistral", "Comic Sans MS", cursive',
+  '"Bebas Neue", "Futura", sans-serif',
+
+  // === METAL / HORROR SOUNDTRACK ===
+  '"Creepster", "Chiller", "Ravie", fantasy',
+  '"Metal Mania", "Stencil Std", "Impact", sans-serif',
 ];
 
 function getRandomSystemFont() {
