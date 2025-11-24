@@ -1,5 +1,72 @@
 /* ========= STYLE DE BASE DU COMPOSANT ========= */
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&family=Lobster&family=Oswald:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&family=Lobster&family=Oswald:wght@400;700&family=Metal+Mania&family=Staatliches&family=Cinzel:wght@400;700&family=Stardos+Stencil:wght@400;700&family=Russo+One&family=Audiowide&family=Permanent+Marker&family=Anton&family=Rock+Salt&family=Neonderthaw&family=Bangers&family=Playfair+Display:wght@400;700&family=Alfa+Slab+One&family=Amatic+SC:wght@400;700&family=Special+Elite&family=Shadows+Into+Light&family=Unica+One&family=Creepster&display=swap");
+
+
+/* ========= FONTS "POCETTE / MARQUE" SUPPLÉMENTAIRES ========= */
+
+/* Graffiti / gribouillage */
+.font-graffiti {
+  font-family: "Rock Salt", "Permanent Marker", cursive;
+}
+
+/* Néon script */
+.font-neonSign {
+  font-family: "Neonderthaw", "Lobster", cursive;
+  letter-spacing: 0.08em;
+}
+
+/* Comic / affiches fun */
+.font-comic {
+  font-family: "Bangers", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Élégant / pochette jazz, classique */
+.font-elegant {
+  font-family: "Playfair Display", "Cinzel", serif;
+  letter-spacing: 0.05em;
+}
+
+/* Slab serif bien gras (rock / indie) */
+.font-slab {
+  font-family: "Alfa Slab One", system-ui, serif;
+  text-transform: uppercase;
+}
+
+/* Thin / affiches indé hyper fines */
+.font-thin {
+  font-family: "Amatic SC", system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Typewriter / old school */
+.font-typewriter2 {
+  font-family: "Special Elite", "Courier New", monospace;
+}
+
+/* Signature / handwritten smooth */
+.font-signature {
+  font-family: "Shadows Into Light", "Lobster", cursive;
+}
+
+/* Wide / compact wide type */
+.font-wide {
+  font-family: "Unica One", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Horror / film d’horreur */
+.font-horror {
+  font-family: "Creepster", "Special Elite", cursive;
+  text-transform: uppercase;
+}
+
+
+
 /* ========= FONTS ALÉATOIRES ========= */
 
 .font-sans {
@@ -61,6 +128,8 @@
 .genre-generator__title {
   font-size: 1.6rem;
   margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .genre-generator__button {
@@ -2989,4 +3058,187 @@ body {
   color: #000;
   mix-blend-mode: screen;
   opacity: 0.1;
+}
+
+
+/* ========= STYLE : SLIDE REVEAL ========= */
+/* Texte masqué qui se révèle horizontalement */
+
+.genre-generator__genre--slideReveal {
+  position: relative;
+  display: inline-block;
+  font-size: 3.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.genre-generator__genre--slideReveal::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  animation: slide-reveal 0.9s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  color: #ffffff;
+}
+
+@keyframes slide-reveal {
+  0% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(8%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ========= STYLE : ZOOM ROTATE ========= */
+/* zoom + légère rotation, style titre d’album */
+
+.genre-generator__genre--zoomRotate {
+  display: inline-block;
+  font-size: 3.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  animation: zoom-rotate-in 0.8s ease-out;
+}
+
+@keyframes zoom-rotate-in {
+  0% {
+    transform: scale(0.6) rotate(-10deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1) rotate(4deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* ========= STYLE : GLOW FLASH ========= */
+/* flash de glow rapide (genre strobe) */
+
+.genre-generator__genre--glowFlash {
+  font-size: 3.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.6),
+    0 0 14px rgba(255, 0, 140, 0.9);
+  animation: glow-flash 1.1s linear infinite;
+}
+
+@keyframes glow-flash {
+  0% {
+    opacity: 0.4;
+    text-shadow:
+      0 0 4px rgba(255, 255, 255, 0.4),
+      0 0 8px rgba(255, 0, 140, 0.6);
+  }
+  25% {
+    opacity: 1;
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.9),
+      0 0 24px rgba(255, 0, 140, 1);
+  }
+  50% {
+    opacity: 0.6;
+    text-shadow:
+      0 0 6px rgba(255, 255, 255, 0.6),
+      0 0 14px rgba(255, 0, 140, 0.8);
+  }
+  75% {
+    opacity: 1;
+    text-shadow:
+      0 0 12px rgba(255, 255, 255, 1),
+      0 0 28px rgba(255, 0, 140, 1);
+  }
+  100% {
+    opacity: 0.4;
+    text-shadow:
+      0 0 4px rgba(255, 255, 255, 0.4),
+      0 0 8px rgba(255, 0, 140, 0.6);
+  }
+}
+
+/* ========= STYLE : OUTLINE FILL ========= */
+/* contour blanc, puis remplissage en dégradé animé */
+
+.genre-generator__genre--outlineFill {
+  position: relative;
+  display: inline-block;
+  font-size: 3.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  text-stroke: 2px #ffffff;
+}
+
+.genre-generator__genre--outlineFill::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #ff005e,
+    #ff9a00,
+    #ffdd00,
+    #00e0ff,
+    #a200f7,
+    #ff005e
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: outline-fill-move 2.5s linear infinite;
+}
+
+@keyframes outline-fill-move {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    background-position: 200% 50%;
+    opacity: 1;
+  }
+}
+
+/* ========= STYLE : WAVE SKEW ========= */
+/* oscillation en skew, effet wavy un peu instable */
+
+.genre-generator__genre--waveSkew {
+  font-size: 3rem;
+  font-weight: 700;
+  display: inline-block;
+  text-transform: uppercase;
+  animation: wave-skew 1.6s ease-in-out infinite;
+}
+
+@keyframes wave-skew {
+  0% {
+    transform: skewX(0deg) translateY(0);
+  }
+  25% {
+    transform: skewX(-6deg) translateY(-4px);
+  }
+  50% {
+    transform: skewX(4deg) translateY(0);
+  }
+  75% {
+    transform: skewX(-2deg) translateY(4px);
+  }
+  100% {
+    transform: skewX(0deg) translateY(0);
+  }
 }

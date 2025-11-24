@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./GenreGenerator.css";
 
 const STYLE_KEYS = [
+  // ⚠️ tu peux remettre ici TOUTE ta liste de styles
   "neon",
   "meta",
   "lights",
@@ -52,23 +53,19 @@ const STYLE_KEYS = [
   "rainbowWave",
   "glitchLines",
   "strokeGrow",
-   "highlightReveal",  // 👈 nouveaux
-  "rotateInX",
-  "colorPulse",
-  "underlineSlide",
-  "highlightReveal",  // 👈 nouveaux
-  "rotateInX",
-  "colorPulse",
-  "underlineSlide",
-   "stackedShadow",
-  "glowTrail",
-  "gradientStroke",
-  "splitColor",
-  "tiltSlideIn",
-  "innerNeon",
-  "shadowZoom",
-  "cutout",
+   "slideReveal",
+  "zoomRotate",
+  "glowFlash",
+  "outlineFill",
+  "waveSkew",
 ];
+
+function getRandomStyle() {
+  const index = Math.floor(Math.random() * STYLE_KEYS.length);
+  return STYLE_KEYS[index];
+}
+
+/* === FONTS ALÉATOIRES === */
 
 const FONT_KEYS = [
   "sans",
@@ -79,33 +76,40 @@ const FONT_KEYS = [
   "cursive",
   "condensed",
   "funky",
+  "metal",
+  "punk",
+  "gothic",
+  "stencil",
+  "retro80s",
+  "techno",
+  "handwritten",
+  "brutal",
+  "graffiti",
+  "neonSign",
+  "comic",
+  "elegant",
+  "slab",
+  "thin",
+  "typewriter2",
+  "signature",
+  "wide",
+  "horror",
 ];
-const [styleKey, setStyleKey] = useState(() => getRandomStyle());
-const [fontKey, setFontKey] = useState(() => getRandomFont());
+
 
 function getRandomFont() {
   const index = Math.floor(Math.random() * FONT_KEYS.length);
   return FONT_KEYS[index];
-}
-const formatted = formatGenre(value);
-
-// 👉 on change le genre, le style ET la font
-setGenre(formatted);
-setStyleKey(getRandomStyle());
-setFontKey(getRandomFont());
-
-
-
-function getRandomStyle() {
-  const index = Math.floor(Math.random() * STYLE_KEYS.length);
-  return STYLE_KEYS[index];
 }
 
 function GenreGenerator() {
   const [genre, setGenre] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  // ⚠️ CES DEUX LIGNES DOIVENT ÊTRE DANS LA FONCTION, COMME ICI :
   const [styleKey, setStyleKey] = useState(() => getRandomStyle());
+  const [fontKey, setFontKey] = useState(() => getRandomFont());
 
   // Mettre une majuscule à chaque mot
   function formatGenre(text) {
@@ -142,9 +146,10 @@ function GenreGenerator() {
 
       const formatted = formatGenre(value);
 
-      // 👉 on change le genre ET on choisit un style aléatoire
+      // 👉 on change le genre, le style ET la font
       setGenre(formatted);
       setStyleKey(getRandomStyle());
+      setFontKey(getRandomFont());
     } catch (err) {
       setError(err.message || "Erreur lors du chargement du genre.");
     } finally {
@@ -159,7 +164,7 @@ function GenreGenerator() {
   return (
     <div className="genre-generator">
       <h1 className="genre-generator__title">
-        🎵 Random Genre : Genrenator 🎵
+        <h2>🎵 GENRENATOR 🎵</h2>
       </h1>
 
       <button
@@ -167,26 +172,22 @@ function GenreGenerator() {
         disabled={loading}
         className="genre-generator__button"
       >
-        {loading ? "Chargement..." : "Nouveau genre"}
+        {loading ? "Chargement..." : "NEW GENRE"}
       </button>
 
-      {!error && genre && (
-  <p
-    className={
-      `genre-generator__genre ` +
-      `genre-generator__genre--${styleKey} ` +
-      `font-${fontKey}`
-    }
-    data-text={genre}
-  >
-    {genre}
-  </p>
-)}
-
+      {error && (
+        <p className="genre-generator__error">
+          Erreur : {error}
+        </p>
+      )}
 
       {!error && genre && (
         <p
-          className={`genre-generator__genre genre-generator__genre--${styleKey}`}
+          className={
+            `genre-generator__genre ` +
+            `genre-generator__genre--${styleKey} ` +
+            `font-${fontKey}`
+          }
           data-text={genre}
         >
           {genre}
