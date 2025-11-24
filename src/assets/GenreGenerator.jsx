@@ -52,7 +52,48 @@ const STYLE_KEYS = [
   "rainbowWave",
   "glitchLines",
   "strokeGrow",
+   "highlightReveal",  // 👈 nouveaux
+  "rotateInX",
+  "colorPulse",
+  "underlineSlide",
+  "highlightReveal",  // 👈 nouveaux
+  "rotateInX",
+  "colorPulse",
+  "underlineSlide",
+   "stackedShadow",
+  "glowTrail",
+  "gradientStroke",
+  "splitColor",
+  "tiltSlideIn",
+  "innerNeon",
+  "shadowZoom",
+  "cutout",
 ];
+
+const FONT_KEYS = [
+  "sans",
+  "serif",
+  "mono",
+  "bebas",
+  "pixel",
+  "cursive",
+  "condensed",
+  "funky",
+];
+const [styleKey, setStyleKey] = useState(() => getRandomStyle());
+const [fontKey, setFontKey] = useState(() => getRandomFont());
+
+function getRandomFont() {
+  const index = Math.floor(Math.random() * FONT_KEYS.length);
+  return FONT_KEYS[index];
+}
+const formatted = formatGenre(value);
+
+// 👉 on change le genre, le style ET la font
+setGenre(formatted);
+setStyleKey(getRandomStyle());
+setFontKey(getRandomFont());
+
 
 
 function getRandomStyle() {
@@ -129,11 +170,19 @@ function GenreGenerator() {
         {loading ? "Chargement..." : "Nouveau genre"}
       </button>
 
-      {error && (
-        <p className="genre-generator__error">
-          Erreur : {error}
-        </p>
-      )}
+      {!error && genre && (
+  <p
+    className={
+      `genre-generator__genre ` +
+      `genre-generator__genre--${styleKey} ` +
+      `font-${fontKey}`
+    }
+    data-text={genre}
+  >
+    {genre}
+  </p>
+)}
+
 
       {!error && genre && (
         <p
