@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./GenreGenerator.css";
-
+import AppFooter from "./AppFooter"; // adapte le chemin si besoin
 const STYLE_KEYS = [
   // ⚠️ tu peux remettre ici TOUTE ta liste de styles
   "neon",
@@ -222,7 +222,10 @@ function GenreGenerator() {
         >
           {genre}
         </p>
+        
       )}
+ <AppFooter />
+      
     </div>
   );
 }
