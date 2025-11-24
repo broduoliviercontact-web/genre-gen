@@ -58,6 +58,27 @@ const STYLE_KEYS = [
   "glowFlash",
   "outlineFill",
   "waveSkew",
+  "shineSweep",
+  "jumpWave2",
+  "handWrite",
+  "revealWords",
+  "frozenGlow",
+  "waveClip2",
+  "smokeFade",
+  "whipSpin",
+  "gradientLoop",
+  "particleGlow",
+    "splitVertical",
+  "dropBounce",
+  "scanLines",
+  "flashStroke",
+  "innerFade",
+  "outlinePop",
+  "shakeRotate",
+  "glitchBlocks",
+  "holoShift",
+  "warpWave",
+
 ];
 
 function getRandomStyle() {
@@ -94,7 +115,12 @@ const FONT_KEYS = [
   "signature",
   "wide",
   "horror",
+  // === nouvelles fonts 1001fonts ===
+  "rockybilly",
+  "quivert",
 ];
+
+
 
 
 function getRandomFont() {
@@ -167,13 +193,17 @@ function GenreGenerator() {
         <h2>🎵 GENRENATOR 🎵</h2>
       </h1>
 
-      <button
-        onClick={fetchGenre}
-        disabled={loading}
-        className="genre-generator__button"
-      >
-        {loading ? "Chargement..." : "NEW GENRE"}
-      </button>
+<button
+  onClick={fetchGenre}
+  disabled={loading}
+  className="genre-generator__button"
+>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  {loading ? "Chargement..." : "NEW GENRE"}
+</button>
 
       {error && (
         <p className="genre-generator__error">
