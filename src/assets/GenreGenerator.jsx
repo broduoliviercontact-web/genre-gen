@@ -1,8 +1,28 @@
 import { useState, useEffect } from "react";
 import "./GenreGenerator.css";
 import AppFooter from "./AppFooter"; // adapte le chemin si besoin
+
 const STYLE_KEYS = [
-  // ⚠️ tu peux remettre ici TOUTE ta liste de styles
+  "bassDrop",
+  "vinylSpin",
+  "laserScan",
+  "strobeBeat",
+  "equalizerBars",
+  "reverbEcho",
+  "synthWave",
+  "raveGlow",
+  "tempoShake",
+  "dubstepSlice",
+  "sidechainPulse",
+  "chorusEcho",
+  "tapeWobble",
+
+  "arenaLight",
+  "clubTunnel",
+  "morphWave",
+  "bpmFlash",
+  "monoStereo",
+  "waveformTrace",
   "neon",
   "meta",
   "lights",
@@ -53,7 +73,7 @@ const STYLE_KEYS = [
   "rainbowWave",
   "glitchLines",
   "strokeGrow",
-   "slideReveal",
+  "slideReveal",
   "zoomRotate",
   "glowFlash",
   "outlineFill",
@@ -68,7 +88,7 @@ const STYLE_KEYS = [
   "whipSpin",
   "gradientLoop",
   "particleGlow",
-    "splitVertical",
+  "splitVertical",
   "dropBounce",
   "scanLines",
   "flashStroke",
@@ -79,7 +99,23 @@ const STYLE_KEYS = [
   "holoShift",
   "warpWave",
 
+  "neonLights2",
+  "rainbowSweep",
+  "lineThrough3d",
+  "neonBorder",
+  "softGlitch",
+  "musicGlow",
+  "blendOverlay",
+  "liquidDrop",
+  "spookyBlur",
+  "spaciousTracking",
+  "cartoonPop",
+  "tilt3d",
+  "wordSwipe",
+  "luminanceClip",
+  "barFadeIn",
 ];
+
 
 function getRandomStyle() {
   const index = Math.floor(Math.random() * STYLE_KEYS.length);
@@ -115,12 +151,55 @@ const FONT_KEYS = [
   "signature",
   "wide",
   "horror",
-  // === nouvelles fonts 1001fonts ===
   "rockybilly",
   "quivert",
+  "morvanh",
+  "redband",
+  "kaijuz",
+  "simbiot",
+  "noxis",
+  "megaroomCrimes",
+  "backToSchool",
+  "timesMusic",
+  "mosca",
+  "larokeVortex",
+  "dominionMusic",
+  "angost",
+  "chopin",
+  "d2k",
+  "dracutaz",
+  "dragonforce",
+  "drumandbass",
+  "grunge",
+  "if",
+  "maiden",
+  "metalmania",
+  "punkkid",
+  "puree2",
+  "pwtrombone",
+  "queensoftheapocalypse",
+  "scarbes",
+  "scaryglyphs",
+  "sedgwick",
+  "sickness",
+  "slaytanic",
+  "thebattlecont",
+  "waveform",
 ];
 
+const SYSTEM_FONT_CHOICES = [
+  '"Segoe UI", system-ui, sans-serif',
+  '-apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif',
+  '"Roboto", system-ui, sans-serif',
+  '"Helvetica Neue", Arial, sans-serif',
+  '"Nunito", system-ui, sans-serif',
+  '"Fira Sans", system-ui, sans-serif',
+];
 
+function getRandomSystemFont() {
+  const index = Math.floor(Math.random() * SYSTEM_FONT_CHOICES.length);
+  return SYSTEM_FONT_CHOICES[index];
+}
 
 
 function getRandomFont() {
@@ -136,6 +215,8 @@ function GenreGenerator() {
   // ⚠️ CES DEUX LIGNES DOIVENT ÊTRE DANS LA FONCTION, COMME ICI :
   const [styleKey, setStyleKey] = useState(() => getRandomStyle());
   const [fontKey, setFontKey] = useState(() => getRandomFont());
+  const [systemFont, setSystemFont] = useState(() => getRandomSystemFont());
+
 
   // Mettre une majuscule à chaque mot
   function formatGenre(text) {
@@ -176,6 +257,9 @@ function GenreGenerator() {
       setGenre(formatted);
       setStyleKey(getRandomStyle());
       setFontKey(getRandomFont());
+      setSystemFont(getRandomSystemFont());
+
+      
     } catch (err) {
       setError(err.message || "Erreur lors du chargement du genre.");
     } finally {
@@ -212,18 +296,19 @@ function GenreGenerator() {
       )}
 
       {!error && genre && (
-        <p
-          className={
-            `genre-generator__genre ` +
-            `genre-generator__genre--${styleKey} ` +
-            `font-${fontKey}`
-          }
-          data-text={genre}
-        >
-          {genre}
-        </p>
-        
-      )}
+  <p
+    className={
+      `genre-generator__genre ` +
+      `genre-generator__genre--${styleKey} ` +
+      `font-${fontKey}`
+    }
+    data-text={genre}
+    style={fontKey === "sans" ? { fontFamily: systemFont } : undefined}
+  >
+    {genre}
+  </p>
+)}
+
  <AppFooter />
       
     </div>

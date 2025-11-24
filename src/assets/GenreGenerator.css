@@ -1,4 +1,393 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&family=Lobster&family=Oswald:wght@400;700&family=Metal+Mania&family=Staatliches&family=Cinzel:wght@400;700&family=Stardos+Stencil:wght@400;700&family=Russo+One&family=Audiowide&family=Permanent+Marker&family=Anton&family=Rock+Salt&family=Neonderthaw&family=Bangers&family=Playfair+Display:wght@400;700&family=Alfa+Slab+One&family=Amatic+SC:wght@400;700&family=Special+Elite&family=Shadows+Into+Light&family=Unica+One&family=Creepster&display=swap");
+/* ========== PACK FONTS – POSTCRYPT & CO ========== */
+
+@font-face {
+  font-family: "Postcrypt";
+  src: url("/fonts/music/postcryp.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GothikSteel";
+  src: url("/fonts/music/Gothik Steel.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Abduction2002";
+  src: url("/fonts/music/abduction2002.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DotMBold";
+  src: url("/fonts/music/DOTMBold.TTF") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DotMatrix";
+  src: url("/fonts/music/DOTMATRI.TTF") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SuperPixelPU";
+  src: url("/fonts/music/Super Pixel Personal Use.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LedDisplaySt";
+  src: url("/fonts/music/The Led Display St.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ShadowOfTheDeads";
+  src: url("/fonts/music/Shadow of the Deads.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MeltedMonster";
+  src: url("/fonts/music/Melted Monster.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelpMeFont";
+  src: url("/fonts/music/HelpMe.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ========== CLASSES UTILISÉES PAR font-${fontKey} ========== */
+
+.font-postcrypt {
+  font-family: "Postcrypt", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.font-gothiksteel {
+  font-family: "GothikSteel", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.font-abduction2002 {
+  font-family: "Abduction2002", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.font-dotmbold {
+  font-family: "DotMBold", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.font-dotmatrix {
+  font-family: "DotMatrix", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.font-superpixel {
+  font-family: "SuperPixelPU", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.font-leddisplay {
+  font-family: "LedDisplaySt", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.font-shadowdeads {
+  font-family: "ShadowOfTheDeads", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.font-meltedmonster {
+  font-family: "MeltedMonster", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.font-helpme {
+  font-family: "HelpMeFont", system-ui, sans-serif;
+}
+
+
+@font-face {
+  font-family: "TheBattleCont";
+  src: url("/fonts/music/TheBattleCont.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "WaveformFont";
+  src: url("/fonts/music/Waveform.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+.font-thebattlecont {
+  font-family: "TheBattleCont", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.font-waveform {
+  font-family: "WaveformFont", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+
+
+
+
+@font-face {
+  font-family: "PunkKid";
+  src: url("/fonts/music/punk kid.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Puree2";
+  src: url("/fonts/music/puree____2.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PWTrombone";
+  src: url("/fonts/music/PWTrombone.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "QueensOfTheApocalypse";
+  src: url("/fonts/music/QueensOfTheApocalypse-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Scarbes";
+  src: url("/fonts/music/Scarbes.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ScaryGlyphs";
+  src: url("/fonts/music/scary_glyphs_and_nice_characters.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SedgwickAveDisplay";
+  src: url("/fonts/music/SedgwickAveDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SicknessFont";
+  src: url("/fonts/music/Sickness.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SlaytanicFont";
+  src: url("/fonts/music/Slaytanic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ========== CLASSES UTILISÉES PAR font-${fontKey} ========== */
+
+.font-partyhard {
+  font-family: "PartyHard", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.font-punkkid {
+  font-family: "PunkKid", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.font-puree2 {
+  font-family: "Puree2", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.font-pwtrombone {
+  font-family: "PWTrombone", system-ui, sans-serif;
+}
+
+.font-queensoftheapocalypse {
+  font-family: "QueensOfTheApocalypse", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.font-scarbes {
+  font-family: "Scarbes", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.font-scaryglyphs {
+  font-family: "ScaryGlyphs", system-ui, sans-serif;
+}
+
+.font-sedgwick {
+  font-family: "SedgwickAveDisplay", system-ui, sans-serif;
+}
+
+.font-sickness {
+  font-family: "SicknessFont", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.font-slaytanic {
+  font-family: "SlaytanicFont", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+
+@font-face {
+  font-family: "Angost";
+  src: url("/fonts/music/Angost-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "D2K";
+  src: url("/fonts/music/d2k.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Dracutaz";
+  src: url("/fonts/music/Dracutaz.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DragonForcE";
+  src: url("/fonts/music/DragonForcE.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DrumAndBassLDR";
+  src: url("/fonts/music/drum_and_bass_ldr.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GrungeMusic";
+  src: url("/fonts/music/Grunge Music.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IfFont";
+  src: url("/fonts/music/If.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MaidenFont";
+  src: url("/fonts/music/maiden.TTF") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MetalManiaLocal";
+  src: url("/fonts/music/MetalMania-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ========== CLASSES UTILISÉES PAR font-${fontKey} ========== */
+
+.font-angost {
+  font-family: "Angost", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+
+
+.font-d2k {
+  font-family: "D2K", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.font-dracutaz {
+  font-family: "Dracutaz", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.font-dragonforce {
+  font-family: "DragonForcE", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.font-drumandbass {
+  font-family: "DrumAndBassLDR", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.font-grunge {
+  font-family: "GrungeMusic", system-ui, sans-serif;
+}
+
+.font-if {
+  font-family: "IfFont", system-ui, sans-serif;
+}
+
+.font-maiden {
+  font-family: "MaidenFont", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.font-metalmania {
+  font-family: "MetalManiaLocal", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+
 
 .genre-generator__footer {
   position: fixed;
@@ -29,13 +418,6 @@
 
 /* === EXEMPLES FONTS 1001FONTS (à adapter avec les vrais noms de fichiers) === */
 
-@font-face {
-  font-family: "Rockybilly";
-  src: url("/fonts/rockybilly/Rockybilly.woff2") format("woff2"),
-       url("/fonts/rockybilly/Rockybilly.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
 
 @font-face {
   font-family: "Quivert";
@@ -713,6 +1095,7 @@
   display: inline-block;
   transform-origin: center bottom;
   animation: wave-move 1.8s ease-in-out infinite;
+  font-family: "Playfair Display", serif;
 }
 
 @keyframes wave-move {
@@ -1003,7 +1386,7 @@
 .genre-generator__genre--scanner {
   font-size: 3.1rem;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #2c37ff;
   position: relative;
   display: inline-block;
   overflow: hidden;
@@ -1398,6 +1781,7 @@
   font-weight: 800;
   text-transform: uppercase;
   animation: zoom-pop 1.4s ease-in-out infinite;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 @keyframes zoom-pop {
@@ -2978,9 +3362,8 @@ body {
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke-width: 3px;
-  text-stroke-width: 3px;
+ 
   -webkit-text-stroke-color: transparent;
-  text-stroke-color: transparent;
   background: linear-gradient(
     135deg,
     #ff005e,
@@ -3000,9 +3383,8 @@ body {
   inset: 0;
   color: transparent;
   -webkit-text-stroke-width: 3px;
-  text-stroke-width: 3px;
   -webkit-text-stroke-color: #ffffff;
-  text-stroke-color: #ffffff;
+
   mix-blend-mode: screen;
   opacity: 0.6;
 }
@@ -3272,7 +3654,7 @@ body {
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 2px #ffffff;
-  text-stroke: 2px #ffffff;
+
 }
 
 .genre-generator__genre--outlineFill::before {
@@ -3742,14 +4124,14 @@ body {
 
 .genre-generator__genre--splitVertical::before {
   left: 0;
-  clip-path: inset(0 50% 0 0);
+  clip-path: inset(0 0% 0 0);
   transform: translateX(-100%);
   animation: split-vertical-left 0.8s ease-out forwards;
 }
 
 .genre-generator__genre--splitVertical::after {
   right: 0;
-  clip-path: inset(0 0 0 50%);
+  clip-path: inset(0 0 0 0%);
   transform: translateX(100%);
   animation: split-vertical-right 0.8s ease-out forwards;
 }
@@ -3765,7 +4147,7 @@ body {
 
 @keyframes split-vertical-right {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   100% {
     transform: translateX(0);
@@ -3845,7 +4227,7 @@ body {
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 2px #ffffff;
-  text-stroke: 2px #ffffff;
+
   animation: flash-stroke 1.2s ease-in-out infinite;
 }
 
@@ -3900,7 +4282,7 @@ body {
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 2px #ffffff;
-  text-stroke: 2px #ffffff;
+
   animation: outline-pop 0.7s ease-out;
 }
 
@@ -3961,6 +4343,1008 @@ body {
 
 
 
+.genre-generator__genre--neonLights2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #0ff;
+  animation: neon-lights-2 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes neon-lights-2 {
+  0% {
+    text-shadow:
+      0 0 4px #0ff,
+      0 0 10px #0ff,
+      0 0 20px #0ff;
+    opacity: 0.8;
+  }
+  40% {
+    text-shadow:
+      0 0 6px #0ff,
+      0 0 14px #0ff,
+      0 0 30px #0ff;
+    opacity: 1;
+  }
+  100% {
+    text-shadow:
+      0 0 3px #0ff,
+      0 0 8px #0ff,
+      0 0 16px #0ff;
+    opacity: 0.7;
+  }
+}
 
 
-  
+  .genre-generator__genre--rainbowSweep {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: linear-gradient(
+    90deg,
+    #ff005e,
+    #ff9a00,
+    #ffdd00,
+    #00e0ff,
+    #a200f7,
+    #ff005e
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-sweep 2.2s linear infinite;
+}
+
+@keyframes rainbow-sweep {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+.genre-generator__genre--lineThrough3d {
+  font-size: 3rem;
+  position: relative;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 4px 4px 0 #111;
+}
+
+.genre-generator__genre--lineThrough3d::after {
+  content: "";
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  top: 50%;
+  height: 4px;
+  background: linear-gradient(90deg, #ff005e, #ffdd00);
+  transform: translateY(-50%) rotateX(0deg);
+  transform-origin: center;
+  animation: line-through-3d 1.4s ease-in-out infinite;
+}
+
+@keyframes line-through-3d {
+  0%,
+  100% {
+    transform: translateY(-50%) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-50%) rotateX(70deg);
+  }
+}
+.genre-generator__genre--neonBorder {
+  font-size: 2.8rem;
+  padding: 0.4em 0.8em;
+  border-radius: 0.4em;
+  border: 2px solid #0ff;
+  text-transform: uppercase;
+  color: #0ff;
+  box-shadow:
+    0 0 8px rgba(0, 255, 255, 0.7),
+    0 0 18px rgba(0, 255, 255, 0.5);
+  animation: neon-border-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes neon-border-pulse {
+  0% {
+    box-shadow:
+      0 0 4px rgba(0, 255, 255, 0.4),
+      0 0 10px rgba(0, 255, 255, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow:
+      0 0 14px rgba(0, 255, 255, 1),
+      0 0 30px rgba(0, 255, 255, 0.9);
+    transform: scale(1.03);
+  }
+  100% {
+    box-shadow:
+      0 0 4px rgba(0, 255, 255, 0.4),
+      0 0 10px rgba(0, 255, 255, 0.3);
+    transform: scale(1);
+  }
+}
+.genre-generator__genre--softGlitch {
+  font-size: 3rem;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+}
+
+.genre-generator__genre--softGlitch::before,
+.genre-generator__genre--softGlitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.genre-generator__genre--softGlitch::before {
+  color: #ff006e;
+  animation: soft-glitch-left 1.2s infinite;
+}
+
+.genre-generator__genre--softGlitch::after {
+  color: #00f5d4;
+  animation: soft-glitch-right 1.2s infinite;
+}
+
+@keyframes soft-glitch-left {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+  30% {
+    transform: translate(-2px, -1px);
+    clip-path: inset(10% 0 40% 0);
+  }
+  60% {
+    transform: translate(-1px, 1px);
+    clip-path: inset(50% 0 5% 0);
+  }
+}
+
+@keyframes soft-glitch-right {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+  30% {
+    transform: translate(2px, 1px);
+    clip-path: inset(0 0 60% 0);
+  }
+  60% {
+    transform: translate(1px, -1px);
+    clip-path: inset(40% 0 0 0);
+  }
+}
+.genre-generator__genre--musicGlow {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffdd00;
+  text-shadow:
+    0 0 8px rgba(255, 221, 0, 0.8),
+    0 0 18px rgba(255, 75, 145, 0.9);
+  animation: music-glow-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes music-glow-pulse {
+  0% {
+    transform: scale(1);
+    text-shadow:
+      0 0 4px rgba(255, 221, 0, 0.6),
+      0 0 10px rgba(255, 75, 145, 0.7);
+  }
+  40% {
+    transform: scale(1.06);
+    text-shadow:
+      0 0 14px rgba(255, 221, 0, 1),
+      0 0 24px rgba(255, 75, 145, 1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.genre-generator__genre--blendOverlay {
+  font-size: 3rem;
+  position: relative;
+  color: #fff;
+  mix-blend-mode: screen;
+}
+
+.genre-generator__genre--blendOverlay::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: #ff005e;
+  mix-blend-mode: lighten;
+  animation: blend-overlay-shift 2s ease-in-out infinite;
+}
+
+@keyframes blend-overlay-shift {
+  0% {
+    transform: translate(-4px, 0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(4px, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-4px, 0);
+    opacity: 0.6;
+  }
+}
+.genre-generator__genre--liquidDrop {
+  font-size: 3rem;
+  font-weight: 700;
+  position: relative;
+  color: #fff;
+  filter: url("#goo") blur(0.2px);
+}
+
+.genre-generator__genre--liquidDrop::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 110%;
+  width: 0.8em;
+  height: 0.8em;
+  background: #00e0ff;
+  border-radius: 50%;
+  transform: translateX(-50%) scale(0.4);
+  opacity: 0;
+  animation: liquid-drop-fall 1.8s ease-in-out infinite;
+}
+
+@keyframes liquid-drop-fall {
+  0% {
+    transform: translate(-50%, -40%) scale(0.3);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    transform: translate(-50%, 0%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, 30%) scale(0.2);
+    opacity: 0;
+  }
+}
+.genre-generator__genre--spookyBlur {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #f5f5f5;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  animation: spooky-blur 2.4s ease-in-out infinite;
+}
+
+@keyframes spooky-blur {
+  0%,
+  100% {
+    filter: blur(0px);
+    transform: skewX(0deg);
+  }
+  40% {
+    filter: blur(2px);
+    transform: skewX(-4deg);
+  }
+  70% {
+    filter: blur(1px);
+    transform: skewX(3deg);
+  }
+}
+.genre-generator__genre--spaciousTracking {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #fff;
+  animation: spacious-tracking 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes spacious-tracking {
+  0% {
+    letter-spacing: 0.2em;
+    opacity: 0.7;
+  }
+  100% {
+    letter-spacing: 0.5em;
+    opacity: 1;
+  }
+}
+.genre-generator__genre--cartoonPop {
+  font-size: 3.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    -3px -3px 0 #ffdd00,
+    3px 3px 0 #00e0ff;
+  animation: cartoon-pop 0.9s ease-out;
+}
+
+@keyframes cartoon-pop {
+  0% {
+    transform: scale(0.4) rotate(-10deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05) rotate(3deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+.genre-generator__genre--tilt3d {
+  font-size: 3.1rem;
+  text-transform: uppercase;
+  color: #fff;
+  transform-origin: center;
+  animation: tilt-3d 2s ease-in-out infinite;
+}
+
+@keyframes tilt-3d {
+  0% {
+    transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+  }
+  40% {
+    transform: perspective(800px) rotateX(15deg) rotateY(-10deg);
+  }
+  70% {
+    transform: perspective(800px) rotateX(-10deg) rotateY(15deg);
+  }
+  100% {
+    transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+  }
+}
+.genre-generator__genre--wordSwipe {
+  font-size: 3rem;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.genre-generator__genre--wordSwipe::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: #000;
+  background: #fff;
+  transform: translateY(100%);
+  animation: word-swipe 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes word-swipe {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-101%);
+  }
+}
+.genre-generator__genre--luminanceClip {
+  font-size: 3.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: linear-gradient(120deg, #ffffff, #ffdd00, #ff4b91, #00e0ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+.genre-generator__genre--luminanceClip::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent 60%);
+  mix-blend-mode: screen;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: luminance-clip-move 2.2s linear infinite;
+}
+
+@keyframes luminance-clip-move {
+  0% {
+    transform: translate(-20%, -20%);
+  }
+  100% {
+    transform: translate(20%, 20%);
+  }
+}
+.genre-generator__genre--barFadeIn {
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+}
+
+.genre-generator__genre--barFadeIn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #fff 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: bar-fade-in-sweep 1.2s ease-out forwards;
+}
+
+@keyframes bar-fade-in-sweep {
+  0% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+.genre-generator__genre--bassDrop {
+  font-size: 3.3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #fff;
+  text-shadow:
+    0 0 8px rgba(0, 0, 0, 0.8),
+    0 10px 0 #00e0ff;
+  animation: bass-drop 1s ease-out;
+}
+
+@keyframes bass-drop {
+  0% {
+    transform: translateY(-80px) scaleY(0.6);
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(0) scaleY(1.1);
+    opacity: 1;
+  }
+  65% {
+    transform: translateY(10px) scaleY(0.95);
+  }
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+.genre-generator__genre--vinylSpin {
+  font-size: 3rem;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0.3em 0.6em;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  animation: vinyl-spin 3s linear infinite;
+}
+
+@keyframes vinyl-spin {
+  0% {
+    transform: rotate(0deg);
+    letter-spacing: 0.08em;
+  }
+  50% {
+    transform: rotate(180deg);
+    letter-spacing: 0.16em;
+  }
+  100% {
+    transform: rotate(360deg);
+    letter-spacing: 0.08em;
+  }
+}
+.genre-generator__genre--laserScan {
+  font-size: 3.1rem;
+  text-transform: uppercase;
+  position: relative;
+  color: #00f5ff;
+  text-shadow:
+    0 0 10px #00f5ff,
+    0 0 25px #00f5ff;
+  overflow: hidden;
+}
+
+.genre-generator__genre--laserScan::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.9) 50%,
+    transparent 100%
+  );
+  transform: translateX(-120%);
+  mix-blend-mode: screen;
+  animation: laser-scan 1.8s linear infinite;
+}
+
+@keyframes laser-scan {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+.genre-generator__genre--strobeBeat {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  animation: strobe-beat 0.2s steps(2, end) infinite;
+}
+
+@keyframes strobe-beat {
+  0% {
+    text-shadow: none;
+    opacity: 1;
+  }
+  50% {
+    text-shadow:
+      0 0 12px #ffffff,
+      0 0 24px #ff00ff;
+    opacity: 0.2;
+  }
+  100% {
+    text-shadow: none;
+    opacity: 1;
+  }
+}
+.genre-generator__genre--equalizerBars {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  position: relative;
+  color: #fff;
+  padding-bottom: 0.8em;
+}
+
+.genre-generator__genre--equalizerBars::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 0.1em;
+  height: 0.4em;
+  background: repeating-linear-gradient(
+    to right,
+    #00e0ff 0,
+    #00e0ff 6px,
+    transparent 6px,
+    transparent 10px
+  );
+  transform-origin: center bottom;
+  animation: equalizer-bars 1s ease-in-out infinite;
+}
+
+@keyframes equalizer-bars {
+  0%,
+  100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1.4);
+  }
+}
+.genre-generator__genre--reverbEcho {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  color: #fff;
+}
+
+.genre-generator__genre--reverbEcho::before,
+.genre-generator__genre--reverbEcho::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: rgba(255, 255, 255, 0.25);
+  filter: blur(2px);
+}
+
+.genre-generator__genre--reverbEcho::before {
+  transform: translate(6px, 6px);
+}
+
+.genre-generator__genre--reverbEcho::after {
+  transform: translate(12px, 12px);
+}
+.genre-generator__genre--synthWave {
+  font-size: 3.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ff4b91, #ffdd00, #00e0ff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 0 8px rgba(0, 0, 0, 0.8),
+    0 0 16px rgba(0, 0, 0, 0.9);
+  animation: synth-wave-move 3s ease-in-out infinite;
+}
+
+@keyframes synth-wave-move {
+  0% {
+    background-position: 0% 50%;
+    transform: skewX(-4deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    transform: skewX(4deg);
+  }
+  100% {
+    background-position: 0% 50%;
+    transform: skewX(-4deg);
+  }
+}
+.genre-generator__genre--raveGlow {
+  font-size: 3.1rem;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    0 0 10px #ff00ff,
+    0 0 18px #00ffea,
+    0 0 26px #ffff00;
+  animation: rave-glow 1.4s ease-in-out infinite;
+}
+
+@keyframes rave-glow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(120deg);
+  }
+  100% {
+    filter: hue-rotate(240deg);
+  }
+}
+.genre-generator__genre--tempoShake {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #fff;
+  animation: tempo-shake 0.5s infinite;
+}
+
+@keyframes tempo-shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-2px, 1px);
+  }
+  50% {
+    transform: translate(2px, -1px);
+  }
+  75% {
+    transform: translate(-1px, -2px);
+  }
+  100% {
+    transform: translate(1px, 2px);
+  }
+}
+.genre-generator__genre--dubstepSlice {
+  font-size: 3rem;
+  position: relative;
+  color: #fff;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.genre-generator__genre--dubstepSlice::before,
+.genre-generator__genre--dubstepSlice::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: screen;
+}
+
+.genre-generator__genre--dubstepSlice::before {
+  color: #ff006e;
+  clip-path: polygon(0 0, 100% 0, 100% 48%, 0 65%);
+  animation: dubstep-slice-top 0.4s infinite;
+}
+
+.genre-generator__genre--dubstepSlice::after {
+  color: #00f5d4;
+  clip-path: polygon(0 52%, 100% 35%, 100% 100%, 0 100%);
+  animation: dubstep-slice-bottom 0.4s infinite;
+}
+
+@keyframes dubstep-slice-top {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-4px);
+  }
+}
+
+@keyframes dubstep-slice-bottom {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+.genre-generator__genre--sidechainPulse {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  animation: sidechain-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes sidechain-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.genre-generator__genre--chorusEcho {
+  font-size: 3rem;
+  text-transform: uppercase;
+  position: relative;
+  color: #fff;
+}
+
+.genre-generator__genre--chorusEcho::before,
+.genre-generator__genre--chorusEcho::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+}
+
+.genre-generator__genre--chorusEcho::before {
+  color: #ffdd00;
+  transform: translate(-4px, -2px);
+}
+
+.genre-generator__genre--chorusEcho::after {
+  color: #00e0ff;
+  transform: translate(4px, 2px);
+}
+.genre-generator__genre--tapeWobble {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #f0f0f0;
+  animation: tape-wobble 1.8s ease-in-out infinite;
+}
+
+@keyframes tape-wobble {
+  0% {
+    transform: skewX(0deg);
+    filter: blur(0);
+  }
+  40% {
+    transform: skewX(-2deg);
+    filter: blur(0.5px);
+  }
+  70% {
+    transform: skewX(3deg);
+    filter: blur(1px);
+  }
+  100% {
+    transform: skewX(0deg);
+    filter: blur(0);
+  }
+}
+.genre-generator__genre--radioDistort {
+  font-size: 3rem;
+  text-transform: uppercase;
+  position: relative;
+  color: #ffffff;
+  animation: radio-distort 1.1s steps(3, end) infinite;
+}
+
+@keyframes radio-distort {
+  0% {
+    filter: contrast(1) saturate(1);
+  }
+  50% {
+    filter: contrast(1.4) saturate(1.6) grayscale(0.3);
+  }
+  100% {
+    filter: contrast(1) saturate(1);
+  }
+}
+.genre-generator__genre--arenaLight {
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow:
+    0 0 12px rgba(255, 255, 255, 0.8),
+    0 0 26px rgba(0, 160, 255, 0.9);
+  animation: arena-light 2s ease-in-out infinite;
+}
+
+@keyframes arena-light {
+  0% {
+    transform: translateX(-8px);
+  }
+  50% {
+    transform: translateX(8px);
+  }
+  100% {
+    transform: translateX(-8px);
+  }
+}
+.genre-generator__genre--clubTunnel {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  position: relative;
+  color: #ffffff;
+}
+
+.genre-generator__genre--clubTunnel::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
+  transform-origin: center;
+  animation: club-tunnel-depth 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes club-tunnel-depth {
+  0% {
+    transform: translateZ(0) scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateZ(-60px) scale(0.9);
+    opacity: 0.8;
+  }
+}
+.genre-generator__genre--morphWave {
+  font-size: 3.1rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  animation: morph-wave 1.8s ease-in-out infinite;
+}
+
+@keyframes morph-wave {
+  0% {
+    letter-spacing: 0.1em;
+    transform: scaleX(1);
+  }
+  50% {
+    letter-spacing: 0.3em;
+    transform: scaleX(1.1);
+  }
+  100% {
+    letter-spacing: 0.1em;
+    transform: scaleX(1);
+  }
+}
+.genre-generator__genre--bpmFlash {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  animation: bpm-flash 0.6s ease-in-out infinite;
+}
+
+@keyframes bpm-flash {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+    text-shadow:
+      0 0 10px #ffffff,
+      0 0 20px #ff4b91;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+.genre-generator__genre--monoStereo {
+  font-size: 3rem;
+  text-transform: uppercase;
+  position: relative;
+  color: #ffffff;
+}
+
+.genre-generator__genre--monoStereo::before,
+.genre-generator__genre--monoStereo::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0.6;
+}
+
+.genre-generator__genre--monoStereo::before {
+  color: #ff006e;
+  transform: translateX(-4px);
+}
+
+.genre-generator__genre--monoStereo::after {
+  color: #00f5d4;
+  transform: translateX(4px);
+}
+.genre-generator__genre--waveformTrace {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  position: relative;
+  color: #ffffff;
+  padding-bottom: 1rem;
+}
+
+.genre-generator__genre--waveformTrace::after {
+  content: "";
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  bottom: 0;
+  height: 0.2rem;
+  background: linear-gradient(
+    to right,
+    #00e0ff 0%,
+    #ff4b91 50%,
+    #ffdd00 100%
+  );
+  clip-path: polygon(
+    0 50%,
+    5% 20%,
+    10% 80%,
+    15% 30%,
+    20% 70%,
+    25% 40%,
+    30% 80%,
+    35% 30%,
+    40% 60%,
+    45% 20%,
+    50% 80%,
+    55% 40%,
+    60% 70%,
+    65% 30%,
+    70% 80%,
+    75% 20%,
+    80% 60%,
+    85% 30%,
+    90% 70%,
+    95% 40%,
+    100% 50%
+  );
+}
