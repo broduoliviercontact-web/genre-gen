@@ -1,4 +1,4 @@
-# 🎵 GENRENATOR – Random Music Genre FX Playground
+# 🎵 GENRENATOR – Random Music Genre 
 
 **Genrenator** est un petit jouet / sandbox pour musiciens et nerds du CSS :  
 à chaque clic, l’app :
