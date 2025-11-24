@@ -168,120 +168,6 @@
 
 /* === BOUTON ANIMÉ STYLE "A" ADAPTÉ EN BUTTON === */
 
-.genre-generator__button {
-  position: relative;
-  display: inline-block;
-  border-radius: 12px;
-  border: 3px outset #888;
-  padding: 12px 26px;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  overflow: hidden;
-
-  box-shadow: 0 0 10px rgb(0, 0, 0, 1);
-  font-family: Verdana, system-ui, sans-serif;
-  font-size: 0.9rem; /* tu peux monter si tu veux */
-  font-weight: bolder;
-  text-decoration: none;
-  background: linear-gradient(160deg, #000000, #444);
-  text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
-
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.genre-generator__button:active {
-  border: 3px outset #ddd;
-  color: #ffffff;
-  background: linear-gradient(160deg, #666, #444);
-  text-shadow: 0px 0px 4px #ccc;
-  box-shadow:
-    0 0 10px #fff,
-    0 0 40px #fff,
-    0 0 80px #fff;
-  transition-delay: 1s;
-}
-
-/* état disabled pour ne pas avoir un truc trop flashy quand c’est inactif */
-.genre-generator__button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
-}
-
-/* Lignes animées autour du bouton */
-
-.genre-generator__button span {
-  position: absolute;
-  display: block;
-}
-
-/* haut */
-.genre-generator__button span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #eee);
-}
-
-.genre-generator__button:active span:nth-child(1) {
-  left: 100%;
-  transition: 0.8s;
-}
-
-/* droite */
-.genre-generator__button span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #eee);
-}
-
-.genre-generator__button:active span:nth-child(2) {
-  top: 100%;
-  transition: 1s;
-  transition-delay: 0.25s;
-}
-
-/* bas */
-.genre-generator__button span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, #eee);
-}
-
-.genre-generator__button:active span:nth-child(3) {
-  right: 100%;
-  transition: 1s;
-  transition-delay: 0.5s;
-}
-
-/* gauche */
-.genre-generator__button span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent, #eee);
-}
-
-.genre-generator__button:active span:nth-child(4) {
-  bottom: 100%;
-  transition: 1s;
-  transition-delay: 0.75s;
-}
-
-
-
-.genre-generator__button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
 
 .genre-generator__error {
   color: #ff4b4b;
@@ -293,6 +179,53 @@
   text-align: center;
   position: relative;
 }
+/* ________________________ */
+
+
+.genre-generator__button {
+  position: relative;
+  display: inline-flex;         /* pour que ça colle au contenu */
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;          /* ne jamais passer à la ligne */
+
+  margin: 20px auto;
+  padding: 14px 32px;
+
+  color: #fff;
+  font-family: Helvetica, system-ui, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0px 1px 0px #000;
+
+  background-color: #1f0893;
+  border: none;
+  border-radius: 5px;
+
+  box-shadow:
+    inset 0 1px 0 #280773,
+    0 10px 0 #040d3a,
+    0 14px 18px rgba(0, 0, 0, 0.6);
+
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease,
+    background-color 0.1s ease,
+    color 0.1s ease;
+
+  /* optionnel : figer la largeur sur une base proche de "NEW GENRE" */
+  /* min-width: 9ch;  à décommenter si tu veux absolument une largeur fixe */
+}
+
+
+
 
 /* ========= STYLE 1 : NEON GLOW ========= */
 

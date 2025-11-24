@@ -190,7 +190,7 @@ function GenreGenerator() {
   return (
     <div className="genre-generator">
       <h1 className="genre-generator__title">
-        <h2>🎵 GENRENATOR 🎵</h2>
+     
       </h1>
 
 <button
@@ -202,7 +202,7 @@ function GenreGenerator() {
   <span></span>
   <span></span>
   <span></span>
-  {loading ? "Chargement..." : "NEW GENRE"}
+  {loading ? "Chargement..." : "🎵 GENRENATOR 🎵"}
 </button>
 
       {error && (
