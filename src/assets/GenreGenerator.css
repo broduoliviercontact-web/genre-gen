@@ -1,6 +1,129 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&family=Lobster&family=Oswald:wght@400;700&family=Metal+Mania&family=Staatliches&family=Cinzel:wght@400;700&family=Stardos+Stencil:wght@400;700&family=Russo+One&family=Audiowide&family=Permanent+Marker&family=Anton&family=Rock+Salt&family=Neonderthaw&family=Bangers&family=Playfair+Display:wght@400;700&family=Alfa+Slab+One&family=Amatic+SC:wght@400;700&family=Special+Elite&family=Shadows+Into+Light&family=Unica+One&family=Creepster&display=swap");
 /* ========== PACK FONTS – POSTCRYPT & CO ========== */
+/* ... (Add anywhere in your CSS) ... */
 
+:root {
+  /* Ensure these variables exist, or rely on your existing ones */
+  --color-dark-btn: #110d1a;
+  --color-primary-btn: #ffffff;
+}
+
+/* The wrapper that centers it in your existing layout */
+.save-btn-wrapper {
+  display: grid;
+  place-content: center;
+  margin-top: auto; /* Ensures it stays at the bottom if flex is used */
+  padding: 1rem 0;
+}
+
+/* The Button Itself */
+.c-btn {
+  position: relative;
+  overflow: hidden;
+  padding: 0.85rem 2rem;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Use the purple from your snippet, or match your app theme */
+  color: var(--color-primary-btn); 
+  text-decoration: none;
+  font-family: system-ui, sans-serif;
+  font-weight: 100px;
+  font-size: 1rem;
+
+  border-radius: 8px;
+  border: none; /* Reset default button border */
+  background-color: transparent;
+  backface-visibility: hidden;
+  box-shadow: inset 0 0 0 1px var(--color-primary-btn);
+
+  transform: translateZ(0);
+  transition: all 0.3s ease;
+}
+
+/* The sliding circle background animation */
+.c-btn::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 120%;
+  width: 120%;
+
+  border-radius: 20%;
+  background-color: var(--color-primary-btn);
+  scale: 0 0;
+  translate: 0 140%;
+  transition: scale 0.6s cubic-bezier(0.215, 0.61, 0.355, 1),
+              translate 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* The Text Label */
+.c-btn__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+
+  z-index: 2;
+  font-size: 1.2rem;
+  letter-spacing: 0.025em;
+
+  transition: color 0.32s ease-in-out;
+}
+
+/* Hover States */
+.c-btn:hover .c-btn__label {
+  color: var(--color-dark-btn);
+}
+
+.c-btn:hover::after {
+  scale: 1.5 1.5;
+  translate: 0 0;
+  border-radius: 50%;
+}
+
+
+.genre-generator__screenshot-btn {
+  display: block;
+ margin-top: 2rem; /* Pushes it down from the text */
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+    background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.genre-generator__screenshot-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.genre-generator__screenshot-btn:active {
+  transform: scale(0.95);
+}
+
+/* HIDE FOOTER IN SCREENSHOTS (Optional) 
+   If you don't want the footer in the image, use the class provided by the library 
+   But usually, it's nice to keep it for branding! 
+*/
 /* ==== BACKGROUNDS ALÉATOIRES POUR LE CONTAINER ==== */
 
 .genre-generator {
@@ -70,6 +193,138 @@
     );
 }
 
+/* ... (Keep your existing .font- classes) ... */
+
+/* === NEW FONT CLASSES === */
+
+/* 1. Futuristic / Sci-Fi */
+.font-audiowide {
+  font-family: "Audiowide", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* 2. Heavy Rock / Marker */
+.font-rockSalt {
+  font-family: "Rock Salt", cursive;
+  transform: rotate(-2deg);
+}
+
+/* 3. Thick Marker / Protest Sign */
+.font-permanentMarker {
+  font-family: "Permanent Marker", cursive;
+  text-transform: uppercase;
+}
+
+/* 4. Cinematic / Epic */
+.font-cinzel {
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* 5. Military / Stencil */
+.font-stardos {
+  font-family: "Stardos Stencil", cursive;
+  text-transform: uppercase;
+}
+
+/* 6. Russian / Industrial Block */
+.font-russo {
+  font-family: "Russo One", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* 7. Neon / Script */
+.font-neonderthaw {
+  font-family: "Neonderthaw", cursive;
+  font-size: 1.2em; /* Usually needs to be bigger to be readable */
+}
+
+/* 8. Comic Book / Loud */
+.font-bangers {
+  font-family: "Bangers", cursive;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* 9. Elegant / Fashion */
+.font-playfair {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* 10. Heavy Slab / Western */
+.font-alfa {
+  font-family: "Alfa Slab One", serif;
+  text-transform: uppercase;
+}
+
+/* 11. Thin & Tall (Horror/Indie) */
+.font-amatic {
+  font-family: "Amatic SC", cursive;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.3em;
+}
+
+/* 12. Typewriter / Secret Doc */
+.font-specialElite {
+  font-family: "Special Elite", monospace;
+  font-weight: 700;
+}
+
+/* 13. Handwriting / Personal */
+.font-shadows {
+  font-family: "Shadows Into Light", cursive;
+}
+
+/* 14. Retro Future / Wide */
+.font-unica {
+  font-family: "Unica One", sans-serif;
+  text-transform: uppercase;
+}
+
+/* 15. Horror / Dripping */
+.font-creepster {
+  font-family: "Creepster", cursive;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* 16. System: Impact (Meme Font) */
+.font-impact {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* 17. System: Courier (Code) */
+.font-courier {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+
+/* 18. System: Times (Old Newspaper) */
+.font-times {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+/* 19. System: Comic Sans (The Legend) */
+.font-comicSans {
+  font-family: "Comic Sans MS", "Chalkboard SE", sans-serif;
+}
+
+/* 20. System: Arial Black (Loud) */
+.font-arialBlack {
+  font-family: "Arial Black", "Gadget", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
 
 @font-face {
   font-family: "Postcrypt";
@@ -625,7 +880,26 @@
 }
 
 .genre-generator {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  position: relative;
+  overflow: hidden;
+  
+  /* === FLEXBOX CENTERING === */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  min-height: 300px; /* Ensures enough height */
+    position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem; /* Increased padding for better spacing */
+  border-radius: 12px;
+  border: 1px solid #222;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  background: radial-gradient(circle at top, #222 0, #000 60%);
+  color: #fff;
+  text-align: center;
+  /* Keep your existing background/border styles... */
   max-width: 800px;
   margin: 2rem auto;
   padding: 1.5rem;
@@ -820,38 +1094,6 @@
   animation: lights 5s 750ms linear infinite;
 }
 
-/* ========= STYLE 4 : RAINBOW SWING ========= */
-
-.genre-generator__genre--rainbow {
-  font-family: "Teko", sans-serif;
-  text-transform: uppercase;
-  font-size: 4rem;
-  position: relative;
-  color: #c6008e;
-}
-
-.genre-generator__genre--rainbow::before {
-  content: attr(data-text);
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(#f70000, #f89200, #f8f501, #038f00, #0168f8, #a200f7);
-  color: transparent;
-  line-height: 0.9;
-  clip-path: ellipse(120px 120px at -2.54% -9.25%);
-  animation: swing 5s infinite alternate;
-}
-
-@keyframes swing {
-  0% {
-    clip-path: ellipse(120px 120px at -2.54% -9.25%);
-  }
-  50% {
-    clip-path: ellipse(120px 120px at 49.66% 64.36%);
-  }
-  100% {
-    clip-path: ellipse(120px 120px at 102.62% -1.61%);
-  }
-}
 
 /* ========= STYLE 5 : VARIABLE FONT INCONSOLATA ========= */
 

@@ -1,31 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./GenreGenerator.css";
-import AppFooter from "./AppFooter"; // adapte le chemin si besoin
+import AppFooter from "./AppFooter";
+import SaveImageButton from "./SaveImageButton";
 
 const STYLE_KEYS = [
-
-    // === ADD THESE NEW COOL STYLES ===
-    
-  "hyperSpeed",
-
-    // === NEW DESIGNYOURWAY INSPIRED STYLES ===
-  "anaglyph3d",
-  "peeled",
-  "longShadow",
-  "maskedPattern",
-  "embossed",
-  "slashed",
-  "folded",
-  "vintageLines",
-  "soapBubble",
-  "cautionTape",
-  "superSaiyan",
-  "blueprint",
-  "xray",
-  "vampireBite",
-  "prism",
-  "stickerSlap",
-  "voidPortal",
   "bassDrop",
   "vinylSpin",
   "laserScan",
@@ -119,15 +97,6 @@ const STYLE_KEYS = [
   "glitchBlocks",
   "holoShift",
   "warpWave",
-  // === FOOLISH DEVELOPER INSPIRED STYLES ===
-  "liquidWater",
-  "smokyDissolve",
-  "cinematicZoom",
-  "shiningGold",
-  "neonFlicker",
-  "elasticBounce",
-  "layer3d",
-  "focusBlur",
 
   "neonLights2",
   "rainbowSweep",
@@ -144,15 +113,49 @@ const STYLE_KEYS = [
   "wordSwipe",
   "luminanceClip",
   "barFadeIn",
+
+  // === NEW STYLES ===
+  "hyperSpeed",
+  "toxicSlime",
+  "cyberGlitch",
+  "goldenLux",
+  "retroTerminal",
+  "popArt",
+  "electricZap",
+  "chromaticAb",
+  "steampunk",
+  "magicalGirl",
+  "paperCut",
+
+  // === DESIGNYOURWAY INSPIRED ===
+  "anaglyph3d",
+  "peeled",
+  "longShadow",
+  "maskedPattern",
+  "embossed",
+  "slashed",
+  "folded",
+  "vintageLines",
+  "soapBubble",
+  "cautionTape",
+  "superSaiyan",
+  "blueprint",
+  "xray",
+  "vampireBite",
+  "prism",
+  "stickerSlap",
+  "voidPortal",
+
+  // === FOOLISH DEVELOPER INSPIRED ===
+  "liquidWater",
+  "smokyDissolve",
+  "cinematicZoom",
+  "shiningGold",
+  "neonFlicker",
+  "elasticBounce",
+  "layer3d",
+  "focusBlur",
 ];
-
-
-function getRandomStyle() {
-  const index = Math.floor(Math.random() * STYLE_KEYS.length);
-  return STYLE_KEYS[index];
-}
-
-/* === FONTS ALÉATOIRES === */
 
 const FONT_KEYS = [
   "sans",
@@ -213,81 +216,34 @@ const FONT_KEYS = [
   "slaytanic",
   "thebattlecont",
   "waveform",
+
+  // === NEW FONTS ===
+  "audiowide",
+  "rockSalt",
+  "permanentMarker",
+  "cinzel",
+  "stardos",
+  "russo",
+  "neonderthaw",
+  "bangers",
+  "playfair",
+  "alfa",
+  "amatic",
+  "specialElite",
+  "shadows",
+  "unica",
+  "creepster",
+  "impact",
+  "courier",
+  "times",
+  "comicSans",
+  "arialBlack",
 ];
 
-const SYSTEM_FONT_CHOICES = [
-  '"Segoe UI", system-ui, sans-serif',
-  '-apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif',
-  '"Roboto", system-ui, sans-serif',
-  '"Helvetica Neue", Arial, sans-serif',
-  '"Nunito", system-ui, sans-serif',
-  '"Fira Sans", system-ui, sans-serif',
-    '"Segoe UI", system-ui, sans-serif',
-  '"Helvetica Neue", Arial, sans-serif',
-
-  // === HARD ROCK & HEAVY METAL ===
-  '"Metal Mania", "Impact", "Haettenschweiler", sans-serif',  // Thrash / Heavy Metal
-  '"Russo One", "Arial Black", sans-serif',                   // Industrial / Hard Rock
-  '"Alfa Slab One", "Impact", sans-serif',                    // Stoner Rock / Doom
-  '"Black Ops One", "Stencil", fantasy',                      // Nu-Metal / Military
-  
-  // === PUNK & GRUNGE ===
-  '"Rock Salt", "Bradley Hand", cursive',                     // Grunge / Messy
-  '"Permanent Marker", "Comic Sans MS", cursive',             // Punk / Garage
-  
-  // === GOTHIC & HORROR ===
-  '"Creepster", "Chiller", fantasy',                          // Shock Rock / Horror
-  '"UnifrakturMaguntia", "Old English Text MT", serif',       // Black Metal / Gothic
-  
-  // === PROG & ALTERNATIVE ===
-  '"Copperplate", "Copperplate Gothic Bold", serif',          // Prog Rock
-  '"Oswald", "Impact", sans-serif',                           // Alternative / Indie
-  '"Bangers", "Impact", sans-serif',                          // Pop Punk
-   // === HIP HOP / PARENTAL ADVISORY ===
-  // Big, blocky, in-your-face
-  '"Anton", "Impact", "Arial Black", "Haettenschweiler", sans-serif',
-  '"Oswald", "Franklin Gothic Medium", sans-serif',
-
-  // === INDIE / FOLK / ACOUSTIC ===
-  // Handwritten, skinny, whimsical
-  '"Amatic SC", "Bradley Hand", "Chalkboard SE", cursive',
-  '"Shadows Into Light", "Patrick Hand", cursive',
-
-  // === TECHNO / EDM / FUTURISTIC ===
-  // Wide, geometric, sci-fi
-  '"Audiowide", "Orbitron", "OCR A Std", monospace',
-  '"Russo One", "Eurostile", "BankGothic", sans-serif',
-
-  // === CLASSIC ROCK / 70s PSYCHEDELIC ===
-  // Groovy scripts and thick serifs
-  '"Lobster", "Brush Script MT", "Cooper Black", cursive',
-  '"Alfa Slab One", "Rockwell Extra Bold", serif',
-
-  // === JAZZ / SOUL / LUXURY ===
-  // High contrast, elegant, fashion magazine style
-  '"Playfair Display", "Didot", "Bodoni MT", serif',
-  '"Cinzel", "Trajan Pro", serif',
-
-  // === GRUNGE / INDUSTRIAL / 90s ===
-  // Distressed, typewriter, messy
-  '"Special Elite", "Courier New", "American Typewriter", monospace',
-  '"Rock Salt", "Chalkduster", fantasy',
-
-  // === VAPORWAVE / RETRO 80s ===
-  // Neon style, brush scripts
-  '"Permanent Marker", "Mistral", "Comic Sans MS", cursive',
-  '"Bebas Neue", "Futura", sans-serif',
-
-  // === METAL / HORROR SOUNDTRACK ===
-  '"Creepster", "Chiller", "Ravie", fantasy',
-  '"Metal Mania", "Stencil Std", "Impact", sans-serif',
-];
-
-function getRandomSystemFont() {
-  const index = Math.floor(Math.random() * SYSTEM_FONT_CHOICES.length);
-  return SYSTEM_FONT_CHOICES[index];
+function getRandomStyle() {
+  const index = Math.floor(Math.random() * STYLE_KEYS.length);
+  return STYLE_KEYS[index];
 }
-
 
 function getRandomFont() {
   const index = Math.floor(Math.random() * FONT_KEYS.length);
@@ -299,17 +255,14 @@ function GenreGenerator() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // ⚠️ CES DEUX LIGNES DOIVENT ÊTRE DANS LA FONCTION, COMME ICI :
   const [styleKey, setStyleKey] = useState(() => getRandomStyle());
   const [fontKey, setFontKey] = useState(() => getRandomFont());
   
+  const captureRef = useRef(null);
 
-  // Mettre une majuscule à chaque mot
   function formatGenre(text) {
     if (!text) return "";
-    return text
-      .toLowerCase()
-      .replace(/\b\w/g, (char) => char.toUpperCase());
+    return text.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase());
   }
 
   async function fetchGenre() {
@@ -339,7 +292,6 @@ function GenreGenerator() {
 
       const formatted = formatGenre(value);
 
-      // 👉 on change le genre, le style ET la font
       setGenre(formatted);
       setStyleKey(getRandomStyle());
       setFontKey(getRandomFont());
@@ -356,44 +308,48 @@ function GenreGenerator() {
 
   return (
     <div className="genre-generator">
+      
       <h1 className="genre-generator__title">
-     
+        {/* Static title or empty */}
       </h1>
 
-<button
-  onClick={fetchGenre}
-  disabled={loading}
-  className="genre-generator__button"
->
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  {loading ? "Chargement..." : "🎵 GENRENATOR 🎵"}
-</button>
+      <button
+        onClick={fetchGenre}
+        disabled={loading}
+        className="genre-generator__button"
+      >
+        {loading ? "LOADING..." : "🎵 GENERATE 🎵"}
+      </button>
 
-      {error && (
-        <p className="genre-generator__error">
-          Erreur : {error}
-        </p>
-      )}
+      {error && <p className="genre-generator__error">Erreur : {error}</p>}
 
       {!error && genre && (
         <p
+          ref={captureRef}
           className={
             `genre-generator__genre ` +
             `genre-generator__genre--${styleKey} ` +
             `font-${fontKey}`
           }
           data-text={genre}
+          // Inline-block ensures screenshot captures only the text bounds
+          style={{ display: 'inline-block' }} 
         >
           {genre}
         </p>
-        
       )}
- <AppFooter />
+
       
+      <div className="genre-generator__bottom-controls">
+        <SaveImageButton 
+            captureRef={captureRef} 
+            fileName={`genre-${styleKey}`} 
+        />
+      </div>
+
+      <AppFooter />
     </div>
+    
   );
 }
 
