@@ -215,8 +215,7 @@ function GenreGenerator() {
   // ⚠️ CES DEUX LIGNES DOIVENT ÊTRE DANS LA FONCTION, COMME ICI :
   const [styleKey, setStyleKey] = useState(() => getRandomStyle());
   const [fontKey, setFontKey] = useState(() => getRandomFont());
-  const [systemFont, setSystemFont] = useState(() => getRandomSystemFont());
-
+  
 
   // Mettre une majuscule à chaque mot
   function formatGenre(text) {
@@ -257,9 +256,6 @@ function GenreGenerator() {
       setGenre(formatted);
       setStyleKey(getRandomStyle());
       setFontKey(getRandomFont());
-      setSystemFont(getRandomSystemFont());
-
-      
     } catch (err) {
       setError(err.message || "Erreur lors du chargement du genre.");
     } finally {
@@ -296,19 +292,18 @@ function GenreGenerator() {
       )}
 
       {!error && genre && (
-  <p
-    className={
-      `genre-generator__genre ` +
-      `genre-generator__genre--${styleKey} ` +
-      `font-${fontKey}`
-    }
-    data-text={genre}
-    style={fontKey === "sans" ? { fontFamily: systemFont } : undefined}
-  >
-    {genre}
-  </p>
-)}
-
+        <p
+          className={
+            `genre-generator__genre ` +
+            `genre-generator__genre--${styleKey} ` +
+            `font-${fontKey}`
+          }
+          data-text={genre}
+        >
+          {genre}
+        </p>
+        
+      )}
  <AppFooter />
       
     </div>
