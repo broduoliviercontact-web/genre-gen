@@ -3,6 +3,318 @@
 /* ... (Add anywhere in your CSS) ... */
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Bebas+Neue&family=Fugaz+One&family=Kaushan+Script&family=Major+Mono+Display&family=Monoton&family=Montserrat:wght@700&family=Orbitron:wght@700&family=Playfair+Display:wght@700&family=Pacifico&family=Righteous&family=Silkscreen&family=Space+Grotesk:wght@700&family=VT323&display=swap");
 
+
+/* Ready-to-drop CSS for 50 text effects (apply to your existing .genre-generator__genre element)
+   Usage example:
+     <p class="genre-generator__genre genre-generator__genre--animated-text-fill">Text</p>
+   Many effects use data-text via pseudo-elements when useful.
+*/
+
+/* small helper to make sure effects render nicely */
+.genre-generator__genre { display: inline-block; line-height: 1; }
+
+/* 1. animated-text-fill */
+.genre-generator__genre--animated-text-fill {
+  background: linear-gradient(90deg,#ff005e,#ff9a00,#00e0ff,#a200f7);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: dyw-rainbow 3.5s linear infinite;
+}
+
+/* 2. animated-signature (simple write-in) */
+.genre-generator__genre--animated-signature {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: .14em solid currentColor;
+  animation: dyw-type 2.6s steps(24,end) 1 forwards, dyw-caret .8s step-end infinite;
+  font-family: cursive;
+}
+@keyframes dyw-type { from { width: 0; } to { width: 100%; } }
+@keyframes dyw-caret { 50% { border-color: transparent; } }
+
+/* 3. line-text-animation (sliding underline reveal) */
+.genre-generator__genre--line-text-animation { position: relative; }
+.genre-generator__genre--line-text-animation::after {
+  content: ""; position: absolute; left:0; right:0; bottom:-6px; height:4px;
+  background: linear-gradient(90deg,#ff005e,#00e0ff); transform-origin:left;
+  transform: scaleX(0); animation: dyw-line 0.9s ease-out forwards;
+}
+@keyframes dyw-line { to { transform: scaleX(1); } }
+
+/* 4. animated-text-shadow-pattern */
+.genre-generator__genre--animated-text-shadow-pattern {
+  color:#fff; text-shadow:0 0 6px rgba(255,75,145,.9);
+  animation: dyw-shadowpulse 2s ease-in-out infinite;
+}
+@keyframes dyw-shadowpulse {
+  0%{ text-shadow:0 0 6px rgba(255,75,145,.6); }
+  50%{ text-shadow:0 0 20px rgba(0,224,255,.9); transform:translateY(-2px); }
+  100%{ text-shadow:0 0 6px rgba(255,75,145,.6); }
+}
+
+/* 5. svg-path-animated-text (emulated shimmer) */
+.genre-generator__genre--svg-path-animated-text {
+  background: linear-gradient(90deg,#fff 0%, rgba(255,255,255,.15) 40%, #fff 80%);
+  background-size: 200% 100%; -webkit-background-clip:text; background-clip:text;
+  color: transparent; animation: dyw-shimmer 1.8s linear infinite;
+}
+@keyframes dyw-shimmer { 0% { background-position:-100% 0; } 100% { background-position:100% 0; } }
+
+/* 6. multi-layered-text-shadow */
+.genre-generator__genre--multi-layered-text-shadow {
+  color:#fff;
+  text-shadow: 1px 1px 0 #ff4b91, 2px 2px 0 #ffdd00, 3px 3px 0 #00e0ff, 4px 4px 0 #a200f7;
+}
+
+/* 7. neon-text-shadow */
+.genre-generator__genre--neon-text-shadow {
+  color:#fff;
+  text-shadow: 0 0 8px #ff4b91, 0 0 18px #ff4b91, 0 0 40px #00e0ff;
+}
+
+/* 8. embossed-shadow */
+.genre-generator__genre--embossed-shadow {
+  color:#222;
+  text-shadow: -1px -1px 0 #fff, 1px 1px 2px rgba(0,0,0,.6);
+}
+
+/* 9. 3d-letters */
+.genre-generator__genre--3d-letters {
+  color:#fff;
+  text-shadow: 1px 1px 0 #bdbdbd, 2px 2px 0 #9a9a9a, 3px 3px 0 #6f6f6f;
+  transform: translateZ(0);
+}
+
+/* 10. 3d-text-shadow */
+.genre-generator__genre--3d-text-shadow {
+  color:#fff; font-weight:900;
+  text-shadow: 4px 4px 0 rgba(0,0,0,.85), 8px 8px 0 rgba(0,0,0,.6);
+}
+
+/* 11. striped-text-background */
+.genre-generator__genre--striped-text-background {
+  background: repeating-linear-gradient(45deg,#ff6b6b 0 8px,#ffd27a 8px 16px);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+
+/* 12. gradient-clipped-text */
+.genre-generator__genre--gradient-clipped-text {
+  background: linear-gradient(90deg,#ff005e,#ff9a00,#00e0ff);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+
+/* 13. image-clipped-text (use background-image on parent for full effect) */
+.genre-generator__genre--image-clipped-text {
+  background-size:cover; -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+
+/* 14. underline-clip-hover (for hover; on load we'll show) */
+.genre-generator__genre--underline-clip-hover { position:relative; }
+.genre-generator__genre--underline-clip-hover::after {
+  content:""; position:absolute; left:0; right:0; bottom:-6px; height:3px;
+  background:#00e0ff; transform-origin:left; transform:scaleX(1); transition:transform .28s ease;
+}
+
+/* 15. neon-hover-glow (static glow for simplicity) */
+.genre-generator__genre--neon-hover-glow {
+  color:#fff; text-shadow:0 0 8px #0ff, 0 0 20px #0ff;
+}
+
+/* 16. spring-pop-hover (entrance pop) */
+.genre-generator__genre--spring-pop-hover {
+  animation: dyw-pop 0.9s cubic-bezier(.19,1,.22,1) both;
+}
+@keyframes dyw-pop {
+  0%{ transform: scale(.6); opacity:0 } 60%{ transform: scale(1.08); opacity:1 } 100%{ transform: scale(1)}
+}
+
+/* 17. glitching-text (simple RGB split) */
+.genre-generator__genre--glitching-text { position:relative; color:#fff; }
+.genre-generator__genre--glitching-text::before,
+.genre-generator__genre--glitching-text::after {
+  content:attr(data-text); position:absolute; inset:0; pointer-events:none;
+}
+.genre-generator__genre--glitching-text::before { color:#ff005e; transform:translateX(-3px); mix-blend-mode:screen; opacity:.8; animation: dyw-glitchA 2s infinite; }
+.genre-generator__genre--glitching-text::after  { color:#00e0ff; transform:translateX(3px); mix-blend-mode:screen; opacity:.8; animation: dyw-glitchB 2s infinite reverse; }
+@keyframes dyw-glitchA { 0%{transform:translate(-3px,0)} 50%{transform:translate(-18px,-2px)} 100%{transform:translate(-3px,0)} }
+@keyframes dyw-glitchB { 0%{transform:translate(3px,0)} 50%{transform:translate(18px,1px)} 100%{transform:translate(3px,0)} }
+
+/* 18. sliced-text */
+.genre-generator__genre--sliced-text { position:relative; color:transparent; -webkit-text-stroke:1px #fff; }
+.genre-generator__genre--sliced-text::before,
+.genre-generator__genre--sliced-text::after { content:attr(data-text); position:absolute; inset:0; }
+.genre-generator__genre--sliced-text::before { clip-path:polygon(0 0,100% 0,100% 45%,0 55%); transform:translateX(-4px); color:#fff; }
+.genre-generator__genre--sliced-text::after  { clip-path:polygon(0 55%,100% 45%,100% 100%,0 100%); transform:translateX(4px); color:#fff; }
+
+/* 19. fire-text-shadow */
+.genre-generator__genre--fire-text-shadow {
+  background: linear-gradient(180deg,#ffe66d,#ff9a00,#ff3b3b); -webkit-background-clip:text; color:transparent;
+  text-shadow:0 0 8px rgba(255,100,0,.9);
+}
+
+/* 20. pixelated-arcade-typography */
+.genre-generator__genre--pixelated-arcade-typography {
+  font-family: 'Press Start 2P', monospace; color:#0ff; text-shadow:0 0 0 #0ff;
+  image-rendering: pixelated;
+}
+
+/* 21. text-reveal */
+.genre-generator__genre--text-reveal { position:relative; overflow:hidden; color:#111; }
+.genre-generator__genre--text-reveal::before { content:attr(data-text); position:absolute; inset:0; transform:translateX(-100%); background:#fff; color:#111; animation: dyw-reveal .9s forwards; }
+@keyframes dyw-reveal { to{ transform:translateX(0); } }
+
+/* 22. shimmer-text */
+.genre-generator__genre--shimmer-text {
+  background: linear-gradient(90deg, rgba(255,255,255,.05) 0, rgba(255,255,255,.9) 50%, rgba(255,255,255,.05) 100%);
+  background-size:200% 100%; -webkit-background-clip:text; background-clip:text; color:transparent;
+  animation: dyw-shimmer 2.4s linear infinite;
+}
+
+/* 23. ribbon-text (faux ribbon behind) */
+.genre-generator__genre--ribbon-text { position:relative; padding:.15em .4em; background:#111; color:#fff; border-radius:.2em; }
+.genre-generator__genre--ribbon-text::after { content:""; position:absolute; left:0; right:0; bottom:-.35em; height:.4em; background:linear-gradient(90deg,#ff005e,#00e0ff); border-radius:.2em; z-index:-1; }
+
+/* 24. skewed-multiline */
+.genre-generator__genre--skewed-multiline { transform:skewX(-8deg); display:inline-block; }
+
+/* 25. typing-animation (alternate to signature, looping) */
+.genre-generator__genre--typing-animation { white-space:nowrap; overflow:hidden; border-right:.12em solid currentColor; animation: dyw-type 2.8s steps(24,end) infinite; }
+
+/* 26. rotating-text */
+.genre-generator__genre--rotating-text { display:inline-block; animation: dyw-rotate 6s linear infinite; transform-origin:center; }
+@keyframes dyw-rotate { 0%{transform:rotateY(0)} 100%{transform:rotateY(360deg)} }
+
+/* 27. animated-gradient-text */
+.genre-generator__genre--animated-gradient-text {
+  background:linear-gradient(90deg,#ff005e,#ffd700,#00e0ff); background-size:300% 100%;
+  -webkit-background-clip:text; background-clip:text; color:transparent; animation: dyw-rainbow 4s linear infinite;
+}
+
+/* 28. split-clip-path */
+.genre-generator__genre--split-clip-path { position:relative; color:#fff; }
+.genre-generator__genre--split-clip-path::before,
+.genre-generator__genre--split-clip-path::after { content:attr(data-text); position:absolute; inset:0; }
+.genre-generator__genre--split-clip-path::before { clip-path:inset(0 0 50% 0); color:#ff4b91; }
+.genre-generator__genre--split-clip-path::after  { clip-path:inset(50% 0 0 0); color:#00e0ff; }
+
+/* 29. text-reflect */
+.genre-generator__genre--text-reflect { position:relative; color:#fff; }
+.genre-generator__genre--text-reflect::after{ content:attr(data-text); position:absolute; left:0; right:0; top:100%; transform:scaleY(-1); opacity:.35; filter:blur(1px); -webkit-background-clip:text; color:transparent; }
+
+/* 30. drop-cap (large first letter style) */
+.genre-generator__genre--drop-cap::first-letter { font-size:2.2em; float:left; line-height:1; margin-right:.12em; }
+
+/* 31. text-blur */
+.genre-generator__genre--text-blur { color:rgba(255,255,255,.95); filter:blur(.6px); text-shadow:0 0 6px rgba(0,0,0,.3); }
+
+/* 32. blend-mode-effects (simple mix) */
+.genre-generator__genre--blend-mode-effects { mix-blend-mode:screen; color:#ff005e; }
+
+/* 33. parallax-text (subtle translate on hover or animation) */
+.genre-generator__genre--parallax-text { transform:translateZ(0); animation: dyw-parallax 6s ease-in-out infinite; }
+@keyframes dyw-parallax { 0% { transform:translateY(0) } 50% { transform:translateY(-6px) } 100% { transform:translateY(0) } }
+
+/* 34. masked-gradient */
+.genre-generator__genre--masked-gradient { background:linear-gradient(90deg,#fff,#ffd700,#00e0ff); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+/* 35. text-stroke-outline */
+.genre-generator__genre--text-stroke-outline { color:transparent; -webkit-text-stroke:2px #fff; }
+
+/* 36. outline-fill */
+.genre-generator__genre--outline-fill { position:relative; color:transparent; -webkit-text-stroke:2px #fff; }
+.genre-generator__genre--outline-fill::before{ content:attr(data-text); position:absolute; inset:0; -webkit-background-clip:text; background:linear-gradient(90deg,#ff005e,#00e0ff); color:transparent; animation: dyw-rainbow 3s linear infinite; }
+
+/* 37. liquid-fill (animated width inside) */
+.genre-generator__genre--liquid-fill { position:relative; color:#03a9f4; -webkit-text-stroke:2px rgba(3,169,244,0.25); }
+.genre-generator__genre--liquid-fill::before { content:attr(data-text); position:absolute; left:0; top:0; width:0; height:100%; color:#03a9f4; overflow:hidden; animation: dyw-liquid 3s linear infinite; }
+@keyframes dyw-liquid { 0%{width:0}50%{width:100%}100%{width:0} }
+
+/* 38. soap-bubble */
+.genre-generator__genre--soap-bubble {
+  color:rgba(255,255,255,.12); -webkit-text-stroke:2px rgba(255,255,255,.6);
+  background:linear-gradient(135deg, rgba(255,0,255,.35), rgba(0,255,255,.35)); -webkit-background-clip:text; color:transparent;
+  filter:drop-shadow(0 0 6px rgba(255,255,255,.18));
+}
+
+/* 39. caution-tape */
+.genre-generator__genre--caution-tape {
+  background:repeating-linear-gradient(45deg,#f9d71c 0 10px,#000 10px 20px);
+  -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-stroke:1px #000;
+}
+
+/* 40. long-shadow */
+.genre-generator__genre--long-shadow {
+  color:#f1c40f;
+  text-shadow: 1px 1px #c0392b,2px 2px #c0392b,3px 3px #c0392b,4px 4px #c0392b,5px 5px #c0392b;
+  transform:skewX(-5deg);
+}
+
+/* 41. peeled-sticker */
+.genre-generator__genre--peeled-sticker {
+  background:#222; color:#fff; padding:.2em .4em; box-shadow:10px 10px 15px rgba(0,0,0,.45); transform:rotate(-4deg);
+}
+.genre-generator__genre--peeled-sticker::after { content:''; position:absolute; right:0; bottom:0; border-top:32px solid #555; border-right:32px solid transparent; width:0;height:0; }
+
+/* 42. anaglyph-3d */
+.genre-generator__genre--anaglyph-3d { position:relative; color:rgba(255,255,255,.9); text-shadow:-3px -2px 0 #00f, 3px 2px 0 #f00; }
+
+/* 43. vintage-retro-lines */
+.genre-generator__genre--vintage-retro-lines { color:transparent; -webkit-text-stroke:2px #ff9f43; position:relative; }
+.genre-generator__genre--vintage-retro-lines::before{ content:attr(data-text); position:absolute; left:4px; top:4px; -webkit-text-stroke:2px #ee5253; z-index:-1; }
+.genre-generator__genre--vintage-retro-lines::after{ content:attr(data-text); position:absolute; left:8px; top:8px; -webkit-text-stroke:2px #2e86de; z-index:-2; }
+
+/* 44. embossed-metal (pressed-in) */
+.genre-generator__genre--embossed-metal { color:#333; text-shadow:-1px -1px 1px #fff, 1px 1px 1px #000; opacity:.9; }
+
+/* 45. masked-pattern */
+.genre-generator__genre--masked-pattern {
+  background:repeating-linear-gradient(45deg,#ff6b6b 0 10px,#feca57 10px 20px);
+  -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-stroke:2px #fff;
+}
+
+/* 46. metallic-chrome */
+.genre-generator__genre--metallic-chrome {
+  background:linear-gradient(180deg,#fff,#bfbfbf 40%,#2b2b2b 60%); -webkit-background-clip:text; background-clip:text; color:transparent;
+  text-shadow:0 0 6px rgba(0,0,0,.6);
+}
+
+/* 47. hologram */
+.genre-generator__genre--hologram {
+  color:#00ffff; text-shadow:0 0 8px rgba(0,255,255,.8),0 0 18px rgba(255,0,255,.6);
+}
+.genre-generator__genre--hologram::before { content:attr(data-text); position:absolute; inset:0; color:#ff00ff; mix-blend-mode:screen; transform:translate(2px,-2px); opacity:.6; }
+
+/* 48. vhs-glitch */
+.genre-generator__genre--vhs-glitch { position:relative; color:#fff; text-shadow:0 0 2px #000; animation: dyw-vhs 1.2s infinite; }
+.genre-generator__genre--vhs-glitch::before, .genre-generator__genre--vhs-glitch::after { content:attr(data-text); position:absolute; inset:0; mix-blend-mode:screen; }
+.genre-generator__genre--vhs-glitch::before{ color:#ff006e; transform:translateX(-2px); }
+.genre-generator__genre--vhs-glitch::after { color:#00f5d4; transform:translateX(2px); }
+@keyframes dyw-vhs { 0%,100%{transform:translate(0)} 20%{transform:translate(-1px,1px)} 40%{transform:translate(1px,-1px)} }
+
+/* 49. neon-flicker (broken sign) */
+.genre-generator__genre--neon-flicker {
+  color:#fff; text-shadow:0 0 7px #fff,0 0 14px #0fa,0 0 40px #0fa; animation: dyw-flicker 1.5s infinite;
+}
+@keyframes dyw-flicker {
+  0%,18%,22%,25%,53%,57%,100%{ opacity:1; }
+  20%,24%,55%{ opacity:.08; text-shadow:none; }
+}
+
+/* 50. hand-written-draw */
+.genre-generator__genre--hand-written-draw {
+  font-family:'Shadows Into Light',cursive; white-space:nowrap; overflow:hidden; border-right:.12em solid currentColor;
+  animation: dyw-handwrite 2.8s steps(28,end) 1 forwards;
+}
+@keyframes dyw-handwrite { from{width:0} to{width:100%} }
+
+/* Shared helper keyframes */
+@keyframes dyw-rainbow { 0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%} }
+@keyframes dyw-glitchA {}
+@keyframes dyw-glitchB {}
+
+
 /* Bad Coma */
 @font-face {
   font-family: "BadComa";
@@ -1643,45 +1955,6 @@
   }
 }
 
-/* ========= STYLE 9 : EXPLOSIVE BURST ========= */
-
-.genre-generator__genre--burst {
-  font-size: 3.5rem;
-  position: relative;
-  color: #fff;
-  letter-spacing: 0.05em;
-}
-
-.genre-generator__genre--burst::before,
-.genre-generator__genre--burst::after {
-  content: "";
-  position: absolute;
-  inset: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 999px;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, #ffdd00, transparent 60%);
-  opacity: 0;
-  pointer-events: none;
-  animation: burst-pulse 0.9s ease-out;
-}
-
-.genre-generator__genre--burst::after {
-  background: radial-gradient(circle, #ff4b91, transparent 70%);
-  animation-delay: 0.15s;
-}
-
-@keyframes burst-pulse {
-  0% {
-    opacity: 0.8;
-    transform: translate(-50%, -50%) scale(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(4);
-  }
-}
 
 /* ========= STYLE 10 : DANCING SHADOW ========= */
 
@@ -6925,4 +7198,180 @@ body {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* ======= GLITCH STYLES PACK ======= */
+
+/* Use attr(data-text) on the element (already in your <p>) */
+
+.genre-generator__genre--glitchRGB {
+  position: relative;
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+.genre-generator__genre--glitchRGB::before,
+.genre-generator__genre--glitchRGB::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  clip-path: inset(0);
+}
+.genre-generator__genre--glitchRGB::before {
+  color: #ff005e;
+  transform: translateX(-6px);
+  mix-blend-mode: screen;
+  filter: blur(0.6px);
+  animation: glitch-rgb-a 1.8s infinite linear;
+}
+.genre-generator__genre--glitchRGB::after {
+  color: #00e0ff;
+  transform: translateX(6px);
+  mix-blend-mode: screen;
+  filter: blur(0.6px);
+  animation: glitch-rgb-b 1.9s infinite linear;
+}
+@keyframes glitch-rgb-a {
+  0% { transform: translateX(-6px) translateY(0); opacity: .9; }
+  20% { transform: translateX(-18px) translateY(-2px); opacity: .6; }
+  40% { transform: translateX(-3px) translateY(1px); opacity: .9; }
+  60% { transform: translateX(-22px) translateY(2px); opacity: .5; }
+  100% { transform: translateX(-6px) translateY(0); opacity: .9; }
+}
+@keyframes glitch-rgb-b {
+  0% { transform: translateX(6px) translateY(0); opacity: .9; }
+  25% { transform: translateX(18px) translateY(1px); opacity: .5; }
+  50% { transform: translateX(4px) translateY(-1px); opacity: .8; }
+  75% { transform: translateX(22px) translateY(-2px); opacity: .4; }
+  100% { transform: translateX(6px) translateY(0); opacity: .9; }
+}
+
+/* ----- VHS / Scanline-style RGB jitter ----- */
+.genre-generator__genre--glitchVHS {
+  position: relative;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  overflow: visible;
+}
+.genre-generator__genre--glitchVHS::before,
+.genre-generator__genre--glitchVHS::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  mix-blend-mode: screen;
+  opacity: .95;
+}
+.genre-generator__genre--glitchVHS::before {
+  color: #ff00aa;
+  transform: translateX(-4px);
+  animation: vhs-shift 0.6s steps(2, end) infinite;
+}
+.genre-generator__genre--glitchVHS::after {
+  color: #00ffd8;
+  transform: translateX(4px);
+  animation: vhs-shift 0.9s steps(3, end) infinite reverse;
+}
+@keyframes vhs-shift {
+  0% { transform: translateY(0) translateX(0); }
+  30% { transform: translateY(-2px) translateX(-6px); }
+  60% { transform: translateY(2px) translateX(3px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+
+/* ----- jitter shake (fast micro-shifts) ----- */
+.genre-generator__genre--glitchJitter {
+  display: inline-block;
+  color: #fff;
+  font-weight: 900;
+  animation: jitter 0.12s infinite;
+}
+@keyframes jitter {
+  0% { transform: translate(0,0); filter: hue-rotate(0deg); }
+  20% { transform: translate(-1px,1px) skewX(-1deg); filter: hue-rotate(20deg); }
+  40% { transform: translate(1px,-1px) skewX(1deg); filter: hue-rotate(-10deg); }
+  60% { transform: translate(-2px,0px) skewY(1deg); filter: hue-rotate(10deg); }
+  80% { transform: translate(1px,2px) skewY(-1deg); filter: hue-rotate(-20deg); }
+  100% { transform: translate(0,0); filter: hue-rotate(0deg); }
+}
+
+
+/* ----- scan-lines overlay (classic CRT look) ----- */
+.genre-generator__genre--glitchScan {
+  position: relative;
+  color: #fff;
+  font-weight: 800;
+}
+.genre-generator__genre--glitchScan::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(0,0,0,0.06) 0 1px, transparent 1px 3px);
+  background-size: 100% 3px;
+  mix-blend-mode: multiply;
+  animation: scan-move 0.8s linear infinite;
+}
+@keyframes scan-move {
+  0% { background-position-y: 0; }
+  100% { background-position-y: 6px; }
+}
+
+/* ----- ASCII / blocky glitch (char overlay) ----- */
+.genre-generator__genre--glitchAscii {
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.genre-generator__genre--glitchAscii::before {
+  content: attr(data-text) " " attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  color: rgba(255,255,255,0.14);
+  transform: translateY(-6px) skewX(-6deg);
+  filter: blur(0.8px);
+  animation: ascii-flicker 2.4s infinite;
+}
+@keyframes ascii-flicker {
+  0% { opacity: .4; transform: translateY(-6px); }
+  50% { opacity: .9; transform: translateY(0); }
+  100% { opacity: .4; transform: translateY(-6px); }
+}
+
+/* ----- pixel-slice (small rectangular glitch) ----- */
+.genre-generator__genre--glitchPixel {
+  position: relative;
+  color: #fff;
+  font-weight: 900;
+}
+.genre-generator__genre--glitchPixel::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  color: #ff4b91;
+  clip-path: polygon(0 0, 100% 0, 100% 20%, 0 20%);
+  transform: translateY(-2px);
+  animation: pixel-slice 1.4s infinite linear;
+}
+@keyframes pixel-slice {
+  0% { clip-path: polygon(0 0, 100% 0, 100% 20%, 0 20%); transform: translateY(0); }
+  25% { clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%); transform: translateY(-8px); }
+  50% { clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%); transform: translateY(6px); }
+  75% { clip-path: polygon(0 40%, 100% 40%, 100% 60%, 0 60%); transform: translateY(-4px); }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 20%, 0 20%); transform: translateY(0); }
+}
+
+/* ===== Capture helper class: freeze animations when exporting ===== */
+.capture-frozen,
+.capture-frozen * {
+  animation: none !important;
+  transition: none !important;
 }

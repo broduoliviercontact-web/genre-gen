@@ -1,11 +1,66 @@
 import { useState, useEffect, useRef } from "react";
 import "./GenreGenerator.css";
 import AppFooter from "./AppFooter";
-import SaveImageButton from "./SaveImageButton";
+import SaveImageButton from "./SaveImageButton.jsx";
 import { toPng } from 'html-to-image';
 import download from 'downloadjs';
 
 const STYLE_KEYS = [
+//
+"animated-text-fill", 
+"animated-signature", 
+"line-text-animation", 
+"animated-text-shadow-pattern", 
+"svg-path-animated-text", 
+"multi-layered-text-shadow", 
+"neon-text-shadow", 
+"embossed-shadow", 
+"3d-letters", 
+"3d-text-shadow",
+ "striped-text-background", 
+ "gradient-clipped-text", 
+ "image-clipped-text", 
+ "underline-clip-hover", 
+ "neon-hover-glow", 
+ "spring-pop-hover", 
+ "glitching-text", 
+ "sliced-text", 
+ "fire-text-shadow", 
+ "pixelated-arcade-typography", 
+ "text-reveal", 
+ "shimmer-text", 
+ "ribbon-text", 
+ "skewed-multiline", 
+ "typing-animation", 
+ "rotating-text", 
+ "animated-gradient-text", 
+ "split-clip-path", 
+ "text-reflect", 
+ "drop-cap", 
+ "text-blur", 
+ "blend-mode-effects", 
+ "parallax-text", 
+ "masked-gradient", 
+ "text-stroke-outline", 
+ "outline-fill", 
+ "liquid-fill", 
+ "soap-bubble", 
+ "caution-tape", 
+ "long-shadow", 
+ "peeled-sticker", 
+ "anaglyph-3d", 
+ "vintage-retro-lines", 
+ "embossed-metal", 
+ "masked-pattern", 
+ "metallic-chrome", 
+ "hologram", 
+ "vhs-glitch", 
+ "neon-flicker", 
+ "hand-written-draw",
+
+
+  //
+
   "bassDrop",
   "vinylSpin",
   "laserScan",
@@ -16,6 +71,12 @@ const STYLE_KEYS = [
   "raveGlow",
   "tempoShake",
   "dubstepSlice",
+  "glitchRGB",
+"glitchVHS",
+"glitchJitter",
+"glitchScan",
+"glitchAscii",
+"glitchPixel",
     // ... tes anciens styles ...
   
   "jellyWobble",
@@ -43,7 +104,7 @@ const STYLE_KEYS = [
   "melting",
   "matrix",
   "spin",
-  "burst",
+
   "shadowDance",
   "mask",
   "typewriter",
@@ -139,7 +200,7 @@ const STYLE_KEYS = [
 
   // === NEW STYLES ===
   "hyperSpeed",
-  "toxicSlime",
+
   "cyberGlitch",
   "goldenLux",
   "popArt",
@@ -161,7 +222,7 @@ const STYLE_KEYS = [
   "superSaiyan",
   "blueprint",
 
-  "vampireBite",
+
   "prism",
   "stickerSlap",
   "voidPortal",
@@ -178,6 +239,16 @@ const STYLE_KEYS = [
 ];
 
 const FONT_KEYS = [
+    "badComa",
+  "metropolitan",
+  "creamCake",
+  "nextUpsBlack",
+  "aerosoldier",
+  "docallisme",
+  "graffitiYouth",
+  "saiba45",
+  "saiba45Outline",
+  "polarSnow",
     "darkcastle",
   "streetsoul",
   "gangsta",

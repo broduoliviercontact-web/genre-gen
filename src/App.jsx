@@ -1,4 +1,4 @@
-import GenreGenerator from "./assets/GenreGenerator.jsx";
+import GenreGenerator from "./assets/components/GenreGenerator.jsx";
 
 function App() {
   return (
