@@ -1,7 +1,342 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&family=Lobster&family=Oswald:wght@400;700&family=Metal+Mania&family=Staatliches&family=Cinzel:wght@400;700&family=Stardos+Stencil:wght@400;700&family=Russo+One&family=Audiowide&family=Permanent+Marker&family=Anton&family=Rock+Salt&family=Neonderthaw&family=Bangers&family=Playfair+Display:wght@400;700&family=Alfa+Slab+One&family=Amatic+SC:wght@400;700&family=Special+Elite&family=Shadows+Into+Light&family=Unica+One&family=Creepster&display=swap");
 /* ========== PACK FONTS – POSTCRYPT & CO ========== */
 /* ... (Add anywhere in your CSS) ... */
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Bebas+Neue&family=Fugaz+One&family=Kaushan+Script&family=Major+Mono+Display&family=Monoton&family=Montserrat:wght@700&family=Orbitron:wght@700&family=Playfair+Display:wght@700&family=Pacifico&family=Righteous&family=Silkscreen&family=Space+Grotesk:wght@700&family=VT323&display=swap");
 
+/* Bad Coma */
+@font-face {
+  font-family: "BadComa";
+  src: url("/fonts/Bad Coma.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-badComa {
+  font-family: "BadComa", cursive;
+}
+
+/* Metropolitan */
+@font-face {
+  font-family: "Metropolitan";
+  src: url("/fonts/Metropolitan.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-metropolitan {
+  font-family: "Metropolitan", sans-serif;
+}
+
+/* Cream Cake */
+@font-face {
+  font-family: "CreamCake";
+  src: url("/fonts/Cream Cake.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-creamCake {
+  font-family: "CreamCake", cursive;
+}
+
+/* Next Ups Black */
+@font-face {
+  font-family: "NextUpsBlack";
+  src: url("/fonts/Next Ups Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-nextUpsBlack {
+  font-family: "NextUpsBlack", cursive;
+}
+
+/* Aerosoldier */
+@font-face {
+  font-family: "Aerosoldier";
+  src: url("/fonts/Aerosoldier_PERSONAL_USE_ONLY.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-aerosoldier {
+  font-family: "Aerosoldier", cursive;
+}
+
+/* Docallisme on Street */
+@font-face {
+  font-family: "DocallismeStreet";
+  src: url("/fonts/docallismeonstreet.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-docallisme {
+  font-family: "DocallismeStreet", cursive;
+}
+
+/* Graffiti Youth */
+@font-face {
+  font-family: "GraffitiYouth";
+  src: url("/fonts/GraffitiYouth-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-graffitiYouth {
+  font-family: "GraffitiYouth", cursive;
+}
+
+/* SAIBA 45 (plein) */
+@font-face {
+  font-family: "Saiba45";
+  src: url("/fonts/SAIBA-45.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-saiba45 {
+  font-family: "Saiba45", sans-serif;
+}
+
+/* SAIBA 45 Outline */
+@font-face {
+  font-family: "Saiba45Outline";
+  src: url("/fonts/SAIBA-45-Outline.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-saiba45Outline {
+  font-family: "Saiba45Outline", sans-serif;
+}
+
+/* Polar Snow */
+@font-face {
+  font-family: "PolarSnow";
+  src: url("/fonts/Polar Snow.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-polarSnow {
+  font-family: "PolarSnow", cursive;
+}
+
+
+
+/* ========== NEW COLORED / ALBUM FONT CLASSES ========== */
+
+/* 1. Big Retro Display - bold color */
+.font-retroDisplay {
+  font-family: "Abril Fatface", "Bebas Neue", serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #ff4b91;
+  text-shadow: 0 6px 18px rgba(255,75,145,0.18);
+}
+
+/* 2. Neon Block - bright block neon */
+.font-neonBlock {
+  font-family: "Fugaz One", "Anton", sans-serif;
+  text-transform: uppercase;
+  background: linear-gradient(90deg,#00e0ff,#ff4b91);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 6px 32px rgba(0,224,255,0.08);
+}
+
+/* 3. Vapor / 80s - pink / cyan gradient */
+.font-vapor80s {
+  font-family: "Monoton", "Bebas Neue", cursive;
+  background: linear-gradient(90deg,#ff00ff,#00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: skewX(-6deg);
+  letter-spacing: 0.08em;
+}
+
+/* 4. Futuristic / Sci-Fi */
+.font-astro {
+  font-family: "Orbitron", "Space Grotesk", sans-serif;
+  font-weight: 700;
+  background: linear-gradient(90deg,#a8fff9,#6dd3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 22px rgba(0,160,255,0.12);
+}
+
+/* 5. Metallic Chrome (cold) */
+.font-chromeCold {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  background: linear-gradient(180deg,#f8f8f8,#bfbfbf 40%,#2b2b2b 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* 6. Graffiti Tag */
+.font-graffitiTag {
+  font-family: "Pacifico", "Kaushan Script", cursive;
+  color: #ff7f2a;
+  text-shadow: 0 10px 30px rgba(255,127,42,0.12);
+  transform: rotate(-2deg);
+}
+
+/* 7. Handwritten Rough */
+.font-rawHand {
+  font-family: "Kaushan Script", "Pacifico", cursive;
+  color: #fff7d6;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+}
+
+/* 8. Elegant Luxe (serif, gold) */
+.font-luxe {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  background: linear-gradient(90deg,#ffd98a,#ffd700 50%,#f8e6a6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.06em;
+}
+
+/* 9. Typewriter Colored */
+.font-typedColor {
+  font-family: "Major Mono Display", monospace;
+  color: #00e0ff;
+  text-shadow: 0 2px 10px rgba(0,224,255,0.08);
+}
+
+/* 10. Pixel / Chiptune */
+.font-chip {
+  font-family: "VT323", "Major Mono Display", monospace;
+  color: #00ffbb;
+  text-shadow: 0 2px 6px rgba(0,255,187,0.12);
+  letter-spacing: 0.03em;
+}
+
+/* 11. Heavy Metal (spattered color) */
+.font-metalSplash {
+  font-family: "Anton", "Bebas Neue", sans-serif;
+  font-weight: 700;
+  color: #f3f3f3;
+  background: linear-gradient(90deg,#ff6b6b,#ffa84b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 16px 40px rgba(0,0,0,0.45);
+}
+
+/* 12. Disco Glitter (multicolor) */
+.font-disco {
+  font-family: "Righteous", "Fugaz One", sans-serif;
+  background: linear-gradient(90deg,#ff4b91,#ffd700,#00e0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
+/* 13. Gothic / Black Metal (blood accent) */
+.font-blackGoth {
+  font-family: "Playfair Display", "Abril Fatface", serif;
+  color: #ffffff;
+  text-shadow: 0 8px 26px rgba(0,0,0,0.7), 0 0 10px rgba(138,3,3,0.6);
+}
+
+/* 14. Retro Rounded (pastel) */
+.font-retroRounded {
+  font-family: "Montserrat", "Bebas Neue", sans-serif;
+  background: linear-gradient(90deg,#ffb4d9,#a0e7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 15. Neon Outline (colored stroke) */
+.font-neonOutline {
+  font-family: "Bebas Neue", "Anton", sans-serif;
+  color: transparent;
+  -webkit-text-stroke: 2px #00e0ff;
+  text-shadow: 0 0 8px rgba(0,224,255,0.6);
+}
+
+/* 16. Brush Paint (wet) */
+.font-brush {
+  font-family: "Pacifico", "Kaushan Script", cursive;
+  background: linear-gradient(90deg,#ff7a7a,#ffd27a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 17. Tape / Analog (warm) */
+.font-tapeWarm {
+  font-family: "Righteous", "Abril Fatface", serif;
+  background: linear-gradient(90deg,#ffdb9b,#ff9a88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 18. Synth Gradient (animated subtle) */
+.font-synth {
+  font-family: "Orbitron", "Righteous", sans-serif;
+  font-weight: 700;
+  background: linear-gradient(90deg,#ff00cc,#00e0ff,#ffd700);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: synthShift 5s linear infinite;
+}
+@keyframes synthShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 19. Pastel Duo */
+.font-pastelDuo {
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(90deg,#c7b2ff,#b3fff0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 20. Grunge Fade (white -> blood) */
+.font-grungeFade {
+  font-family: "Abril Fatface", "Anton", serif;
+  color: #fff;
+  background: linear-gradient(180deg,#ffffff,#ff6b6b 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 21. Chrome Warm (golden) */
+.font-chromeWarm {
+  font-family: "Playfair Display", serif;
+  background: linear-gradient(90deg,#ffefc2,#ffd700,#ffbd52);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 22. Electric Cyan */
+.font-electric {
+  font-family: "Orbitron", sans-serif;
+  color: #00e0ff;
+  text-shadow: 0 6px 22px rgba(0,224,255,0.12);
+}
+
+/* 23. Retro Arcade (bright outline) */
+.font-arcade {
+  font-family: "Monoton", "VT323", monospace;
+  color: #ffd700;
+  text-shadow: 0 4px 12px rgba(255,215,0,0.12);
+}
+
+/* 24. Signature Script (colored ink) */
+.font-signatureColor {
+  font-family: "Pacifico", "Kaushan Script", cursive;
+  color: #ff77a9;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
 .font-darkcastle {
   font-family: "DarkCastle", serif;
   font-size: 1.2em; /* Souvent petit, besoin d'être plus gros */
@@ -2363,6 +2698,7 @@
 .genre-generator__genre--blurIn {
   font-size: 3.1rem;
   animation: blur-in 0.9s ease-out forwards;
+  color: #4d0404;
 }
 
 @keyframes blur-in {
@@ -2370,7 +2706,25 @@
     filter: blur(12px);
     opacity: 0;
     transform: translateY(10px);
+
   }
+30% {
+    filter: blur(6px);
+    opacity: 0.5;
+    transform: translateY(4px);
+  }
+
+
+
+
+  60% {
+    filter: blur(4px);
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+
+
+
   100% {
     filter: blur(0);
     opacity: 1;
@@ -2396,36 +2750,7 @@
   }
 }
 
-/* ========= STYLE 48 : RAINBOW WAVE ========= */
 
-.genre-generator__genre--rainbowWave {
-  font-size: 3.3rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  background: linear-gradient(
-    90deg,
-    #ff005e,
-    #ff9a00,
-    #ffdd00,
-    #00e0ff,
-    #a200f7,
-    #ff005e
-  );
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: rainbow-wave-move 3s linear infinite;
-}
-
-@keyframes rainbow-wave-move {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 300% 50%;
-  }
-}
 
 /* ========= STYLE 49 : GLITCH LINES ========= */
 
@@ -3940,7 +4265,7 @@ body {
   inset: 0;
   transform: translateX(-100%);
   animation: slide-reveal 0.9s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-  color: #ffffff;
+  color: #272fa1;
 }
 
 @keyframes slide-reveal {
@@ -4157,46 +4482,7 @@ body {
 
 
 
-/* ========= STYLE 1 : SHINE SWEEP (FLASH DE LUMIÈRE QUI PASSE) ========= */
 
-.genre-generator__genre--shineSweep {
-  position: relative;
-  display: inline-block;
-  font-size: 3.1rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: #ffffff;
-  overflow: hidden;
-}
-
-.genre-generator__genre--shineSweep::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -150%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.95),
-    transparent
-  );
-  transform: skewX(-20deg);
-  animation: shine-sweep 1.8s ease-in-out infinite;
-}
-
-@keyframes shine-sweep {
-  0% {
-    left: -150%;
-  }
-  60% {
-    left: 120%;
-  }
-  100% {
-    left: 120%;
-  }
-}
 
 /* ========= STYLE 2 : JUMP WAVE 2 (SAUT + BALANCEMENT) ========= */
 
@@ -4376,6 +4662,8 @@ body {
   transform-origin: left center;
   animation: whip-spin 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
   opacity: 0;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  color: blue;
 }
 
 @keyframes whip-spin {
@@ -4383,6 +4671,17 @@ body {
     transform: rotate(-25deg) translateX(-40px);
     opacity: 0;
   }
+30% {
+    transform: rotate(12deg) translateX(15px);
+    opacity: 1;
+  }
+
+  50% {
+    transform: rotate(-6deg) translateX(-5px);
+    opacity: 1;
+  }
+
+
   60% {
     transform: rotate(8deg) translateX(10px);
     opacity: 1;
@@ -4891,44 +5190,7 @@ body {
     opacity: 0.6;
   }
 }
-.genre-generator__genre--liquidDrop {
-  font-size: 3rem;
-  font-weight: 700;
-  position: relative;
-  color: #fff;
-  filter: url("#goo") blur(0.2px);
-}
 
-.genre-generator__genre--liquidDrop::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 110%;
-  width: 0.8em;
-  height: 0.8em;
-  background: #00e0ff;
-  border-radius: 50%;
-  transform: translateX(-50%) scale(0.4);
-  opacity: 0;
-  animation: liquid-drop-fall 1.8s ease-in-out infinite;
-}
-
-@keyframes liquid-drop-fall {
-  0% {
-    transform: translate(-50%, -40%) scale(0.3);
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  60% {
-    transform: translate(-50%, 0%) scale(1);
-  }
-  100% {
-    transform: translate(-50%, 30%) scale(0.2);
-    opacity: 0;
-  }
-}
 .genre-generator__genre--spookyBlur {
   font-size: 3rem;
   text-transform: uppercase;
@@ -5758,41 +6020,7 @@ body {
   filter: drop-shadow(0 0 2px #00a2ff);
 }
 
-/* ========= STYLE 103 : X-RAY SKELETON ========= */
-.genre-generator__genre--xray {
-  font-size: 3.4rem;
-  font-weight: 800;
-  color: #000;
-  background-color: #fff;
-  padding: 0 10px;
-  filter: invert(1) grayscale(1) contrast(1.5);
-  mix-blend-mode: exclusion;
-}
 
-/* ========= STYLE 104 : VAMPIRE BITE ========= */
-.genre-generator__genre--vampireBite {
-  font-size: 3.5rem;
-  font-family: serif;
-  color: #8a0303;
-  text-shadow: 
-    1px 1px 0 #000,
-    0 15px 5px rgba(138, 3, 3, 0.5); /* Fake dripping shadow */
-  position: relative;
-}
-.genre-generator__genre--vampireBite::after {
-  content: ".";
-  position: absolute;
-  color: #8a0303;
-  top: 40px;
-  left: 50%;
-  font-size: 0.5em;
-  animation: drip-blood 2s infinite;
-  opacity: 0;
-}
-@keyframes drip-blood {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(30px); opacity: 0; }
-}
 
 /* ========= STYLE 105 : PRISM REFRACTION ========= */
 .genre-generator__genre--prism {
@@ -5958,26 +6186,6 @@ body {
   text-shadow: -2px 0 #00e0ff;
 }
 
-/* ========= STYLE 114 : FOLDED PAPER ========= */
-/* Looks like the text is folded in the middle */
-.genre-generator__genre--folded {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: #fff;
-  text-transform: uppercase;
-  position: relative;
-}
-
-.genre-generator__genre--folded span {
-  /* Note: This usually requires wrapping letters in spans, 
-     but for this CSS-only version we simulate depth with gradients */
-  background: linear-gradient(to bottom, #ffffff 50%, #cccccc 50%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  transform: perspective(500px) rotateX(20deg);
-  display: inline-block;
-}
 
 /* ========= STYLE 115 : VINTAGE RETRO LINES ========= */
 /* The classic 70s/80s striped logo look */
@@ -6325,43 +6533,7 @@ body {
   50% { filter: brightness(1.5) drop-shadow(0 0 5px #0f0); }
 }
 
-/* ========= STYLE 128 : MAGMA CRACKS (Lave craquelée) ========= */
-.genre-generator__genre--magmaCracks {
-  font-size: 3.5rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: #1a0500; /* Roche sombre */
-  position: relative;
-  overflow: hidden;
-}
 
-.genre-generator__genre--magmaCracks::before {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  /* Les craquelures */
-  background: repeating-linear-gradient(
-    90deg,
-    transparent 0,
-    transparent 10px,
-    #ff4500 10px,
-    #ffff00 12px
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  mix-blend-mode: overlay;
-  animation: magma-flow 3s linear infinite;
-}
-
-@keyframes magma-flow {
-  0% { opacity: 0.5; filter: hue-rotate(0deg); }
-  50% { opacity: 1; filter: hue-rotate(-20deg); }
-  100% { opacity: 0.5; filter: hue-rotate(0deg); }
-}
 
 /* ========= STYLE 129 : GHOST FLOAT (Fantôme Spooky) ========= */
 .genre-generator__genre--ghostFloat {
@@ -6419,4 +6591,338 @@ body {
   0% { transform: scaleY(1); opacity: 0; }
   20% { transform: scaleY(3); opacity: 0.8; }
   100% { transform: scaleY(1); opacity: 0; }
+}
+
+/* ============================
+   COULEURS ANIMÉES — Nouveau pack
+   ============================ */
+
+/* Utiles : variables */
+:root {
+  --color-accent: #ff4b91;
+  --color-accent-2: #00e0ff;
+  --color-accent-3: #ffd700;
+}
+
+/* ---------- 1. RAINBOW SLIDE - dégradé horizontal animé ---------- */
+.genre-generator__genre--rainbowSlide {
+  font-size: 3.4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: transparent;
+  background: linear-gradient(90deg, #ff005e, #ff9a00, #ffdd00, #00e0ff, #a200f7);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-slide 3.5s linear infinite;
+}
+@keyframes rainbow-slide {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---------- 2. HUE SHIFT - variation continue de teinte ---------- */
+.genre-generator__genre--hueShift {
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: #fff;
+  filter: hue-rotate(0deg);
+  animation: hue-rotate 6s linear infinite;
+  text-shadow: 0 0 16px rgba(255,255,255,0.06);
+}
+@keyframes hue-rotate {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* ---------- 3. CHROMA WAVE - onde de couleurs (background-clip) ---------- */
+.genre-generator__genre--chromaWave {
+  font-size: 3.6rem;
+  font-weight: 900;
+  color: transparent;
+  background: conic-gradient(from 0deg, #ff005e, #ff9a00, #ffd700, #00e0ff, #a200f7, #ff005e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: chroma-rotate 4s linear infinite;
+}
+@keyframes chroma-rotate {
+  0% { transform: rotate(0deg); filter: saturate(1); }
+  50% { transform: rotate(5deg); filter: saturate(1.2); }
+  100% { transform: rotate(0deg); filter: saturate(1); }
+}
+
+/* ---------- 4. NEON PULSE - néon changeant ---------- */
+.genre-generator__genre--neonPulse {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow:
+    0 0 8px var(--color-accent),
+    0 0 20px var(--color-accent),
+    0 0 40px var(--color-accent-2);
+  animation: neon-pulse 2.4s ease-in-out infinite;
+}
+@keyframes neon-pulse {
+  0% {
+    text-shadow:
+      0 0 6px #ff4b91, 0 0 16px #ff4b91, 0 0 30px #00e0ff;
+    color: #ff4b91;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    text-shadow:
+      0 0 10px #00e0ff, 0 0 26px #00e0ff, 0 0 50px #ffd700;
+    color: #00e0ff;
+    filter: hue-rotate(60deg);
+  }
+  100% {
+    text-shadow:
+      0 0 6px #ffd700, 0 0 16px #ffd700, 0 0 30px #ff4b91;
+    color: #ffd700;
+    filter: hue-rotate(0deg);
+  }
+}
+
+/* ---------- 5. SPECTRUM BARS - contour animé en spectre ---------- */
+.genre-generator__genre--spectrumBars {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255,255,255,0.95);
+  position: relative;
+  background: linear-gradient(90deg, #ff005e 0%, #ff9a00 20%, #ffdd00 40%, #00e0ff 60%, #a200f7 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: spectrum-move 2.6s linear infinite;
+}
+@keyframes spectrum-move {
+  0% { background-position: 0% 50%; -webkit-text-stroke-color: rgba(255,255,255,0.9); }
+  50% { background-position: 100% 50%; -webkit-text-stroke-color: rgba(255,255,255,0.7); }
+  100% { background-position: 0% 50%; -webkit-text-stroke-color: rgba(255,255,255,0.9); }
+}
+
+/* ---------- 6. PRISM ROTATE - décalage multicouche ---------- */
+.genre-generator__genre--prismRotate {
+  font-size: 3.6rem;
+  font-weight: 900;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.genre-generator__genre--prismRotate::before,
+.genre-generator__genre--prismRotate::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.85;
+}
+.genre-generator__genre--prismRotate::before {
+  color: #ff4b91;
+  transform: translate(-6px, -4px);
+  filter: blur(6px);
+  animation: prism-a 3s ease-in-out infinite;
+}
+.genre-generator__genre--prismRotate::after {
+  color: #00e0ff;
+  transform: translate(6px, 4px);
+  filter: blur(6px);
+  animation: prism-b 3s ease-in-out infinite;
+}
+@keyframes prism-a {
+  0% { transform: translate(-6px,-4px) rotate(0deg); opacity:0.6; }
+  50% { transform: translate(-12px,-6px) rotate(2deg); opacity:1; }
+  100% { transform: translate(-6px,-4px) rotate(0deg); opacity:0.6; }
+}
+@keyframes prism-b {
+  0% { transform: translate(6px,4px) rotate(0deg); opacity:0.6; }
+  50% { transform: translate(12px,6px) rotate(-2deg); opacity:1; }
+  100% { transform: translate(6px,4px) rotate(0deg); opacity:0.6; }
+}
+
+/* ---------- 7. KINETIC GRADIENT - morphing doux ---------- */
+.genre-generator__genre--kineticGradient {
+  font-size: 3.3rem;
+  font-weight: 800;
+  color: transparent;
+  background: linear-gradient(120deg, #ff005e, #00e0ff, #ffd700, #a200f7);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: kinetic 8s ease-in-out infinite;
+}
+@keyframes kinetic {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 0%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---------- 8. THERMAL MAP - duotone chaud/froid ---------- */
+.genre-generator__genre--thermal {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: transparent;
+  background: linear-gradient(180deg, #00f, #0ff 30%, #ff0 60%, #f00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: thermalShift 4s ease-in-out infinite;
+}
+@keyframes thermalShift {
+  0% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(90deg) saturate(1.2); }
+  100% { filter: hue-rotate(0deg); }
+}
+
+/* ---------- 9. STROBE RAINBOW - flash multicolore ---------- */
+.genre-generator__genre--strobeRainbow {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #fff;
+  animation: strobe-rainbow 1.2s steps(6, end) infinite;
+  text-shadow: 0 0 12px rgba(255,255,255,0.08);
+}
+@keyframes strobe-rainbow {
+  0% { color:#ff005e; text-shadow: 0 0 18px #ff005e; }
+  16% { color:#ff9a00; text-shadow: 0 0 18px #ff9a00; }
+  32% { color:#ffd700; text-shadow: 0 0 18px #ffd700; }
+  48% { color:#00e0ff; text-shadow: 0 0 18px #00e0ff; }
+  64% { color:#a200f7; text-shadow: 0 0 18px #a200f7; }
+  80% { color:#ff005e; text-shadow: 0 0 18px #ff005e; }
+  100% { color:#ff9a00; text-shadow: 0 0 18px #ff9a00; }
+}
+
+/* ---------- 10. HOLO SHIFT - iridescent / holo ---------- */
+.genre-generator__genre--holoShift {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: transparent;
+  background: linear-gradient(60deg, rgba(255,0,128,0.95), rgba(0,200,255,0.95), rgba(255,220,0,0.95));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: holo 3.5s ease-in-out infinite;
+}
+@keyframes holo {
+  0% { background-position: 0% 50%; filter: contrast(1); }
+  50% { background-position: 100% 50%; filter: contrast(1.1) saturate(1.05); }
+  100% { background-position: 0% 50%; filter: contrast(1); }
+}
+
+/* ---------- 11. SPECTRAL OUTLINE - contour multicolore ---------- */
+.genre-generator__genre--spectralOutline {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow:
+    0 0 0 #111,
+    0 0 8px rgba(255,0,128,0.6),
+    0 0 16px rgba(0,200,255,0.6),
+    0 0 28px rgba(255,220,0,0.6);
+  animation: spectralPulse 3s ease-in-out infinite;
+}
+@keyframes spectralPulse {
+  0% { text-shadow: 0 0 8px rgba(255,0,128,0.6); color:#ff4b91; }
+  50% { text-shadow: 0 0 8px rgba(0,200,255,0.6); color:#00e0ff; }
+  100% { text-shadow: 0 0 8px rgba(255,220,0,0.6); color:#ffd700; }
+}
+
+/* ---------- 12. MULTI STROKE SHIFT - contour animé ---------- */
+.genre-generator__genre--multiStroke {
+  font-size: 3.4rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
+  position: relative;
+}
+.genre-generator__genre--multiStroke::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  -webkit-text-stroke: 4px #ff005e;
+  color: transparent;
+  transform: translateY(-6px);
+  animation: strokeShift 3s ease-in-out infinite;
+}
+@keyframes strokeShift {
+  0% { transform: translateY(-6px); -webkit-text-stroke-color: #ff005e; }
+  50% { transform: translateY(6px); -webkit-text-stroke-color: #00e0ff; }
+  100% { transform: translateY(-6px); -webkit-text-stroke-color: #ffd700; }
+}
+
+/* ---------- 13. AURORA BOREALIS - douce variation verticale ---------- */
+.genre-generator__genre--aurora {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: transparent;
+  background: linear-gradient(180deg, #00ffbb, #00aaff, #ff66cc);
+  background-size: 100% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: auroraFlow 6s ease-in-out infinite;
+}
+@keyframes auroraFlow {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* ---------- 14. DISCO BALL - flash et rotation de teintes ---------- */
+.genre-generator__genre--disco {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #fff;
+  animation: discoFlash 1.4s linear infinite;
+}
+@keyframes discoFlash {
+  0% { color:#ff005e; text-shadow: 0 0 10px #ff005e; transform: rotate(0deg); }
+  25% { color:#00e0ff; text-shadow: 0 0 10px #00e0ff; transform: rotate(2deg); }
+  50% { color:#ffd700; text-shadow: 0 0 10px #ffd700; transform: rotate(0deg); }
+  75% { color:#a200f7; text-shadow: 0 0 10px #a200f7; transform: rotate(-2deg); }
+  100% { color:#ff005e; text-shadow: 0 0 10px #ff005e; transform: rotate(0deg); }
+}
+
+/* ---------- 15. GRADIENT MASK SWEEP - masque qui balaye ---------- */
+.genre-generator__genre--maskSweep {
+  font-size: 3.3rem;
+  font-weight: 900;
+  color: transparent;
+  background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(255,255,255,0.2), rgba(255,255,255,0.95));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: maskSweep 2.6s ease-in-out infinite;
+}
+@keyframes maskSweep {
+  0% { background-position: -200% 0%; filter: hue-rotate(0deg); }
+  50% { background-position: 100% 0%; filter: hue-rotate(90deg); }
+  100% { background-position: -200% 0%; filter: hue-rotate(0deg); }
+}
+
+/* ---------- 16. PRISM GLINT - reflet spectral rapide ---------- */
+.genre-generator__genre--prismGlint {
+  font-size: 3.4rem;
+  font-weight: 900;
+  color: transparent;
+  background: linear-gradient(90deg, #fff 0%, #ff005e 20%, #00e0ff 40%, #ffd700 60%, #fff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400% 100%;
+  animation: prismGlint 1.8s linear infinite;
+}
+@keyframes prismGlint {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

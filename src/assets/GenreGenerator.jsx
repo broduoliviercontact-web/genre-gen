@@ -22,7 +22,7 @@ const STYLE_KEYS = [
   "crtTurnOn",
   "searchlight",
   "circuitBoard",
-  "magmaCracks",
+
   "ghostFloat",
   "vaporGrid",
   "pixelSort",
@@ -90,7 +90,6 @@ const STYLE_KEYS = [
   "glowFlash",
   "outlineFill",
   "waveSkew",
-  "shineSweep",
   "jumpWave2",
   "handWrite",
   "revealWords",
@@ -106,7 +105,6 @@ const STYLE_KEYS = [
   "outlinePop",
   "shakeRotate",
   "glitchBlocks",
-  "holoShift",
   "neonLights2",
   "rainbowSweep",
   "lineThrough3d",
@@ -114,7 +112,23 @@ const STYLE_KEYS = [
   "softGlitch",
   "musicGlow",
   "blendOverlay",
-  "liquidDrop",
+//
+  "rainbowSlide",
+  "hueShift",
+  "chromaWave",
+  "neonPulse",
+  "spectrumBars",
+  "prismRotate",
+  "kineticGradient",
+  "thermal",
+  "strobeRainbow",
+  "holoShift",
+  "spectralOutline",
+  "multiStroke",
+  "aurora",
+  "disco",
+  "maskSweep",
+  "prismGlint",
   "spookyBlur",
   "spaciousTracking",
   "cartoonPop",
@@ -129,7 +143,7 @@ const STYLE_KEYS = [
   "cyberGlitch",
   "goldenLux",
   "popArt",
-  "electricZap",
+
   "chromaticAb",
   "magicalGirl",
 
@@ -140,13 +154,13 @@ const STYLE_KEYS = [
   "maskedPattern",
   "embossed",
   "slashed",
-  "folded",
+
   "vintageLines",
   "soapBubble",
   "cautionTape",
   "superSaiyan",
   "blueprint",
-  "xray",
+
   "vampireBite",
   "prism",
   "stickerSlap",
@@ -214,7 +228,7 @@ const FONT_KEYS = [
   "dominionMusic",
   "angost",
   "chopin",
-  "d2k",
+
   "dracutaz",
   "dragonforce",
   "grunge",
@@ -224,7 +238,6 @@ const FONT_KEYS = [
   "punkkid",
   "puree2",
   "queensoftheapocalypse",
-  "scarbes",
   "scaryglyphs",
   "sedgwick",
   "sickness",
@@ -255,16 +268,54 @@ const FONT_KEYS = [
   "arialBlack",
 ];
 
+const EXTRA_FONT_KEYS = [
+  "retroDisplay",
+  "neonBlock",
+  "vapor80s",
+  "astro",
+  "chromeCold",
+  "graffitiTag",
+  "rawHand",
+  "luxe",
+  "typedColor",
+  "chip",
+  "metalSplash",
+  "disco",
+  "blackGoth",
+  "retroRounded",
+  "neonOutline",
+  "brush",
+  "tapeWarm",
+  "synth",
+  "pastelDuo",
+  "grungeFade",
+  "chromeWarm",
+  "electric",
+  "arcade",
+  "signatureColor",
+    "badComa",
+  "metropolitan",
+  "creamCake",
+  "nextUpsBlack",
+  "aerosoldier",
+  "docallisme",
+  "graffitiYouth",
+  "saiba45",
+  "saiba45Outline",
+  "polarSnow",
+];
+
 function getRandomStyle() {
   const index = Math.floor(Math.random() * STYLE_KEYS.length);
   return STYLE_KEYS[index];
 }
 
 function getRandomFont() {
-  const index = Math.floor(Math.random() * FONT_KEYS.length);
-  return FONT_KEYS[index];
+  // Merge original FONT_KEYS with EXTRA_FONT_KEYS at runtime
+  const pool = Array.isArray(FONT_KEYS) ? FONT_KEYS.concat(EXTRA_FONT_KEYS) : EXTRA_FONT_KEYS;
+  const index = Math.floor(Math.random() * pool.length);
+  return pool[index];
 }
-
 function GenreGenerator() {
   const [genre, setGenre] = useState("");
   const [loading, setLoading] = useState(false);
@@ -355,12 +406,12 @@ function GenreGenerator() {
       )}
 
       
-      <div className="genre-generator__bottom-controls">
+      {/* <div className="genre-generator__bottom-controls">
         <SaveImageButton 
             captureRef={captureRef} 
             fileName={`genre-${styleKey}`} 
         />
-      </div>
+      </div> */}
 
       <AppFooter />
     </div>
