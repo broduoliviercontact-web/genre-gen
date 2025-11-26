@@ -2,6 +2,55 @@
 /* ========== PACK FONTS – POSTCRYPT & CO ========== */
 /* ... (Add anywhere in your CSS) ... */
 
+.font-darkcastle {
+  font-family: "DarkCastle", serif;
+  font-size: 1.2em; /* Souvent petit, besoin d'être plus gros */
+}
+
+.font-streetsoul {
+  font-family: "StreetSoul", cursive;
+  transform: rotate(-3deg); /* Un peu penché pour le style tag */
+}
+
+.font-gangsta {
+  font-family: "GangstaWrap", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.font-cyberpunk {
+  font-family: "Cyberpunk", sans-serif;
+  text-transform: uppercase;
+}
+
+.font-lcd {
+  font-family: "LcdSolid", monospace;
+  letter-spacing: 0.1em;
+}
+
+.font-lazer {
+  font-family: "Lazer84", sans-serif;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.font-roadrage {
+  font-family: "RoadRage", cursive;
+  text-transform: uppercase;
+}
+
+.font-hippie {
+  font-family: "KeepOnTruckin", cursive;
+  text-transform: lowercase; /* Souvent plus joli en minuscule pour ce style */
+}
+
+.font-luxepop {
+  font-family: "CocoGoose", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+
 :root {
   /* Ensure these variables exist, or rely on your existing ones */
   --color-dark-btn: #110d1a;
@@ -10,7 +59,9 @@
 
 /* The wrapper that centers it in your existing layout */
 .save-btn-wrapper {
-  display: grid;
+   display: block; 
+  width: auto;
+  height: auto;
   place-content: center;
   margin-top: auto; /* Ensures it stays at the bottom if flex is used */
   padding: 1rem 0;
@@ -129,6 +180,17 @@
 .genre-generator {
   position: relative;
   overflow: hidden;
+    /* Ensure the main card is a flex column */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  /* Make sure the card has a minimum height so there is space to push to */
+  min-height: 400px; /* Adjust this value if you want the card taller/shorter */
+  
+  /* Keep your existing styles... */
+  position: relative;
+  /* ... */
 }
 
 /* 1. Fond sombre radial "de base" */
@@ -712,6 +774,16 @@
   text-transform: uppercase;
 }
 
+.genre-generator__bottom-controls {
+  /* This is the key! It pushes the wrapper to the bottom */
+  margin-top: auto; 
+  
+  /* Optional: Add some padding so it's not glued to the very edge */
+  padding-bottom: 1rem; 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 
 .genre-generator__footer {
@@ -4292,35 +4364,7 @@ body {
   }
 }
 
-/* ========= STYLE 7 : SMOKE FADE (LE TEXTE PART EN FUMÉE) ========= */
 
-.genre-generator__genre--smokeFade {
-  font-size: 3rem;
-  text-transform: uppercase;
-  color: #ffffff;
-  animation: smoke-fade 2.8s ease-out forwards;
-}
-
-@keyframes smoke-fade {
-  0% {
-    opacity: 1;
-    filter: blur(0);
-    text-shadow: 0 0 0 rgba(255, 255, 255, 0);
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 0.8;
-    filter: blur(3px);
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
-    transform: translateY(-5px);
-  }
-  100% {
-    opacity: 0;
-    filter: blur(12px);
-    transform: translateY(-20px);
-    text-shadow: 0 0 40px rgba(255, 255, 255, 0);
-  }
-}
 
 /* ========= STYLE 8 : WHIP SPIN (COUP DE FOUET + ROTATION) ========= */
 
@@ -6174,4 +6218,205 @@ body {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+/* ... (à la suite de ton CSS) ... */
+
+/* ========= STYLE 124 : JELLY WOBBLE (Gélatine) ========= */
+.genre-generator__genre--jellyWobble {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #ff0099;
+  text-transform: uppercase;
+  animation: jelly-move 2s infinite;
+  transform-origin: center;
+}
+
+@keyframes jelly-move {
+  0%, 100% { transform: scale(1, 1); }
+  25% { transform: scale(0.9, 1.1); }
+  50% { transform: scale(1.1, 0.9); }
+  75% { transform: scale(0.95, 1.05); }
+}
+
+/* ========= STYLE 125 : CRT TURN ON (Allumage TV Rétro) ========= */
+.genre-generator__genre--crtTurnOn {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: #fff;
+  background: #000;
+  padding: 0 10px;
+  text-shadow: 0 0 5px #fff;
+  animation: crt-on 4s infinite;
+  opacity: 0; /* Commence invisible */
+}
+
+@keyframes crt-on {
+  0% {
+    transform: scaleY(0.005) scaleX(0);
+    opacity: 1;
+    filter: brightness(5);
+  }
+  10% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  15% {
+    transform: scaleY(1) scaleX(1);
+    filter: brightness(1);
+  }
+  80% {
+    opacity: 1;
+    text-shadow: 0 0 5px #fff;
+  }
+  100% {
+    opacity: 0;
+    text-shadow: 0 0 20px #fff;
+  }
+}
+
+/* ========= STYLE 126 : SEARCHLIGHT (Lampe Torche) ========= */
+.genre-generator__genre--searchlight {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.1); /* Texte sombre */
+  background: radial-gradient(circle 40px at 0% 50%, #fff 99%, transparent 100%);
+  background-size: 100% 100%; /* Pour couvrir tout */
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: searchlight-move 4s infinite ease-in-out alternate;
+}
+
+@keyframes searchlight-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* ========= STYLE 127 : CIRCUIT BOARD (Tech Vert) ========= */
+.genre-generator__genre--circuitBoard {
+  font-size: 3.4rem;
+  font-weight: 900;
+  color: transparent;
+  text-transform: uppercase;
+  /* Simulation de lignes de circuit */
+  background-image: repeating-linear-gradient(
+      45deg, 
+      #0f0 0, 
+      #0f0 2px, 
+      transparent 2px, 
+      transparent 8px
+    ),
+    repeating-linear-gradient(
+      -45deg, 
+      #0f0 0, 
+      #0f0 2px, 
+      transparent 2px, 
+      transparent 8px
+    );
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+  animation: circuit-pulse 2s infinite;
+}
+
+@keyframes circuit-pulse {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.5) drop-shadow(0 0 5px #0f0); }
+}
+
+/* ========= STYLE 128 : MAGMA CRACKS (Lave craquelée) ========= */
+.genre-generator__genre--magmaCracks {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #1a0500; /* Roche sombre */
+  position: relative;
+  overflow: hidden;
+}
+
+.genre-generator__genre--magmaCracks::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* Les craquelures */
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 10px,
+    #ff4500 10px,
+    #ffff00 12px
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  mix-blend-mode: overlay;
+  animation: magma-flow 3s linear infinite;
+}
+
+@keyframes magma-flow {
+  0% { opacity: 0.5; filter: hue-rotate(0deg); }
+  50% { opacity: 1; filter: hue-rotate(-20deg); }
+  100% { opacity: 0.5; filter: hue-rotate(0deg); }
+}
+
+/* ========= STYLE 129 : GHOST FLOAT (Fantôme Spooky) ========= */
+.genre-generator__genre--ghostFloat {
+  font-size: 3.3rem;
+  color: rgba(255, 255, 255, 0.8);
+  filter: blur(2px);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  animation: ghost-wail 3s infinite ease-in-out;
+}
+
+@keyframes ghost-wail {
+  0% { transform: translateY(0) scale(1); opacity: 0.4; letter-spacing: 0.1em; }
+  50% { transform: translateY(-15px) scale(1.1); opacity: 0.9; letter-spacing: 0.2em; }
+  100% { transform: translateY(0) scale(1); opacity: 0.4; letter-spacing: 0.1em; }
+}
+
+/* ========= STYLE 130 : VAPOR GRID (Perspective 80s) ========= */
+.genre-generator__genre--vaporGrid {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ff00ff; /* Rose néon haut */
+  background: linear-gradient(to bottom, #ff00ff 40%, #00ffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: perspective(500px) rotateX(25deg);
+  text-shadow: 0 10px 10px rgba(0,255,255,0.5);
+}
+
+/* ========= STYLE 131 : PIXEL SORT (Glitch étiré) ========= */
+.genre-generator__genre--pixelSort {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+}
+.genre-generator__genre--pixelSort::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: transparent;
+  /* On simule l'étirement des pixels avec un gradient linéaire */
+  background: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%, transparent 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  transform: scaleY(1);
+  transform-origin: top;
+  animation: pixel-stretch 2s infinite;
+  filter: blur(1px);
+}
+
+@keyframes pixel-stretch {
+  0% { transform: scaleY(1); opacity: 0; }
+  20% { transform: scaleY(3); opacity: 0.8; }
+  100% { transform: scaleY(1); opacity: 0; }
 }

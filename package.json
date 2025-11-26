@@ -26,5 +26,18 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "vite": "^7.2.2"
-  }
+  },
+  "description": "**Genrenator** est un petit jouet / sandbox pour musiciens et nerds du CSS :   à chaque clic, l’app :",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/broduoliviercontact-web/genre-gen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/broduoliviercontact-web/genre-gen/issues"
+  },
+  "homepage": "https://github.com/broduoliviercontact-web/genre-gen#readme"
 }

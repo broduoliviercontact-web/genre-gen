@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import "./GenreGenerator.css";
 import AppFooter from "./AppFooter";
 import SaveImageButton from "./SaveImageButton";
+import { toPng } from 'html-to-image';
+import download from 'downloadjs';
 
 const STYLE_KEYS = [
   "bassDrop",
@@ -14,6 +16,16 @@ const STYLE_KEYS = [
   "raveGlow",
   "tempoShake",
   "dubstepSlice",
+    // ... tes anciens styles ...
+  
+  "jellyWobble",
+  "crtTurnOn",
+  "searchlight",
+  "circuitBoard",
+  "magmaCracks",
+  "ghostFloat",
+  "vaporGrid",
+  "pixelSort",
   "sidechainPulse",
   "chorusEcho",
   "tapeWobble",
@@ -84,7 +96,6 @@ const STYLE_KEYS = [
   "revealWords",
   "frozenGlow",
   "waveClip2",
-  "smokeFade",
   "whipSpin",
   "gradientLoop",
   "particleGlow",
@@ -96,8 +107,6 @@ const STYLE_KEYS = [
   "shakeRotate",
   "glitchBlocks",
   "holoShift",
-  "warpWave",
-
   "neonLights2",
   "rainbowSweep",
   "lineThrough3d",
@@ -119,13 +128,10 @@ const STYLE_KEYS = [
   "toxicSlime",
   "cyberGlitch",
   "goldenLux",
-  "retroTerminal",
   "popArt",
   "electricZap",
   "chromaticAb",
-  "steampunk",
   "magicalGirl",
-  "paperCut",
 
   // === DESIGNYOURWAY INSPIRED ===
   "anaglyph3d",
@@ -158,6 +164,15 @@ const STYLE_KEYS = [
 ];
 
 const FONT_KEYS = [
+    "darkcastle",
+  "streetsoul",
+  "gangsta",
+  "cyberpunk",
+  "lcd",
+  "lazer",
+  "roadrage",
+  "hippie",
+  "luxepop",
   "sans",
   "serif",
   "mono",
